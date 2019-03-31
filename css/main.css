@@ -8,17 +8,6 @@ body {
     overflow-x: hidden;
 }
       
-
-.jhuang {
-    text-align: center;
-    opacity: 1 !important;
-    font-weight: lighter;
-    font-style: normal;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 18vmin;
-}
-
-      
 #header {
     border: 0;
     font-style: italic;
@@ -32,24 +21,7 @@ body {
     display: grid;
     grid-template-rows: 3fr max-content max-content max-content 1fr max-content 1fr;
     border: none;
-  }
-
-
-
-
-
-
-
-
-#quote {
-    bottom: 5%;
-    font-size: 4vmin !important;
-    font-style: normal;
-    font-family: 'Ubuntu', sans-serif;
-    opacity:0;
 }
-
-
       
   h2 {
       font-size: 24px;
@@ -231,36 +203,6 @@ body {
         font-size: 150px;
     }
   }
-  </style>
-.bg-grey {
-
-}
-
-#headshot {
-    width: 30vmin;
-    height: 30vmin;
-    border-radius: 50%;
-    align-self: center;
-}
-
-#aboutMe {
-    background-color: white;
-}
-
-#experience {
-    background-color: #212121;
-}
-
-#experience * {
-    color: white;
-}
-
-#showcase {
-    background-color: #212121;
-}
-#showcase *{
-    color: white;
-}
 
 
 @media (min-height: 600px) {
@@ -282,9 +224,7 @@ body {
     height: 100vh!important;
     }
     
-    #min-footer {
-        height: 50vh !important;
-    }
+
 }
 
 #footer {
@@ -302,9 +242,6 @@ body {
     justify-self: center;
 }
 
-#madeBy:hover #made-with-heart{
-    color: red !important;
-}
 #madeBy:hover {
     color: white;
 }
@@ -313,21 +250,7 @@ body {
     color: red !important;
     transition: all 0.3s ease;
 }
-#madeBy:hover #made-with-heart{
-    color: red !important;
-}
 
-#madeBy:hover #made-with-heart{
-    color: red !important;
-}
-
-#madeBy:hover #made-with-heart{
-    color: red !important;
-}
-
-#madeBy:hover #made-with-heart{
-    color: red !important;
-}
 
 .disable-select {
     -webkit-user-select: none;  
@@ -336,77 +259,13 @@ body {
     user-select: none;
 }
 
-
-
-
-
 .navbar-fixed-top {
     opacity: 0.9;
-}
-
-#headerUp {
-    border: 0;
-    position: relative;
-    width: 100%;
-    height: 30vh;
-    display: inline-block;
-    float: left;
-    background-color: rgba(0,0,0,0.7);
-    -webkit-transition-duration:0.8s;/* Safari */transition-duration:0.8s;
-}
-
-#headerDown {
-    border: 0;
-    position: relative;
-    height: 30vh;
-    width: 100%;
-    display: block;
-    float: left;
-    background-color: rgba(0,0,0,0.7);
-    -webkit-transition-duration:0.5s;/* Safari */transition-duration:0.5s;
-}
-
-#headerDown a{
-    position: absolute;
-    top:50%;
-}
-
-#helloThere {
-    margin-top: auto;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 5vmin;
 }
 
 .hover-turn-gray:hover {
     color: lightgray!important;
 }
-
-.arrow-icon {
-    padding: 13px;
-    font-size: 5vmin;
-    color:azure;
-    cursor: pointer;
-    border-radius: 50%;
-    border: white 2px solid;
-    z-index: 101;
-}
-
-.arrow-icon:hover {
-    border: 2px solid #e0e0e0;
-    box-shadow: 0 0 15px #fafafa;
-    transition: all 0.3s ease;
-    color:#e0e0e0;
-}
-
-.spinner {
-    position: absolute;
-    top: 25%;
-    height: 50%;
-    width: 10%;
-}
-
-
-
 
 .xl {
     font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
@@ -422,113 +281,9 @@ body {
 
 
 
-.hire-me {
-  border: 2px black solid;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
-  outline: 1px solid;
-  outline-color: rgba(0, 0, 0, .5);
-  outline-offset: 0px;
-  text-shadow: none;
-  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
-  color: black;
-  cursor: pointer;
-  display: block;
-  font-size:16px;
-  font-weight: 600;
-  line-height: 45px;
-  margin: 0 auto 2em;
-  max-width: 160px; 
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  vertical-align: middle;
-  width: 100%; 
-} 
-
-.hire-me:hover {
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
-  outline-color: rgba(255, 255, 255, 0);
-  outline-offset: 15px;
-}
-
-
-
 .made-with-heart {
     font-size: 18px;
     color: #bdbdbd;
-}
-
-
-
-
-
-#skills {
-    background-color: #eeeeee;
-}
-
-#contact {
-    background-color: #eeeeee;
-}
-
-
-
-#particles-js {
-    position:absolute;
-    z-index: 100;
-    top:0;
-    height: 100%;
-    width: 100%;
-}
-
-
-
-.white-space {
-    width: 100vw;
-    height: 80vh;
-    position: relative;
-}
-
-.floating-content {
-    width: 100vw;
-    height: 90vh;
-    background-color: white;
-    position: relative;
-    color:black;
-    z-index: 30;
-}
-
-.sticky-content {
-    width: 100vw;
-    height:100vh;
-    position: fixed;
-    top:0;
-    background-color: #f3f3f3;
-}
-
-
-
-
-
-.floating-content-container {
-    height: 60vh;
-    width: 80vw;
-    margin-top: 15vh;
-    margin-bottom: 15vh;
-    margin-left: 10vw;
-    margin-right: 10vw;
-    overflow: show;
-    position: absolute;
-    display: grid;
-   grid-template-columns: 6fr minmax(10px, 1fr) 6fr;
-    grid-template-rows: 1fr;
-}
-
-.social-icon {
-    height: 10vmin;
-    width: 10vmin;
-}
-.social-icon:hover {
-    filter:drop-shadow(1px 1px 1px black);
 }
 
 @media (orientation:landscape) {
@@ -543,117 +298,26 @@ body {
     }
 }
 
-#about-1 {
-    z-index: 29;
-}
-
-
-
-
-
-#experience-1 {
-    z-index: 28;
-}
-
-
-
-.sticky-content-container {
-    height: 60vh;
-    width: 80vw;
-    margin-top: 20vh;
-    margin-bottom: 20vh;
-    margin-left: 10vw;
-    margin-right: 10vw;
-    overflow: show;
-    position: absolute;
-    display: grid;
-    grid-template-columns: 6fr minmax(10px, 1fr) 6fr;
-    grid-template-rows: 1fr;
-}
-
-.center-align {
-    display: flex;
-    align-items: center;
-}
-#footer-1 {
-  z-index: 27;
-}
-
-
-
-.headerDown {
-    height: 20vh;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    border: none;
-}
-
-.headerWrapper {
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0,0,0,0.6);
-}
-
-
-
-.avatar-item {
-    justify-self: center;
-    align-self: center;
-    display: grid;
-    grid-template-rows: auto min-content;
-    grid-gap: 2vmin;
-}
-
-.intro-item {
-    justify-self: center;
-    align-self: center;
-}
-
-.social-links {
-    align-self: center;
-    width: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.linked-in {
-    justify-self: end;
-}
-
-.github {
-    justify-self: start;
-}
-
-#new-1 {
-    z-index: 27;
-}
-
-.you-can-reach-me {
-    justify-self: end;
-    align-self: center;
-}
-
-.contact-info {
-    justify-self: start;
-    align-self: center;
-}
 
 #projects-body {
     background-color: #f3f3f3;
-    height: 120vh;
+    display: grid;
+    grid-auto-rows: 60vh;
+    grid-row-gap: 2vh
 }
 
 #min-footer {
     background: #212121;
-    border-top: 1px solid #ddd;
-    height: 20vh;
-    display: grid;
+    display: flex;
     color: #bdbdbd;
-    cursor: pointer;
+}
+
+#min-footer p {
     font-size: calc(1rem + 0.6vw);
-    grid-template-rows: minmax(max-content ,1fr) 1fr;
+    cursor: pointer;
+    margin: auto;
     padding: 20px;
+    text-align: center;
 }
 
 #min-footer p {
@@ -678,11 +342,6 @@ body {
     align-self: start;
 }
 
-.projects-body-content {
-    height: 100vh;
-    width: 100%;
-    display: grid;
-}
 
 .grid-item-center-align {
     justify-self: center;
@@ -693,50 +352,7 @@ body {
         height: 40vmin;
 }
 
-.thanks-link {
-    color: #bdbdbd;
-}
 
-.thanks-link:hover {
-    text-decoration: none;
-    color: #414141;
-}
-
-.framed-img {
-    width: 40vw;
-    height: 50vh;
-    overflow: hidden;
-    border-radius: 18px;
-}
-
-.img-within {
-    width: 40vmax;
-    transition-duration: 1s;
-    border-radius: 18px;
-}
-
-#just-love {
-    transition-duration: 0.5s;
-}
-
-.arrow-up-container {
-    grid-column: 2/3;
-    grid-row: 2/3;
-    display: flex;
-}
-
-.arrow-up {
-    margin: auto;
-}
-
-#see-thanks {
-    cursor: pointer;
-    font-size: 16px;
-    -webkit-transition-duration:0.4s;/* Safari */transition-duration:0.4s;
-   grid-column: 2/3;
-    grid-row: 6/7;
-    justify-self: center;
-}
 
 #rights-reserved {
     cursor: pointer;
@@ -746,10 +362,11 @@ body {
     justify-self: center;
 }
 
-.another-pic {
-    border-radius: 16px;
-    width: 30vw;
-    height: 30vw;
+#projects-body .odd {
+    background-color: powderblue;
 }
 
-
+#projects-body .even {
+    background-color: cadetblue;
+    
+}
