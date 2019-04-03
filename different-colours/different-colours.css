@@ -1,0 +1,81 @@
+
+
+
+#colourful-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    transition-duration: 0.3s;
+}
+
+#colour {
+    margin: auto;
+    font-size: 8vmin;
+    display: grid;
+}
+
+#colour span {
+    text-align: center;
+    line-height: 1.2;
+}
+
+#different-colours-copyright {
+    font-size: 1.3vmin;
+    align-self: flex-end;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+}
+
+#different-colours-copyright a {
+    color: inherit;
+}
+
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+
+
+#next-button {
+    display: inline-block;
+    border: 0.1em solid;
+    border-radius: 0.4em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 300;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+    user-select: none;
+    font-size: 3vmin;
+    white-space: nowrap;
+    width: fit-content;
+    padding: 10px;
+    line-height: 1;
+    justify-self: center;
+    margin-top: 30px;
+    transition-duration: 0s;
+}
+
+#next-button:hover {
+    filter: brightness(90%);
+    transition-duration: 0s;
+}
+

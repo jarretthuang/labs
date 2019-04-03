@@ -364,9 +364,24 @@ body {
 
 #projects-body .odd {
     background-color: powderblue;
+    color: black;
 }
 
 #projects-body .even {
     background-color: cadetblue;
+    color: white;
     
+}
+
+.project-container {
+    display: flex;
+}
+
+.project-container div {
+    margin: auto;
+    font-size: 6vmin;
+}
+
+.project-container div a {
+    color: inherit;
 }
