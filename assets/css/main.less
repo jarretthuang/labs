@@ -21,9 +21,11 @@ html {
 }
 
 .block {
-    background-color: @almost-white;
+    background-color: @shakespeare-lighter-30;
     border-radius: 0.2rem;
     .subtle-box-shadow();
+    .override-anchor();
+    .readonly();
 
     &.large {
         grid-row: span 2;
@@ -39,5 +41,11 @@ html {
         .redirect-to-project {
             margin: auto;
         }
+    }
+
+    &:hover:not(.empty) {
+        background-color: @shakespeare-darker-20;
+        transition-duration: 0.3s;
+        color: @almost-white;
     }
 }

@@ -2,6 +2,7 @@
 @shakespeare: #4EABD1; // This colour is actually called "Shakespeare" :)
 @shakespeare-darker-40: darken(@shakespeare, 40%);
 @shakespeare-darker-20: darken(@shakespeare, 20%);
+@shakespeare-lighter-30: lighten(@shakespeare, 30%);
 @mahogany: #4E0606;
 @rebel: #3C1206;
 @almost-white: #fafafa;
@@ -37,9 +38,16 @@
     user-select: none;
 }
 
-.darkenOnHover() {
+.darken-on-hover() {
     &:hover {
         filter: brightness(90%);
         transition-duration: 0.3s;
+    }
+}
+
+.override-anchor {
+    a {
+        color: inherit;
+        text-decoration: none;
     }
 }
