@@ -1,0 +1,40 @@
+@import url(constants.less);
+
+#copyright-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5vmin;
+}
+
+#copyright {
+    .font-family();
+    .subtle-box-shadow();
+    .readonly();
+
+    display: inline-block;
+    width: min-content;
+    white-space: nowrap;
+    padding: 10px 15px 10px 15px;
+
+    font-size: small;
+    border-radius: 2rem;
+    background-color: fade(white, 20%);
+
+    a {
+        color: inherit;
+    }
+}
+
+@media (max-width: 800px) {
+    #copyright {
+        margin: auto;
+    }
+}
+
+@media (min-width: 800px) {
+    #copyright {
+        align-self: end;
+        margin-right: 5vmin;;
+    }
+}

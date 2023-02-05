@@ -1,4 +1,3 @@
-
 // colours
 @shakespeare: #4EABD1; // This colour is actually called "Shakespeare" :)
 @shakespeare-darker-40: darken(@shakespeare, 40%);
@@ -37,29 +36,3 @@
     cursor: pointer;
 }
 
-.copy-right() {
-    .font-family();
-    .subtle-box-shadow();
-    .readonly();
-
-    position: absolute;
-    margin: 20px;
-    bottom: 10%;
-    padding: 10px 15px 10px 15px;
-
-    font-size: small;
-    border-radius: 2rem;
-    background-color: fade(white, 20%);
-
-    a {
-        color: inherit;
-    }
-
-    @media (max-width: 500px) {
-        align-self: center;
-    }
-    @media (min-width: 500px) {
-        right: 10%;
-        align-self: flex-end;
-    }
-}

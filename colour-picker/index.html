@@ -10,7 +10,7 @@
       type="image/x-icon"
       href="/assets/img/favicon.ico"
     />
-    <link rel="stylesheet/less" type="text/css" href="colour-picker.less" />
+    <link rel="stylesheet" type="text/css" href="public/colour-picker.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Ubuntu"
       rel="stylesheet"
@@ -23,24 +23,29 @@
   </head>
   <body>
     <div id="colourful-container">
+
       <div id="colour">
         <span id="colour-name"></span>
         <span id="colour-hex"></span>
         <div id="next-button">Next</div>
       </div>
-      <div id="copyright">
-        <span class="time-to-date">
-          © 2018 -
-          <script>
-            document.write(new Date().getFullYear());
-          </script>
-          Jarrett Huang.
-        </span>
-        <span class="shout-out">
-          Made possible by
-          <a href="http://chir.ag/projects/ntc/">ntc.js</a>
-        </span>
+
+      <div id="copyright-container">
+        <div id="copyright">
+          <span class="time-to-date">
+            © 2018 -
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            Jarrett Huang.
+          </span>
+          <span class="shout-out">
+            Made possible by
+            <a href="http://chir.ag/projects/ntc/">ntc.js</a>
+          </span>
+        </div>
       </div>
+      
     </div>
   </body>
 </html>
