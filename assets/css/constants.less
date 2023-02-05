@@ -1,0 +1,29 @@
+
+// colours
+@shakespeare: #4EABD1; // This colour is actually called "Shakespeare" :)
+@shakespeare-darker-40: darken(@shakespeare, 40%);
+@mahogany: #4E0606;
+@rebel: #3C1206;
+@almost-white: #fafafa;
+
+@background-colour-main: @shakespeare-darker-40;
+@block-colour-main: @shakespeare;
+@font-colour-main: @almost-white;
+
+// fonts
+.font-family() {
+    font-family: 'ubuntu', helvetica, san-serif;
+}
+
+.font-main() {
+    color: @font-colour-main;
+    .font-family();
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+// common style mixins
+.full-width-and-height() {
+    height: 100%;
+    width: 100%;
+}

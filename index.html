@@ -1,64 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Jarrett Huang's Web Labs</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Web projects and code experiments made by Jarrett Huang."
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/assets/img/favicon.ico"
+    />
+    <link rel="stylesheet/less" type="text/css" href="/assets/css/main.less" />
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Ubuntu"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
 
-<head>
-    <title>JHUANG</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <script src="/js/jquery-3.2.1.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-</head>
-
-<body id="projects-body" data-spy="scroll" data-target=".navbar" data-offset="60">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand hover-turn-gray" href="/">JH</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="https://jhuang.ca">HOME</a>
-                    </li>
-                    <li>
-                        <a href="/">PROJECTS</a>
-                    </li>
-                    <li>
-                        <a href="https://blog.jhuang.ca">BLOG</a>
-                    </li>
-                    <li>
-                        <a href="https://jhuang.ca/contact/">CONTACT</a>
-                    </li>
-                </ul>
-            </div>
+  <body>
+    <div id="canvas">
+      <div id="block-container">
+        <div class="block empty"></div>
+        <div class="block project">
+          <a class="redirect-to-project" href="/colour-picker/"
+            >Colour Picker</a
+          >
         </div>
-    </nav>
-
-        <div class="project-container odd">
-            <div id="project-colour-tool"><a href="/different-colours/">Different Colours</a></div>
-        </div>
-        <div class="project-container even">
-        </div>
-        <div class="project-container odd"></div>
-        <div class="project-container even"></div>
-
-    
-    <div id="min-footer">
-        <p>© 2018 - <script>document.write(new Date().getFullYear())</script> JARRETT HUANG<br>ALL RIGHTS RESERVED</p>
+        <div class="block large"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block empty"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block empty"></div>
+      </div>
     </div>
-
-</body>
-
+  </body>
 </html>
