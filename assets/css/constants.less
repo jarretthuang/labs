@@ -28,3 +28,26 @@
     height: 100%;
     width: 100%;
 }
+
+.subtle-box-shadow() {
+    box-shadow: 0px 0px 6px rgb(0 0 0 / 30%);
+}
+
+.copy-right() {
+    .font-family();
+    .subtle-box-shadow();
+
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    align-self: flex-end;
+    margin: 20px;
+    padding: 10px 15px 10px 15px;
+    font-size: small;
+    border-radius: 2rem;
+    color: @almost-white;
+    background-color: @rebel;
+    a {
+        color: inherit;
+    }
+}
