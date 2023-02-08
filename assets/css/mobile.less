@@ -5,7 +5,8 @@
     }
 
     #canvas {
-        padding-top: 5vmin;
+        padding-top: 10vmin;
+        padding-bottom: 10vmin;
     }
 }
 
@@ -13,5 +14,17 @@
     .copyright {
         align-self: end;
         margin-right: 5vmin;;
+    }
+}
+
+@media (orientation: landscape) {
+    #block-container {
+        grid-auto-rows: minmax(20vmin, 1fr);
+    }
+}
+  
+@media (orientation: portrait) {
+    #block-container {
+        grid-auto-rows: minmax(25vmin, 1fr);
     }
 }

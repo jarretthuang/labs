@@ -1,1 +1,1 @@
-@media (max-width:800px){.copyright{align-self:center}#canvas{padding-top:5vmin}}@media (min-width:800px){.copyright{align-self:end;margin-right:5vmin}}
+@media (max-width:800px){.copyright{align-self:center}#canvas{padding-top:10vmin;padding-bottom:10vmin}}@media (min-width:800px){.copyright{align-self:end;margin-right:5vmin}}@media (orientation:landscape){#block-container{grid-auto-rows:minmax(20vmin, 1fr)}}@media (orientation:portrait){#block-container{grid-auto-rows:minmax(25vmin, 1fr)}}
