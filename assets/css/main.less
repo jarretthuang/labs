@@ -1,6 +1,5 @@
 @import url(constants.less);
 @import url(copyright.less);
-@import url(mobile.less);
 
 html {
     background-color: @background-colour-main;
@@ -79,4 +78,16 @@ html {
         margin: auto;
         font-size: 7vmin;
    }
+}
+
+@media (orientation: landscape) {
+    #block-container {
+        grid-auto-rows: minmax(20vmin, 1fr);
+    }
+}
+  
+@media (orientation: portrait) {
+    #block-container {
+        grid-auto-rows: minmax(25vmin, 1fr);
+    }
 }

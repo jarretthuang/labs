@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Colour Picker</title>
+    <title>JSON Viewer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Pick a colour!" />
+    <meta name="description" content="Viewing and editing JSON text." />
     <link
       rel="shortcut icon"
       type="image/x-icon"
       href="/assets/img/favicon.ico"
     />
-    <link rel="stylesheet" type="text/css" href="public/colour-picker.css" />
+    <link rel="stylesheet" type="text/css" href="public/json-viewer.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Ubuntu"
       rel="stylesheet"
       type="text/css"
     />
-    <script src="jquery-3.2.1.min.js"></script>
-    <script src="colour-picker.js"></script>
-    <script src="ntc.js"></script>
+    <script src="json-viewer.js"></script>
   </head>
   <body>
-    <div id="colourful-container">
-      <div id="colour">
-        <span id="colour-name"></span>
-        <span id="colour-hex"></span>
-        <div id="next-button">Next</div>
+    <div id="main-canvas">
+      <div id="view-switcher">
+        <div class="buttons">
+          <div class="button">View</div>
+          <b></b>
+          <div class="button">Edit</div>
+        </div>
       </div>
-
+      <div id="json-viewer-container"></div>
       <div id="copyright-container">
         <a class="copyright" href="/">
           <span class="time-to-date">
@@ -37,9 +37,6 @@
             </script>
             Jarrett Huang
           </span>
-        </a>
-        <a class="copyright" href="http://chir.ag/projects/ntc/">
-          <span class="shout-out"> Made possible by ntc.js </span>
         </a>
       </div>
     </div>
