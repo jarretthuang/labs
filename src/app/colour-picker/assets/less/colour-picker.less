@@ -1,33 +1,26 @@
-@import url("../assets/css/constants.less");
-@import url("../assets/css/copyright.less");
+@import url(./../../../assets/\ less/constants.less);
 
-body {
-    .font-family();
+.ColourPicker {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    transition-duration: 0.3s;
+    color: @almost-white;
 }
 
-#colourful-container {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
+.colourful-container {
+  margin: auto;
   display: flex;
   flex-direction: column;
-  transition-duration: 0.3s;
-}
+  align-items: center;
+  font-size: 10vmin;
 
-#colour {
-    margin: auto;
-    font-size: 8vmin;
-    display: grid;
-}
+  .colour-text {
+    display: flex;
+    flex-direction: column;
+  }
 
-#colour span {
-    text-align: center;
-    line-height: 1.2;
-}
-
-#next-button {
+  .next-button {
     display: inline-block;
     border: 0.1em solid;
     border-radius: 0.4em;
@@ -38,14 +31,14 @@ body {
     transition: all 0.2s;
     cursor: pointer;
     user-select: none;
-    font-size: 3vmin;
+    font-size: 5vmin;
     white-space: nowrap;
     width: fit-content;
     padding: 10px;
     line-height: 1;
     justify-self: center;
     margin-top: 30px;
-    transition-duration: 0s;
 
     .darken-on-hover();
+   }
 }

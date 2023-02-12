@@ -1,22 +1,18 @@
-@import url(constants.less);
-@import url(copyright.less);
+@import url("../../../assets/\ less/constants.less");
 
-html {
-    background-color: @background-colour-main;
-    .font-main();
-}
-
-#canvas {
-    color: @rebel;
+.Home {
+    height: 100%;
 }
 
 #block-container {
-    width: 90%;
-    margin: 5%;
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25vmin, 1fr));
+    grid-auto-rows: minmax(20vmin, 1fr);
     grid-gap: 1rem;
-    overflow: hidden;
+    overflow-y: auto;
+    padding-right: 1rem;
+    margin-right: -1rem;
 }
 
 .block {
@@ -67,10 +63,6 @@ html {
     }
 }
 
-.copyright {
-    color: @almost-white;
-}
-
 .title-block {
     display: flex;
     
@@ -78,16 +70,4 @@ html {
         margin: auto;
         font-size: 7vmin;
    }
-}
-
-@media (orientation: landscape) {
-    #block-container {
-        grid-auto-rows: minmax(20vmin, 1fr);
-    }
-}
-  
-@media (orientation: portrait) {
-    #block-container {
-        grid-auto-rows: minmax(25vmin, 1fr);
-    }
 }
