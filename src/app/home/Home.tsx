@@ -4,8 +4,10 @@ function Home(props: any) {
   return (
     <div className="Home">
       <div id="block-container">
-        <div className="block large title-block">
-          <span className="title-content">Labs.jhuang.ca</span>
+        <div className="block large title-block reverse-colour">
+          <span className="title-content">
+            <b>Jarrett Huang's Web Design Labs</b>
+          </span>
         </div>
         <div className="block rectangle-vertical project">
           <span className="redirect-to-project">JSON Viewer</span>

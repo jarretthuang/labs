@@ -18,11 +18,12 @@
 .block {
     background-color: @shakespeare-lighter-30;
     border-radius: 0.2rem;
+    transition-duration: 0.3s;
     .override-anchor();
     .readonly();
 
     &:not(.empty) {
-        box-shadow: 0px 0px 6px fade(@shakespeare-lighter-30, 20%);
+        .subtle-box-shadow();
     }
 
     &.large {
@@ -58,9 +59,17 @@
 
     &:hover:not(.empty) {
         background-color: @shakespeare-darker-40;
-        transition-duration: 0.3s;
         color: @almost-white;
     }
+}
+
+.block.reverse-colour {
+    background-color: lighten(@sanguine, 15%);
+    color: @almost-white;
+    &:hover {
+        background-color: lighten(@sanguine, 5%);
+    }
+
 }
 
 .title-block {
@@ -68,6 +77,8 @@
     
     .title-content {
         margin: auto;
-        font-size: 7vmin;
+        font-size: 8vmin;
+        text-transform: uppercase;
+        white-space: normal;
    }
 }
