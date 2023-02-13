@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./assets/css/App.css";
 import Copyright from "./Copyright";
 import Home from "./home/Home";
@@ -9,8 +9,17 @@ function App() {
   const [currentApp, setApp] = useState("home");
   const [isDarkTheme, setIsDarkTheme] = useState(true);
 
-  const fullscreenClass = currentApp === "colour-picker" ? "full-screen " : "";
+  const fullScreenApps = ["colour-picker", "json-viewer"];
+  const fullscreenClass = fullScreenApps.includes(currentApp)
+    ? "full-screen "
+    : "";
   const darkThemeClass = isDarkTheme ? "dark-theme " : "";
+
+  useEffect(() => {
+    if (currentApp === "json-viewer") {
+      setIsDarkTheme(false);
+    }
+  }, [currentApp]);
 
   const renderAppView = (app: String) => {
     switch (app) {

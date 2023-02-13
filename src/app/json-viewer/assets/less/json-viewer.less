@@ -1,6 +1,63 @@
 @import url(./../../../assets/\ less/constants.less);
 
-
 .JsonViewer {
-  color: @almost-white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background-color: lighten(@powder-blue, 10%);
+}
+
+#json-viewer-container {
+  .subtle-box-shadow();
+  position: absolute;
+  height: 73vh;
+  width: 90vw;
+  top: 15vh;
+  left: 5vw;
+  border-radius: 1rem;
+}
+
+#view-switcher {
+  position: absolute;
+  height: 10vh;
+  width: 90vw;
+  top: 5vh;
+  left: 5vw;
+  display: flex;
+
+  .buttons {
+      margin: auto;
+      font-size: 1rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: row;
+
+      b {
+          width: 1rem;
+      }
+
+      .button {
+          .subtle-box-shadow();
+          width: 5rem;
+          padding: 0.6vmin;
+          border-radius: 1rem;
+          text-align: center;
+          cursor: pointer;
+          user-select: none;
+          color: darken(@powder-blue, 60%);
+
+          &:hover {
+              background-color: darken(@powder-blue, 30%);
+              color: @almost-white;
+          }
+
+          &.selected {
+              background-color: darken(@powder-blue, 40%);
+              color: @almost-white;
+          }
+      }
+  }
 }
