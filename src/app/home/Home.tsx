@@ -10,7 +10,10 @@ function Home(props: any) {
             <b>Jarrett Huang's Web Design Labs</b>
           </span>
         </div>
-        <div className="block rectangle-vertical project">
+        <div
+          className="block rectangle-vertical project"
+          onClick={() => props.setApp("json-viewer")}
+        >
           <div className="app-name json">
             <span className="brace-open">{"{"}</span>
             <span className="json-viewer">{"JSON: Viewer"}</span>

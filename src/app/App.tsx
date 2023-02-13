@@ -3,6 +3,7 @@ import "./assets/css/App.css";
 import Copyright from "./Copyright";
 import Home from "./home/Home";
 import ColourPicker from "./colour-picker/ColourPicker";
+import JsonViewer from "./json-viewer/JsonViewer";
 
 function App() {
   const [currentApp, setApp] = useState("home");
@@ -17,6 +18,8 @@ function App() {
         return <Home setApp={setApp}></Home>;
       case "colour-picker":
         return <ColourPicker setIsDarkTheme={setIsDarkTheme}></ColourPicker>;
+      case "json-viewer":
+        return <JsonViewer></JsonViewer>;
       default:
         return undefined;
     }
