@@ -3,9 +3,7 @@ function Copyright(props: any) {
   return (
     <div className="Copyright">
       <div className="copyright-banner" onClick={props.goHome}>
-        <span className="time-to-date">
-          Copyright © {currentYear} Jarrett Huang
-        </span>
+        <span>Copyright © {currentYear} Jarrett Huang</span>
       </div>
     </div>
   );
