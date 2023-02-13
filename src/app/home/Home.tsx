@@ -1,4 +1,5 @@
 import "./assets/css/Home.css";
+import raninbowLogo from "./assets/img/rainbow.png";
 
 function Home(props: any) {
   return (
@@ -10,13 +11,18 @@ function Home(props: any) {
           </span>
         </div>
         <div className="block rectangle-vertical project">
-          <span className="redirect-to-project">JSON Viewer</span>
+          <div className="app-name json">
+            <span className="brace-open">{"{"}</span>
+            <span className="json-viewer">{"JSON: Viewer"}</span>
+            <span className="brace-close">{"}"}</span>
+          </div>
         </div>
         <div
           className="block project"
           onClick={() => props.setApp("colour-picker")}
         >
-          <span className="redirect-to-project">Colour Picker</span>
+          <img className="app-logo" src={raninbowLogo} alt="Logo" />
+          <span className="app-name">Colour Picker</span>
         </div>
         <div className="block rectangle"></div>
         <div className="block empty"></div>

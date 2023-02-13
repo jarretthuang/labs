@@ -50,13 +50,6 @@
         background-color: transparent;
     }
 
-    &.project {
-        display: flex;
-        .redirect-to-project {
-            margin: auto;
-        }
-    }
-
     &:hover:not(.empty) {
         background-color: @shakespeare-darker-40;
         color: @almost-white;
@@ -81,4 +74,33 @@
         text-transform: uppercase;
         white-space: normal;
    }
+}
+
+.block.project {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .app-name {
+        text-transform: lowercase;
+        width: min-content;
+        padding: 1vmin;
+    }
+    .app-logo {
+        height: 8vmin;
+    }
+}
+
+.app-name.json {
+    display: flex;
+    flex-direction: column;
+
+    .brace-open{
+        align-self: flex-start;
+    }
+    .brace-close{
+        align-self: flex-end;
+    }
+    .json-viewer {
+        padding: 0 20px 0 20px;
+    }
 }
