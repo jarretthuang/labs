@@ -2,14 +2,29 @@ import { useState } from "react";
 import "./assets/css/json-viewer.css";
 
 function JsonViewer(props: any) {
-  type viewType = "view" | "edit";
+  type ViewType = "view" | "edit";
   const [currentView, switchView] = useState("edit");
-  const getSelectedClass = (view: viewType) =>
+  const getSelectedClass = (view: ViewType) =>
     currentView === view ? "selected " : "";
+  const [text, updateText] = useState("Paste your JSON text here!");
+
+  const renderView = (viewType: string) => {
+    if (viewType === "edit") {
+      return (
+        <textarea
+          className="main-textarea"
+          value={text}
+          onChange={(e) => updateText(e.target.value)}
+        ></textarea>
+      );
+    } else {
+      return <div className="readonly-view">{text}</div>;
+    }
+  };
 
   return (
     <div className="JsonViewer">
-      <div id="view-switcher">
+      <div className="view-switcher">
         <div className="buttons">
           <div
             className={
@@ -30,9 +45,7 @@ function JsonViewer(props: any) {
           </div>
         </div>
       </div>
-      <div id="json-viewer-container">
-        <textarea id="main-textarea"></textarea>
-      </div>
+      <div className="json-viewer-container">{renderView(currentView)}</div>
     </div>
   );
 }

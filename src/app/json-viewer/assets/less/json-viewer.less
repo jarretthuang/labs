@@ -10,7 +10,7 @@
   background-color: lighten(@powder-blue, 10%);
 }
 
-#json-viewer-container {
+.json-viewer-container {
   .subtle-box-shadow();
   position: absolute;
   height: 78vh;
@@ -20,7 +20,7 @@
   border-radius: 1rem;
 }
 
-#view-switcher {
+.view-switcher {
   position: absolute;
   height: 10vh;
   width: 90vw;
@@ -62,7 +62,7 @@
   }
 }
 
-#main-textarea {
+.main-textarea {
   height: 100%;
   width: 100%;
   background: none;
@@ -74,7 +74,7 @@
 
   &:focus {
     outline: solid 2px darken(@powder-blue, 30%);
-    animation: borderFade 3s ease-in-out infinite;
+    animation: borderFade 2s ease-in-out infinite;
   }
 }
 
@@ -83,6 +83,11 @@
       outline-color: transparent
   }    
   50% {    
-    outline-color: darken(@powder-blue, 30%)    
+    outline-color: darken(@powder-blue, 35%)    
   }    
+}
+
+.readonly-view {
+  height: 100%;
+  width: 100%;
 }
