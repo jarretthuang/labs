@@ -11,14 +11,21 @@ function JsonViewer(props: any) {
   const renderView = (viewType: string) => {
     if (viewType === "edit") {
       return (
-        <textarea
-          className="main-textarea"
-          value={text}
-          onChange={(e) => updateText(e.target.value)}
-        ></textarea>
+        <div className="json-viewer-container">
+          <div className="tool-bar"></div>
+          <textarea
+            className="main-textarea"
+            value={text}
+            onChange={(e) => updateText(e.target.value)}
+          ></textarea>
+        </div>
       );
     } else {
-      return <div className="readonly-view">{text}</div>;
+      return (
+        <div className="json-viewer-container">
+          <div className="readonly-view">{text}</div>
+        </div>
+      );
     }
   };
 
@@ -45,7 +52,7 @@ function JsonViewer(props: any) {
           </div>
         </div>
       </div>
-      <div className="json-viewer-container">{renderView(currentView)}</div>
+      {renderView(currentView)}
     </div>
   );
 }

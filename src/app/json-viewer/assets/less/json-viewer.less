@@ -62,17 +62,27 @@
   }
 }
 
+.tool-bar {
+  height: 1.5rem;
+}
+
 .main-textarea {
-  height: 100%;
+  height: calc(100% - 1.5rem);
   width: 100%;
   background: none;
   border: none;
   border-radius: 1rem;
   font-size: 2vmin;
   resize: none;
-  padding: 1rem;
+  padding: 0.5rem 1rem 1rem 0.5rem;
 
   &:focus {
+    outline: none;
+  }
+}
+
+.json-viewer-container {
+  &:has(.main-textarea:focus) {
     outline: solid 2px darken(@powder-blue, 30%);
     animation: borderFade 2s ease-in-out infinite;
   }
