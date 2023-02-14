@@ -61,3 +61,28 @@
       }
   }
 }
+
+#main-textarea {
+  height: 100%;
+  width: 100%;
+  background: none;
+  border: none;
+  border-radius: 1rem;
+  font-size: 2vmin;
+  resize: none;
+  padding: 1rem;
+
+  &:focus {
+    outline: solid 2px darken(@powder-blue, 30%);
+    animation: borderFade 3s ease-in-out infinite;
+  }
+}
+
+@keyframes borderFade {    
+  from, to {    
+      outline-color: transparent
+  }    
+  50% {    
+    outline-color: darken(@powder-blue, 30%)    
+  }    
+}

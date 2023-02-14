@@ -30,7 +30,9 @@ function JsonViewer(props: any) {
           </div>
         </div>
       </div>
-      <div id="json-viewer-container"></div>
+      <div id="json-viewer-container">
+        <textarea id="main-textarea"></textarea>
+      </div>
     </div>
   );
 }
