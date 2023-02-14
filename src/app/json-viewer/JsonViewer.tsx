@@ -7,10 +7,26 @@ function JsonViewer(props: any) {
   const getSelectedClass = (view: ViewType) =>
     currentView === view ? "selected " : "";
   const defaultText = "Paste your JSON text here!";
-  const [text, updateText] = useState(defaultText);
+  const [currentText, updateText] = useState(defaultText);
+  const parseJson = (text: string) => {
+    try {
+      return JSON.parse(text);
+    } catch (e) {
+      return undefined; //TODO: toast!
+    }
+  };
+
   const clearDefaultText = () => {
-    if (text === defaultText) {
+    if (currentText === defaultText) {
       updateText("");
+    }
+  };
+
+  const formatJson = (text: string) => {
+    const parsedJson = parseJson(text);
+    if (parsedJson) {
+      const formattedJsonString = JSON.stringify(parsedJson, null, 4);
+      updateText(formattedJsonString);
     }
   };
 
@@ -21,7 +37,12 @@ function JsonViewer(props: any) {
           <div className="tool-bar">
             <div className="tool-bar-button">Copy</div>
             <div className="tool-bar-button">Paste</div>
-            <div className="tool-bar-button">Format</div>
+            <div
+              className="tool-bar-button"
+              onClick={() => formatJson(currentText)}
+            >
+              Format
+            </div>
             <div className="tool-bar-button">Minimize</div>
             <div className="tool-bar-button" onClick={() => updateText("")}>
               Clear
@@ -29,7 +50,7 @@ function JsonViewer(props: any) {
           </div>
           <textarea
             className="main-textarea"
-            value={text}
+            value={currentText}
             onClick={clearDefaultText}
             onChange={(e) => updateText(e.target.value)}
           ></textarea>
@@ -38,7 +59,7 @@ function JsonViewer(props: any) {
     } else {
       return (
         <div className="json-viewer-container">
-          <div className="readonly-view">{text}</div>
+          <div className="readonly-view">{currentText}</div>
         </div>
       );
     }
