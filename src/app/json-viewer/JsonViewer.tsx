@@ -30,6 +30,14 @@ function JsonViewer(props: any) {
     }
   };
 
+  const minimizeJson = (text: string) => {
+    const parsedJson = parseJson(text);
+    if (parsedJson) {
+      const formattedJsonString = JSON.stringify(parsedJson, null);
+      updateText(formattedJsonString);
+    }
+  };
+
   const renderView = (viewType: string) => {
     if (viewType === "edit") {
       return (
@@ -43,7 +51,12 @@ function JsonViewer(props: any) {
             >
               Format
             </div>
-            <div className="tool-bar-button">Minimize</div>
+            <div
+              className="tool-bar-button"
+              onClick={() => minimizeJson(currentText)}
+            >
+              Minimize
+            </div>
             <div className="tool-bar-button" onClick={() => updateText("")}>
               Clear
             </div>
