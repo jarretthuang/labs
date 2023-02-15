@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./assets/css/json-viewer.css";
+import Notification from "../../notification/Notification";
+import { ReactNotificationOptions } from "react-notifications-component";
 
 function JsonViewer(props: any) {
   type ViewType = "view" | "edit";
@@ -8,11 +10,33 @@ function JsonViewer(props: any) {
     currentView === view ? "selected " : "";
   const defaultText = "Paste your JSON text here!";
   const [currentText, updateText] = useState(defaultText);
-  const parseJson = (text: string) => {
+  const [notification, createNotification] = useState<
+    ReactNotificationOptions | undefined
+  >(undefined);
+
+  const parseJson = (text: string, notify: boolean = true) => {
     try {
       return JSON.parse(text);
     } catch (e) {
-      return undefined; //TODO: toast!
+      console.log(e);
+      if (notify) {
+        let error: string;
+        if (typeof e === "string") {
+          error = e.toUpperCase(); // works, `e` narrowed to string
+        } else if (e instanceof Error) {
+          error = e.message; // works, `e` narrowed to Error
+        } else {
+          error = "";
+        }
+        const notification: ReactNotificationOptions = {
+          title: "Invalid JSON",
+          type: "info",
+          container: "top-center",
+          message: error,
+        };
+        createNotification(notification);
+      }
+      return undefined;
     }
   };
 
@@ -102,6 +126,7 @@ function JsonViewer(props: any) {
         </div>
       </div>
       {renderView(currentView)}
+      <Notification notification={notification}></Notification>
     </div>
   );
 }
