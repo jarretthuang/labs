@@ -67,8 +67,20 @@ function JsonViewer(props: any) {
       return (
         <div className="json-viewer-container">
           <div className="tool-bar">
-            <div className="tool-bar-button">Copy</div>
-            <div className="tool-bar-button">Paste</div>
+            <div
+              className="tool-bar-button"
+              onClick={() => navigator.clipboard.writeText(currentText)}
+            >
+              Copy
+            </div>
+            <div
+              className="tool-bar-button"
+              onClick={() =>
+                navigator.clipboard.readText().then((text) => updateText(text))
+              }
+            >
+              Paste
+            </div>
             <div
               className="tool-bar-button"
               onClick={() => formatJson(currentText)}
