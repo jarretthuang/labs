@@ -12,7 +12,7 @@ function Home(props: any) {
         </div>
         <div
           className="block rectangle-vertical project"
-          onClick={() => props.setApp("json-viewer")}
+          onClick={() => props.navigate("json-viewer")}
         >
           <div className="app-name json">
             <span className="brace-open">{"{"}</span>
@@ -22,7 +22,7 @@ function Home(props: any) {
         </div>
         <div
           className="block project"
-          onClick={() => props.setApp("colour-picker")}
+          onClick={() => props.navigate("colour-picker")}
         >
           <img className="app-logo" src={raninbowLogo} alt="Logo" />
           <span className="app-name">Colour Picker</span>

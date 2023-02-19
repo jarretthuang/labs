@@ -4,10 +4,14 @@ import Copyright from "./Copyright";
 import Home from "./home/Home";
 import ColourPicker from "./colour-picker/ColourPicker";
 import JsonViewer from "./json-viewer/JsonViewer";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import Error404 from "./Error404";
 
 function App() {
   const [currentApp, setApp] = useState("home");
   const [isDarkTheme, setIsDarkTheme] = useState(true);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const fullScreenApps = ["colour-picker", "json-viewer"];
   const fullscreenClass = fullScreenApps.includes(currentApp)
@@ -21,28 +25,30 @@ function App() {
     }
   }, [currentApp]);
 
-  const renderAppView = (app: String) => {
-    switch (app) {
-      case "home":
-        return <Home setApp={setApp}></Home>;
-      case "colour-picker":
-        return <ColourPicker setIsDarkTheme={setIsDarkTheme}></ColourPicker>;
-      case "json-viewer":
-        return <JsonViewer></JsonViewer>;
-      default:
-        return undefined;
-    }
-  };
+  useEffect(() => {
+    const currentApp = location.pathname.slice(1);
+    setApp(currentApp);
+  }, [location]);
 
   const goHome = () => {
     setIsDarkTheme(true);
-    setApp("home");
+    navigate("/");
   };
 
   return (
     <div className={"App " + darkThemeClass}>
       <div className={"app-view " + fullscreenClass}>
-        {renderAppView(currentApp)}
+        <Routes>
+          <Route path="/" element={<Home navigate={navigate}></Home>} />
+          <Route
+            path="/colour-picker"
+            element={
+              <ColourPicker setIsDarkTheme={setIsDarkTheme}></ColourPicker>
+            }
+          />
+          <Route path="/json-viewer" element={<JsonViewer></JsonViewer>} />
+          <Route path="*" element={<Error404 />} />
+        </Routes>
       </div>
       <Copyright goHome={goHome}></Copyright>
     </div>
