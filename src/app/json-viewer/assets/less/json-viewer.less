@@ -101,25 +101,23 @@
   font-size: 2vmin;
   resize: none;
   padding: 0.5rem 1rem 1rem 0.5rem;
-
-  &:focus {
-    outline: none;
-  }
+  outline: none;
 }
 
 .json-viewer-container {
+  border: solid 2px transparent;
   &:has(.main-textarea:focus) {
-    outline: solid 2px darken(@powder-blue, 30%);
+    border: solid 2px darken(@powder-blue, 30%);
     animation: borderFade 2s ease-in-out infinite;
   }
 }
 
 @keyframes borderFade {    
   from, to {    
-      outline-color: transparent
+    border: solid 2px transparent;
   }    
   50% {    
-    outline-color: darken(@powder-blue, 35%)    
+    border: solid 2px darken(@powder-blue, 35%);
   }    
 }
 
