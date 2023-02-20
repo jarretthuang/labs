@@ -1,7 +1,6 @@
 import TreeView from "@mui/lab/TreeView";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import DataObjectIcon from "@mui/icons-material/DataObject";
 import "./assets/css/json-viewer-tree.css";
 import JsonViewerTreeItem from "./JsonViewerTreeItem";
 
@@ -28,7 +27,7 @@ function JsonViewerTree(props) {
     if (typeof json === "object") {
       if (Array.isArray(json)) {
         return (
-          <JsonViewerTreeItem nodeId={nodeId} key={nodeId} label={key}>
+          <JsonViewerTreeItem nodeId={nodeId} key={nodeId} label={key + " [ ]"}>
             {json.map((itemInArray, index) =>
               populateTreeItems(itemInArray, index.toString(), nodeId)
             )}
@@ -36,7 +35,7 @@ function JsonViewerTree(props) {
         );
       } else {
         return (
-          <JsonViewerTreeItem nodeId={nodeId} key={nodeId} label={key}>
+          <JsonViewerTreeItem nodeId={nodeId} key={nodeId} label={key + " { }"}>
             {Object.keys(json).map((key: string) =>
               populateTreeItems(json[key], key, nodeId)
             )}
