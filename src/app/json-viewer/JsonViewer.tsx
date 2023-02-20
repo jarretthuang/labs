@@ -3,6 +3,7 @@ import "./assets/css/json-viewer.css";
 import Notification from "../notification/Notification";
 import { ReactNotificationOptions } from "react-notifications-component";
 import JsonViewerTree from "./JsonViewerTree";
+import { sampleJson } from "./assets/sample";
 
 function JsonViewer(props: any) {
   type ViewType = "view" | "edit";
@@ -97,6 +98,12 @@ function JsonViewer(props: any) {
             </div>
             <div className="tool-bar-button" onClick={() => updateText("")}>
               Clear
+            </div>
+            <div
+              className="tool-bar-button"
+              onClick={() => updateText(JSON.stringify(sampleJson))}
+            >
+              Example
             </div>
           </div>
           <textarea
