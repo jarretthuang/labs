@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./assets/css/json-viewer.css";
 import Notification from "../../notification/Notification";
 import { ReactNotificationOptions } from "react-notifications-component";
+import JsonViewerTree from "./JsonViewerTree";
 
 function JsonViewer(props: any) {
   type ViewType = "view" | "edit";
@@ -108,7 +109,9 @@ function JsonViewer(props: any) {
     } else {
       return (
         <div className="json-viewer-container">
-          <div className="readonly-view">{currentText}</div>
+          <div className="readonly-view">
+            <JsonViewerTree jsonText={currentText}></JsonViewerTree>
+          </div>
         </div>
       );
     }

@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import App from "./app/App";
 import reportWebVitals from "./reportWebVitals";
 import { HashRouter } from "react-router-dom";
+import "@fontsource/roboto";
+import "@fontsource/ubuntu";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
