@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./assets/css/App.css";
-import Copyright from "./Copyright";
+import Copyright from "./copyright/Copyright";
 import Home from "./home/Home";
 import ColourPicker from "./colour-picker/ColourPicker";
 import JsonViewer from "./json-viewer/JsonViewer";

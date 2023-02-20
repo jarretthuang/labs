@@ -1,14 +1,9 @@
 @import url(constants.less);
 
-@media (max-width: @mobile-screen-width) {
-    .copyright-banner {
-        align-self: center;
-    }
-}
-
-@media (min-width: @mobile-screen-width) {
-    .copyright-banner {
-        align-self: end;
-        margin-right: 5vmin;;
+.App {
+    @media (max-width: @mobile-screen-width) {
+        .app-view {
+            height: calc(95vh - 6rem);
+        }
     }
 }

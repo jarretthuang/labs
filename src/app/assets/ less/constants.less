@@ -59,3 +59,13 @@
 
 // mobile
 @mobile-screen-width: 800px;
+
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: @mobile-screen-width) {
+    .mobile-only {
+        display: initial;
+    }
+}

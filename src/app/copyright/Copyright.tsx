@@ -1,3 +1,5 @@
+import "./assets/css/Copyright.css";
+
 function Copyright(props: any) {
   const currentYear = new Date().getFullYear();
   return (
