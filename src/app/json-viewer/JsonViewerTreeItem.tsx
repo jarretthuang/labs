@@ -32,8 +32,7 @@ const JsonViewerTreeItem = styled((props: TreeItemProps) => (
     },
   },
   [`& .${treeItemClasses.group}`]: {
-    marginLeft: "0.7rem",
-    paddingLeft: 18,
+    paddingLeft: "0.7rem",
     borderLeft: `1px dashed ${alpha(theme.palette.text.primary, 0.4)}`,
   },
 }));

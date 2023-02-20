@@ -1,4 +1,5 @@
 @import url(constants.less);
+@import url(App-mobile.less);
 
 html {
     background-color: @background-colour-main;
@@ -23,24 +24,6 @@ code {
     monospace;
 }
 
-@media (max-width: 800px) {
-  .copyright-banner {
-      align-self: center;
-  }
-
-  // TODO: make view longer in mobile screen?
-  // .App {
-  //     padding-top: 10vmin;
-  //     padding-bottom: 10vmin;
-  // }
-}
-
-@media (min-width: 800px) {
-  .copyright-banner {
-      align-self: end;
-      margin-right: 5vmin;;
-  }
-}
 
 .App {
   position: absolute;

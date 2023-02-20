@@ -1,0 +1,69 @@
+@import url(./../../../assets/\ less/constants.less);
+
+.JsonViewer {
+  @media (max-width: @mobile-screen-width) {
+    font-size: 1rem;
+
+    .view-switcher {
+      .buttons {
+        .button {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .tool-bar {
+      height: 3rem;
+      overflow-x: auto;
+      margin: 0 1rem 0 1rem;
+
+      .tool-bar-button {
+        font-size: 1rem;
+        border-radius: 0.5rem;
+        margin: 0 0.5rem 0 0.5rem;
+        text-transform: uppercase;
+      }
+    }
+
+    .main-textarea {
+      font-size: 1rem;
+      height: calc(100% - 3rem);
+    }
+
+    .json-viewer-container {
+      height: 82vh;
+    }
+
+
+    .JsonViewerTree {
+      ul {
+ 
+        .MuiTreeItem-content {
+          border-radius: 0.2rem;
+          margin: 0.1rem 0 0.1rem 0;
+          align-items: center;
+          height: 2rem;
+        }
+
+        .MuiTreeItem-iconContainer {
+          padding: 0 0.5rem 0 0.5rem;
+
+          svg {
+            font-size: 1rem;
+          }
+        }
+
+        .MuiTreeItem-label {
+          font-size: 1rem;
+          padding: 2px 0.6rem 0 0.1rem;
+          text-align: start;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+
+      }
+
+    }
+  }
+}
