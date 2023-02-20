@@ -6,6 +6,7 @@ import ColourPicker from "./colour-picker/ColourPicker";
 import JsonViewer from "./json-viewer/JsonViewer";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Error404 from "./Error404";
+import { Helmet } from "react-helmet-async";
 
 function App() {
   const [currentApp, setApp] = useState("home");
@@ -37,6 +38,9 @@ function App() {
 
   return (
     <div className={"App " + darkThemeClass}>
+      <Helmet>
+        <meta name="theme-color" content="#3c1206" />
+      </Helmet>
       <div className={"app-view " + fullscreenClass}>
         <Routes>
           <Route path="/" element={<Home navigate={navigate}></Home>} />

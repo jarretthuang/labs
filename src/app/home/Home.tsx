@@ -1,14 +1,10 @@
 import "./assets/css/Home.css";
 import raninbowLogo from "./assets/img/rainbow.png";
 import jsonLogo from "./assets/img/code.png";
-import { Helmet } from "react-helmet-async";
 
 function Home(props: any) {
   return (
     <div className="Home">
-      <Helmet>
-        <meta name="theme-color" content="#3c1206" />
-      </Helmet>
       <div className="block-container">
         <div className="block large title-block reverse-colour">
           <span className="title-content">Jarrett Huang's Web Design Labs</span>
