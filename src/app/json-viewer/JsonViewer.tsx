@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./assets/css/json-viewer.css";
-import Notification from "../../notification/Notification";
+import Notification from "../notification/Notification";
 import { ReactNotificationOptions } from "react-notifications-component";
 import JsonViewerTree from "./JsonViewerTree";
 
@@ -50,7 +50,7 @@ function JsonViewer(props: any) {
   const formatJson = (text: string) => {
     const parsedJson = parseJson(text);
     if (parsedJson) {
-      const formattedJsonString = JSON.stringify(parsedJson, null, 4);
+      const formattedJsonString = JSON.stringify(parsedJson, null, 2);
       updateText(formattedJsonString);
     }
   };
