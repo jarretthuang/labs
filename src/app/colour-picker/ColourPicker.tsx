@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./assets/css/colour-picker.css";
 import ColorDictionary from "./assets/js/colour-dictionary";
+import { Helmet } from "react-helmet-async";
 
 function ColourPicker(props: any) {
   type textColour = "black" | "white";
@@ -60,6 +61,9 @@ function ColourPicker(props: any) {
         color: currentColour.textColour,
       }}
     >
+      <Helmet>
+        <meta name="theme-color" content={currentColour.hex} />
+      </Helmet>
       <div className="colourful-container">
         <div className="colour-text">
           <span className="colour-name">{currentColour.name}</span>

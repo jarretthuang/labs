@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { HashRouter } from "react-router-dom";
 import "@fontsource/roboto";
 import "@fontsource/ubuntu";
+import { HelmetProvider } from "react-helmet-async";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,7 +13,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <HashRouter>
-      <App />
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
     </HashRouter>
   </React.StrictMode>
 );
