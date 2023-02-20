@@ -6,9 +6,7 @@ function Home(props: any) {
     <div className="Home">
       <div id="block-container">
         <div className="block large title-block reverse-colour">
-          <span className="title-content">
-            <b>Jarrett Huang's Web Design Labs</b>
-          </span>
+          <span className="title-content">Jarrett Huang's Web Design Labs</span>
         </div>
         <div
           className="block rectangle-vertical project"
