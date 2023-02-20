@@ -1,7 +1,21 @@
-# 🔥 Welcome to _JHuang.ca_ 🔥
+# Welcome to labs.jhuang.ca
 
-Wassup internet, this is Jarrett Huang. I am a software developer based in Vancouver Canada.
+Hi internet, this is Jarrett Huang. I wrote this React app as a way for me to learn how the framework works as I mostly use Angular on a daily basis. As it turns out, React is quite fun and easy to get started with. This app/website has now become a lab where I'll be adding more apps, tools, and web code experiments.
 
-# 🔨 Renovation Notice 🔨
+Hope you can find something interesting and useful here.
+Happy coding!
 
-As of Sep 3 2022, this site is going under major renovation, which probably won't finish anytime soon considering the staggeringly low amount of effort and commitment I had put into this previously.. Anyhow, I primarily work with Angular in my job. So I was hoping to learn some React while renovating this site and see how it goes. Fingers crossed.
+-
+Jarrett
+
+# Build app
+```
+npm install
+npm run start
+```
+
+# Deploy
+```
+npm run deploy
+git cherry-pick 75c24d636f69caf3df5edbc2e72d832f41835df9  (adds CNAME + .gitignore)
+```
