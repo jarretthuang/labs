@@ -14,6 +14,7 @@ function JsonViewer(props: any) {
   const [notification, createNotification] = useState<
     ReactNotificationOptions | undefined
   >(undefined);
+  const [jsonObject, updateJsonObject] = useState(undefined);
 
   const parseJson = (text: string, notify: boolean = true) => {
     try {
@@ -110,10 +111,18 @@ function JsonViewer(props: any) {
       return (
         <div className="json-viewer-container">
           <div className="readonly-view">
-            <JsonViewerTree jsonText={currentText}></JsonViewerTree>
+            <JsonViewerTree json={jsonObject}></JsonViewerTree>
           </div>
         </div>
       );
+    }
+  };
+
+  const openTreeView = () => {
+    const parsedJson = parseJson(currentText);
+    if (parsedJson) {
+      updateJsonObject(parsedJson);
+      switchView("view");
     }
   };
 
@@ -125,7 +134,7 @@ function JsonViewer(props: any) {
             className={
               "button view-switcher-button " + getSelectedClass("view")
             }
-            onClick={() => switchView("view")}
+            onClick={openTreeView}
           >
             View
           </div>

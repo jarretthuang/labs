@@ -5,26 +5,53 @@ import TreeItem from "@mui/lab/TreeItem";
 import "./assets/css/json-viewer-tree.css";
 
 function JsonViewerTree(props) {
-  return (
-    <div className="JsonViewerTree">
+  const populateTree = (json: Object) => {
+    return (
       <TreeView
         aria-label="json viewer tree"
         defaultCollapseIcon={<ExpandMoreIcon />}
         defaultExpandIcon={<ChevronRightIcon />}
-        sx={{ flexGrow: 1, maxWidth: "max-content", overflowY: "auto" }}
+        sx={{ flexGrow: 1, overflowY: "auto" }}
       >
-        <TreeItem nodeId="1" label="Applications">
-          <TreeItem nodeId="2" label="Calendar" />
-        </TreeItem>
-        <TreeItem nodeId="5" label="Documents">
-          <TreeItem nodeId="10" label="OSS" />
-          <TreeItem nodeId="6" label="MUI">
-            <TreeItem nodeId="8" label="index.js" />
-          </TreeItem>
-        </TreeItem>
+        {populateTreeItems(json)}
       </TreeView>
-    </div>
-  );
+    );
+  };
+
+  const populateTreeItems = (
+    json: any,
+    key: string = "JSON",
+    nodeIdPrefix: string = ""
+  ) => {
+    const nodeId: string = nodeIdPrefix + "." + key;
+    if (typeof json === "object") {
+      if (Array.isArray(json)) {
+        return (
+          <TreeItem nodeId={nodeId} key={nodeId} label={key}>
+            {json.map((itemInArray, index) =>
+              populateTreeItems(itemInArray, index.toString(), nodeId)
+            )}
+          </TreeItem>
+        );
+      } else {
+        return (
+          <TreeItem nodeId={nodeId} key={nodeId} label={key}>
+            {Object.keys(json).map((key: string) =>
+              populateTreeItems(json[key], key, nodeId)
+            )}
+          </TreeItem>
+        );
+      }
+    } else {
+      const value =
+        typeof json === "string" ? '"' + json + '"' : json.toString();
+      return (
+        <TreeItem nodeId={nodeId} key={nodeId} label={key + ": " + value} />
+      );
+    }
+  };
+
+  return <div className="JsonViewerTree">{populateTree(props.json)}</div>;
 }
 
 export default JsonViewerTree;
