@@ -1,0 +1,77 @@
+@import url("../../../assets/\ less/constants.less");
+
+@media (max-width: @mobile-screen-width) {
+
+    .Home {
+
+        font-size: 6vmin;
+        font-weight: 500;
+
+        .block-container {
+            grid-template-columns: 1fr 1fr;
+            grid-auto-rows: minmax(40vmin, 1fr);
+
+            .block {
+
+                &.large {
+                    grid-row: span 2;
+                    grid-column: span 2;
+                }
+
+                &.rectangle {
+                    grid-row: span 2;
+                    grid-column: span 2;
+                }
+
+                &.rectangle-vertical {
+                    grid-row: span 2;
+                    grid-column: span 1;
+                }
+
+                &.one-by-three {
+                    grid-row: span 1;
+                    grid-column: span 2;
+                }
+            }
+
+            .title-block {
+                text-align: justify;
+
+                .title-content {
+                    font-size: 13vmin;
+                    width: min-content;
+                    font-weight: 700;
+                }
+            }
+
+            .block.project {
+                .app-name {
+                    display: none;
+                }
+
+                .app-logo {
+                    height: 15vmin;
+
+                    &.logo-xl {
+                        height: 20vmin;
+                    }
+
+                    &.mobile-only {
+                        display: block;
+                    }
+                }
+
+                &:hover {
+                    .app-name {
+                        display: block;
+                    }
+
+                    .app-logo {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+}

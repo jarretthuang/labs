@@ -1,10 +1,11 @@
 import "./assets/css/Home.css";
 import raninbowLogo from "./assets/img/rainbow.png";
+import jsonLogo from "./assets/img/code.png";
 
 function Home(props: any) {
   return (
     <div className="Home">
-      <div id="block-container">
+      <div className="block-container">
         <div className="block large title-block reverse-colour">
           <span className="title-content">Jarrett Huang's Web Design Labs</span>
         </div>
@@ -12,6 +13,11 @@ function Home(props: any) {
           className="block rectangle-vertical project"
           onClick={() => props.navigate("json-viewer")}
         >
+          <img
+            className="app-logo mobile-only logo-xl"
+            src={jsonLogo}
+            alt="Logo"
+          />
           <div className="app-name json">
             <span className="brace-open">{"{"}</span>
             <span className="json-viewer">{"JSON: Viewer"}</span>

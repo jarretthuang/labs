@@ -1,10 +1,11 @@
 @import url("../../../assets/\ less/constants.less");
+@import url("Home-mobile.less");
 
 .Home {
     height: 100%;
 }
 
-#block-container {
+.block-container {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25vmin, 1fr));
@@ -87,6 +88,10 @@
     }
     .app-logo {
         height: 8vmin;
+
+        &.mobile-only {
+            display: none;
+        }
     }
 }
 
