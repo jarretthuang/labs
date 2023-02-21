@@ -73,7 +73,7 @@
     flex-direction: row;
     align-items: center;
     text-align: end;
-    
+
     .title-content {
         margin: auto;
         font-size: 6vmin;
@@ -82,10 +82,37 @@
         font-weight: 700;
     }
 
-    .jh-logo {
-        margin: auto;
-        height: 30vmin;
-        max-height: 100%;
+    a {
+        position: relative;
+
+        .jh-logo {
+            margin: auto;
+            height: 30vmin;
+            max-height: 100%;
+            padding: 0 10px 0 10px;
+        }
+
+        &:hover {
+            .jh-logo {
+                transition-duration: 0.5s;
+                opacity: 20%;
+            }
+
+            .main-site-redirect {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                display: flex;
+
+                .main-site-redirect-msg {
+                    font-size: 3vmin;
+                    text-align: center;
+                    margin: auto;
+                }
+            }
+        }
     }
 }
 
