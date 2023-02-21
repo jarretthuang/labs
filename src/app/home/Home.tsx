@@ -1,13 +1,21 @@
 import "./assets/css/Home.css";
 import raninbowLogo from "./assets/img/rainbow.png";
 import jsonLogo from "./assets/img/code.png";
+import jhLogo from "./../assets/img/jh.png";
 
 function Home(props: any) {
   return (
     <div className="Home">
       <div className="block-container">
         <div className="block large title-block reverse-colour">
-          <span className="title-content">Jarrett Huang's Web Design Labs</span>
+          <a href="https://labs.jhuang.ca">
+            <img className="jh-logo" src={jhLogo} alt="Logo" />
+          </a>
+          <span className="title-content">
+            Jarrett Huang's
+            <br />
+            Web Design Labs
+          </span>
         </div>
         <div
           className="block rectangle-vertical project"

@@ -31,7 +31,7 @@
         grid-row: span 2;
         grid-column: span 2;
     }
-    
+
     &.rectangle {
         grid-row: span 1;
         grid-column: span 2;
@@ -58,35 +58,48 @@
 }
 
 .block.reverse-colour {
-    background-color: lighten(@sanguine, 15%);
     color: @almost-white;
+    background-color: transparent;
+    box-shadow: none;
+
     &:hover {
-        background-color: lighten(@sanguine, 5%);
+        background-color: transparent;
     }
 
 }
 
 .title-block {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: end;
     
     .title-content {
         margin: auto;
-        font-size: 8vmin;
+        font-size: 6vmin;
         text-transform: uppercase;
         white-space: normal;
         font-weight: 700;
-   }
+    }
+
+    .jh-logo {
+        margin: auto;
+        height: 30vmin;
+        max-height: 100%;
+    }
 }
 
 .block.project {
     display: flex;
     align-items: center;
     justify-content: center;
+
     .app-name {
         text-transform: lowercase;
         width: min-content;
         padding: 1vmin;
     }
+
     .app-logo {
         height: 8vmin;
     }
@@ -96,12 +109,14 @@
     display: flex;
     flex-direction: column;
 
-    .brace-open{
+    .brace-open {
         align-self: flex-start;
     }
-    .brace-close{
+
+    .brace-close {
         align-self: flex-end;
     }
+
     .json-viewer {
         padding: 0 20px 0 20px;
     }

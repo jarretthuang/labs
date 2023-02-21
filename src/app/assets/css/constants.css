@@ -1,1 +1,1 @@
-.override-anchor a{color:inherit;text-decoration:none}.mobile-only{display:none}@media (max-width:800px){.mobile-only{display:initial}}
+.visible-on-hover-parent{transition-duration:1s}.visible-on-hover-parent .visible-on-hover{display:none}.visible-on-hover-parent:hover .visible-on-hover{display:initial}.visible-on-hover-parent:hover>:not(.visible-on-hover){display:none}.mobile-only{display:none}@media (max-width:800px){.mobile-only{display:initial}}

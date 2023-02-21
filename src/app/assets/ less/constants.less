@@ -50,10 +50,25 @@
     }
 }
 
-.override-anchor {
+.override-anchor() {
     a {
         color: inherit;
         text-decoration: none;
+    }
+}
+
+.visible-on-hover-parent {
+    transition-duration: 1s;
+    .visible-on-hover {
+        display: none;
+    }
+    &:hover {
+        .visible-on-hover {
+            display: initial;
+        }
+        >:not(.visible-on-hover) {
+            display: none;
+        }
     }
 }
 
