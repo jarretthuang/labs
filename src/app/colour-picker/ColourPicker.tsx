@@ -62,6 +62,7 @@ function ColourPicker(props: any) {
       }}
     >
       <Helmet>
+        <title>Colour Picker - JH Labs</title>
         <meta name="theme-color" content={currentColour.hex} />
       </Helmet>
       <div className="colourful-container">

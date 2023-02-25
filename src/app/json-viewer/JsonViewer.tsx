@@ -137,6 +137,7 @@ function JsonViewer(props: any) {
   return (
     <div className="JsonViewer">
       <Helmet>
+        <title>JSON Viewer - JH Labs</title>
         <meta name="theme-color" content="#d7eff2" />
       </Helmet>
       <div className="view-switcher">
