@@ -40,14 +40,19 @@
     .JsonViewerTree {
       >ul {
         overflow-x: scroll;
+        padding-bottom: 0.5rem;
+        
+        >li {
+          width: max-content;
+          max-width: 130vw;
+          min-width: 100%;
+        }
  
         .MuiTreeItem-content {
           border-radius: 0.4rem;
           min-height: 2rem;
           padding-top: 0.2rem;
           padding-bottom: 0.2rem;
-          width: max-content;
-          max-width: 80vw;
         }
 
         .MuiTreeItem-iconContainer {
