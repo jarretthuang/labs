@@ -10,11 +10,9 @@ function Home(props: any) {
         <div className="block large title-block reverse-colour">
           <a className="visible-on-hover-parent" href="https://jhuang.ca">
             <img className="jh-logo" src={jhLogo} alt="Logo" />
-            <div className="visible-on-hover main-site-redirect">
-              <div className="main-site-redirect-msg">
-                Click to navigate to main site jhuang.ca
-              </div>
-            </div>
+            {/* <div className="visible-on-hover main-site-redirect">
+              <div className="main-site-redirect-msg">To jhuang.ca</div>
+            </div> */}
           </a>
           <span className="title-content">
             Jarrett Huang's
