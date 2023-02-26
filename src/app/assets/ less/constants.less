@@ -18,7 +18,11 @@
 
 // fonts
 .font-family() {
-    font-family: 'ubuntu', helvetica, san-serif;
+    font-family: 'Ubuntu', helvetica, san-serif;
+    font-smooth: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .font-main() {
@@ -59,9 +63,11 @@
 
 .visible-on-hover-parent {
     transition-duration: 1s;
+
     .visible-on-hover {
         display: none;
     }
+
     &:hover {
         .visible-on-hover {
             display: initial;
