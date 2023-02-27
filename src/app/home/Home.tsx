@@ -71,7 +71,16 @@ function Home(props: any) {
         {jsonViewerApp()}
         {colourPickerApp()}
         {threeApp()}
-        <div className="block rectangle"></div>
+        <div className="block rectangle">
+          <div className="wave">
+            <div className="animated-text">
+              <div className="text">Hire Me!</div>
+            </div>
+            <div className="background-text">
+              <div className="text">Hire Me!</div>
+            </div>
+          </div>
+        </div>
         <div className="block one-by-three"></div>
         <div className="block empty"></div>
       </div>
