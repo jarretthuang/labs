@@ -72,8 +72,8 @@ function Home(props: any) {
         {colourPickerApp()}
         {threeApp()}
         <div className="block rectangle"></div>
-        <div className="block empty"></div>
         <div className="block one-by-three"></div>
+        <div className="block empty"></div>
       </div>
     </div>
   );

@@ -14,14 +14,15 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const fullScreenApps = ["colour-picker", "json-viewer"];
+  const fullScreenApps = ["colour-picker", "json-viewer", "three"];
   const fullscreenClass = fullScreenApps.includes(currentApp)
     ? "full-screen "
     : "";
   const darkThemeClass = isDarkTheme ? "dark-theme " : "";
 
   useEffect(() => {
-    if (currentApp === "json-viewer") {
+    const darkThemeApps = ["json-viewer", "three"];
+    if (darkThemeApps.includes(currentApp)) {
       setIsDarkTheme(false);
     }
   }, [currentApp]);

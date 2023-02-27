@@ -1,7 +1,14 @@
+import { Helmet } from "react-helmet-async";
+import "./assets/css/Three.css";
+
 function Three() {
   return (
     <div className="Three">
-      <div>TEST 3.JS</div>
+      <Helmet>
+        <title>Three - JH Labs</title>
+        {/* <meta name="theme-color" content={currentColour.hex} /> */}
+      </Helmet>
+      <div className="three-container">test</div>
     </div>
   );
 }
