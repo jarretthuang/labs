@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./assets/css/App.css";
-import Copyright from "./copyright/Copyright";
-import Home from "./home/Home";
+import Copyright from "./components/copyright/Copyright";
+import Home from "./components/home/Home";
 import ColourPicker from "./colour-picker/ColourPicker";
 import JsonViewer from "./json-viewer/JsonViewer";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./assets/css/json-viewer.css";
-import Notification from "../notification/Notification";
+import Notification from "../components/notification/Notification";
 import { ReactNotificationOptions } from "react-notifications-component";
 import JsonViewerTree from "./JsonViewerTree";
 import { sampleJson } from "./assets/sample";

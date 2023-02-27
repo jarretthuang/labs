@@ -1,7 +1,7 @@
 import "./assets/css/Home.css";
 import raninbowLogo from "./assets/img/rainbow.png";
 import jsonLogo from "./assets/img/code.png";
-import jhLogo from "./../assets/img/jh.png";
+import jhLogo from "./../../assets/img/jh.png";
 import cubeLogo from "./assets/img/icecube.png";
 
 function Home(props: any) {
