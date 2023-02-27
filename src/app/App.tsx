@@ -6,7 +6,7 @@ import ColourPicker from "./colour-picker/ColourPicker";
 import JsonViewer from "./json-viewer/JsonViewer";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Error404 from "./Error404";
-import Three from "./three/Three";
+import Three from "./components/three/Three";
 
 function App() {
   const [currentApp, setApp] = useState("home");
