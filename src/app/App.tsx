@@ -6,6 +6,7 @@ import ColourPicker from "./colour-picker/ColourPicker";
 import JsonViewer from "./json-viewer/JsonViewer";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Error404 from "./Error404";
+import Three from "./three/Three";
 
 function App() {
   const [currentApp, setApp] = useState("home");
@@ -47,6 +48,7 @@ function App() {
             }
           />
           <Route path="/json-viewer" element={<JsonViewer></JsonViewer>} />
+          <Route path="/three" element={<Three></Three>} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </div>
