@@ -6,5 +6,93 @@
     height: 48px;
     width: 100vw;
     z-index: 1;
+    color: @almost-white;
     .dark-glass();
+    .subtle-box-shadow-white();
+
+    ul {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        margin-top: 0;
+        align-items: center;
+        justify-content: space-between;
+        list-style-type: none;
+        padding: 0 5vh 0 5vh;
+    }
+
+    li {
+        cursor: pointer;
+        opacity: 0.5;
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        &:hover {
+            opacity: 0.6;
+        }
+
+        &.jh-logo {
+
+            .jh-logo-bw {
+                height: 36px;
+            }
+        }
+
+        &.handle {
+            font-size: 32px;
+            align-self: flex-start;
+
+            .handle-symbol {
+                transition: transform ease 0.5s;
+            }
+        }
+
+        &.expanded-content {
+            display: none;
+            height: 0;
+        }
+    }
+
+    &.expanded {
+        box-shadow: none;
+        height: calc(100vh - 3rem);
+
+        @media (max-width: @mobile-screen-width) {
+            height: calc(100vh - 6rem);
+        }
+
+        ul {
+            flex-direction: column;
+        }
+
+        li {
+            height: 48px;
+            width: 100%;
+
+            &.jh-logo {
+                display: none;
+            }
+
+            &.handle {
+                display: flex;
+                justify-content: flex-end;
+
+                .handle-symbol {
+                    transform: rotate(45deg);
+                }
+            }
+
+            &.expanded-content {
+                display: flex;
+                height: 100%;
+                width: 100%;
+
+                span {
+                    margin: auto;
+                }
+            }
+        }
+    }
+
 }
