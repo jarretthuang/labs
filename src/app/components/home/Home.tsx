@@ -2,6 +2,7 @@ import "./assets/css/Home.css";
 import raninbowLogo from "./assets/img/rainbow.png";
 import jsonLogo from "./assets/img/code.png";
 import jhLogo from "./../../assets/img/jh.png";
+import jhLogoWide from "./../../assets/img/jhLabsLogoWideVector.png";
 import cubeLogo from "./assets/img/icecube.png";
 import WaveUi from "../common/ui/wave/Wave";
 import { useState } from "react";
@@ -9,11 +10,16 @@ import { useState } from "react";
 function Home(props: any) {
   const titleBlock = () => {
     return (
-      <div className="block large title-block reverse-colour">
+      <div className="block large title-block">
         <div className="logo-container">
-          <img className="jh-logo" src={jhLogo} alt="Logo" />
+          <img className="jh-logo desktop-only" src={jhLogo} alt="Logo" />
+          <img
+            className="jh-logo-wide mobile-only"
+            src={jhLogoWide}
+            alt="Logo"
+          />
         </div>
-        <span className="title-content">
+        <span className="title-content desktop-only">
           Jarrett Huang's
           <br />
           Web Design Labs

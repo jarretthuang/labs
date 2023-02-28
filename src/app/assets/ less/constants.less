@@ -13,6 +13,7 @@
 @sanguine: #8D3D38;
 @solitaire: #FEF8E2;
 @tuna: #353542;
+@swiss: #f46524;
 
 @background-colour-main: @shakespeare-darker-50;
 @block-colour-main: @shakespeare;
@@ -83,9 +84,15 @@
 .mobile-only {
     display: none;
 }
+.desktop-only {
+    display: initial;
+}
 
 @media (max-width: @mobile-screen-width) {
     .mobile-only {
         display: initial;
+    }
+    .desktop-only {
+        display: none;
     }
 }
