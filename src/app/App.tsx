@@ -42,9 +42,15 @@ function App() {
     navigate("/");
   };
 
+  const renderNavBar = () => {
+    if (!fullScreenApps.includes(currentApp)) {
+      return <NavBar></NavBar>;
+    }
+  };
+
   return (
     <div className={"App " + darkThemeClass}>
-      <NavBar></NavBar>
+      {renderNavBar()}
       <div className={"app-view " + fullscreenClass}>
         <Routes>
           <Route path="/" element={<Home navigate={navigate}></Home>} />
