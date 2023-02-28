@@ -68,8 +68,10 @@ function Home(props: any) {
     return (
       <div
         className="block project rectangle"
-        onMouseEnter={() => setAboutMeHovered(!isAboutMeHovered)}
-        onMouseLeave={() => setAboutMeHovered(!isAboutMeHovered)}
+        onMouseEnter={() => setAboutMeHovered(true)}
+        onMouseLeave={() => setAboutMeHovered(false)}
+        onTouchStart={() => setAboutMeHovered(true)}
+        onTouchEnd={() => setAboutMeHovered(false)}
         onClick={() => window.open("https://jhuang.ca", "_blank")}
       >
         <img
