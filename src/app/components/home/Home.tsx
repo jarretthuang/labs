@@ -10,9 +10,9 @@ function Home(props: any) {
   const titleBlock = () => {
     return (
       <div className="block large title-block reverse-colour">
-        <a className="visible-on-hover-parent" href="https://jhuang.ca">
+        <div className="logo-container">
           <img className="jh-logo" src={jhLogo} alt="Logo" />
-        </a>
+        </div>
         <span className="title-content">
           Jarrett Huang's
           <br />
