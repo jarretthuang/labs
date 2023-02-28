@@ -6,7 +6,6 @@ import { HashRouter } from "react-router-dom";
 import "@fontsource/roboto";
 import "@fontsource/ubuntu";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import jhLabsLogo from "./app/assets/img/jhLabs.png";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -18,7 +17,6 @@ root.render(
         <Helmet>
           <title>Jarrett Huang's Web Labs</title>
           <meta name="theme-color" content="#071419" />
-          <meta property="og:image" content={jhLabsLogo} />
         </Helmet>
         <App />
       </HelmetProvider>
