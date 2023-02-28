@@ -75,12 +75,12 @@ function Home(props: any) {
         onClick={() => window.open("https://jhuang.ca", "_blank")}
       >
         <img
-          className="app-logo image"
+          className="app-logo image logo-xl"
           src="https://avatars2.githubusercontent.com/u/13912692"
           alt="JH"
         />
         <WaveUi
-          className="app-name"
+          className="app-name font-xl"
           text="about me"
           isHovered={isAboutMeHovered}
         ></WaveUi>
