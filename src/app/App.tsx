@@ -7,6 +7,7 @@ import JsonViewer from "./components/json-viewer/JsonViewer";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Error404 from "./Error404";
 import Three from "./components/three/Three";
+import NavBar from "./components/nav-bar/NavBar";
 
 function App() {
   const [currentApp, setApp] = useState("home");
@@ -28,8 +29,12 @@ function App() {
   }, [currentApp]);
 
   useEffect(() => {
-    const currentApp = location.pathname.slice(1);
-    setApp(currentApp);
+    const appFromUrl = location.pathname.slice(1);
+    if (appFromUrl === "") {
+      setApp("home");
+    } else {
+      setApp(appFromUrl);
+    }
   }, [location]);
 
   const goHome = () => {
@@ -39,6 +44,7 @@ function App() {
 
   return (
     <div className={"App " + darkThemeClass}>
+      <NavBar></NavBar>
       <div className={"app-view " + fullscreenClass}>
         <Routes>
           <Route path="/" element={<Home navigate={navigate}></Home>} />
@@ -53,7 +59,7 @@ function App() {
           <Route path="*" element={<Error404 />} />
         </Routes>
       </div>
-      <Copyright goHome={goHome}></Copyright>
+      <Copyright goHome={goHome} hasDock={currentApp === "home"}></Copyright>
     </div>
   );
 }
