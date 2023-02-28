@@ -9,7 +9,7 @@ function NavBar() {
   return (
     <nav className={"NavBar " + expandedClass}>
       <ul>
-        <li className="jh-logo" onClick={() => expand(!expanded)}>
+        <li className="jh-logo">
           <img className="jh-logo-bw" src={jhLogoBW} alt="JH" />
         </li>
         <li className="handle" onClick={() => expand(!expanded)}>
