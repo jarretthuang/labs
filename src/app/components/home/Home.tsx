@@ -3,6 +3,8 @@ import raninbowLogo from "./assets/img/rainbow.png";
 import jsonLogo from "./assets/img/code.png";
 import jhLogo from "./../../assets/img/jh.png";
 import cubeLogo from "./assets/img/icecube.png";
+import WaveUi from "../common/ui/wave/Wave";
+import { useState } from "react";
 
 function Home(props: any) {
   const titleBlock = () => {
@@ -10,9 +12,6 @@ function Home(props: any) {
       <div className="block large title-block reverse-colour">
         <a className="visible-on-hover-parent" href="https://jhuang.ca">
           <img className="jh-logo" src={jhLogo} alt="Logo" />
-          {/* <div className="visible-on-hover main-site-redirect">
-      <div className="main-site-redirect-msg">To jhuang.ca</div>
-    </div> */}
         </a>
         <span className="title-content">
           Jarrett Huang's
@@ -64,6 +63,29 @@ function Home(props: any) {
     );
   };
 
+  const [isAboutMeHovered, setAboutMeHovered] = useState(false);
+  const aboutMe = () => {
+    return (
+      <div
+        className="block project rectangle"
+        onMouseEnter={() => setAboutMeHovered(!isAboutMeHovered)}
+        onMouseLeave={() => setAboutMeHovered(!isAboutMeHovered)}
+        onClick={() => window.open("https://jhuang.ca", "_blank")}
+      >
+        <img
+          className="app-logo image"
+          src="https://avatars2.githubusercontent.com/u/13912692"
+          alt="JH"
+        />
+        <WaveUi
+          className="app-name"
+          text="about me"
+          isHovered={isAboutMeHovered}
+        ></WaveUi>
+      </div>
+    );
+  };
+
   return (
     <div className="Home">
       <div className="block-container">
@@ -71,18 +93,10 @@ function Home(props: any) {
         {jsonViewerApp()}
         {colourPickerApp()}
         {threeApp()}
-        <div className="block rectangle">
-          <div className="wave">
-            <div className="animated-text">
-              <div className="text">Hire Me!</div>
-            </div>
-            <div className="background-text">
-              <div className="text">Hire Me!</div>
-            </div>
-          </div>
-        </div>
-        <div className="block one-by-three"></div>
         <div className="block empty"></div>
+        <div className="block"></div>
+        <div className="block one-by-three"></div>
+        {aboutMe()}
       </div>
     </div>
   );
