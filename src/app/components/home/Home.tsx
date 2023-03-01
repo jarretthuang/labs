@@ -98,12 +98,11 @@ function Home(props: any) {
     <div className="Home">
       <div className="block-container">
         {titleBlock()}
-        {jsonViewerApp()}
         {colourPickerApp()}
+        {jsonViewerApp()}
         {threeApp()}
-        <div className="block"></div>
-        <div className="block"></div>
-        <div className="block one-by-three"></div>
+        <div className="block empty"></div>
+        {/* <div className="block one-by-three"></div> */}
         {aboutMe()}
       </div>
     </div>
