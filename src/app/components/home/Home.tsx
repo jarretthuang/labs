@@ -14,7 +14,7 @@ function Home(props: any) {
         <div className="logo-container">
           <img className="jh-logo desktop-only" src={jhLogo} alt="Logo" />
           <img
-            className="jh-logo-wide mobile-only"
+            className="jh-logo wide mobile-only"
             src={jhLogoWide}
             alt="Logo"
           />
