@@ -4,6 +4,7 @@
     height: 3rem;
     position: absolute;
     bottom: 0;
+    left: 0;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -25,26 +26,12 @@
         font-size: small;
         border-radius: 2rem;
         background-color: fade(white, 20%);
-    }
-
-    &.dock {
-        .dark-glass();
+        align-self: center;
     }
 }
 
 @media (max-width: @mobile-screen-width) {
     .Copyright {
         height: 6rem;
-
-        .copyright-banner {
-            align-self: center;
-        }
-    }
-}
-
-@media (min-width: @mobile-screen-width) {
-    .copyright-banner {
-        align-self: end;
-        margin-right: 5vmin;
     }
 }

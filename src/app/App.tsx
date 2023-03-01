@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./assets/css/App.css";
-import Copyright from "./components/copyright/Copyright";
 import Home from "./components/home/Home";
 import ColourPicker from "./components/colour-picker/ColourPicker";
 import JsonViewer from "./components/json-viewer/JsonViewer";
@@ -22,9 +21,11 @@ function App() {
   const darkThemeClass = isDarkTheme ? "dark-theme " : "";
 
   useEffect(() => {
-    const darkThemeApps = ["json-viewer", "three"];
-    if (darkThemeApps.includes(currentApp)) {
+    const lightThemeApps = ["json-viewer", "three"];
+    if (lightThemeApps.includes(currentApp)) {
       setIsDarkTheme(false);
+    } else {
+      setIsDarkTheme(true);
     }
   }, [currentApp]);
 
@@ -38,14 +39,11 @@ function App() {
   }, [location]);
 
   const goHome = () => {
-    setIsDarkTheme(true);
     navigate("/");
   };
 
   const renderNavBar = () => {
-    if (true) {
-      return <NavBar isDarkTheme={isDarkTheme}></NavBar>;
-    }
+    return <NavBar goHome={goHome} isDarkTheme={isDarkTheme}></NavBar>;
   };
 
   return (
@@ -65,7 +63,6 @@ function App() {
           <Route path="*" element={<Error404 />} />
         </Routes>
       </div>
-      <Copyright goHome={goHome} hasDock={currentApp === "home"}></Copyright>
     </div>
   );
 }

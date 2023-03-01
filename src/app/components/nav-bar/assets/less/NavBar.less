@@ -9,6 +9,9 @@
     color: @rebel;
     .subtle-box-shadow();
     .light-glass();
+    transition-delay: 0s;
+    transition-duration: 0.5s;
+    transition-property: background;
 
     &.dark-theme {
         .dark-glass();
@@ -30,13 +33,15 @@
     li {
         cursor: pointer;
         user-select: none;
-        opacity: 0.5;
         display: flex;
         align-items: center;
         height: 100%;
 
-        &:hover {
-            opacity: 0.6;
+        &:not(.expanded-content) {
+            opacity: 0.5;
+            &:hover {
+                opacity: 0.6;
+            }
         }
 
         &.jh-logo {
@@ -63,10 +68,11 @@
 
     &.expanded {
         box-shadow: none;
-        height: calc(100vh - 3rem);
+        height: 100vh;
+        .light-glass(0.9);
 
-        @media (max-width: @mobile-screen-width) {
-            height: calc(100vh - 6rem);
+        &.dark-theme {
+            .dark-glass(0.9);
         }
 
         ul {

@@ -1,3 +1,4 @@
+import Copyright from "../copyright/Copyright";
 import { NavBarParams } from "./NavBarParams";
 import "./assets/css/NavBar.css";
 import jhLogoBW from "./assets/img/jhLogoBW.png";
@@ -12,7 +13,7 @@ function NavBar(props: NavBarParams) {
   return (
     <nav className={allClassName}>
       <ul>
-        <li className="jh-logo">
+        <li className="jh-logo" onClick={props.goHome}>
           <img className="jh-logo-bw" src={jhLogoBW} alt="JH" />
         </li>
         <li className="handle" onClick={() => expand(!expanded)}>
@@ -20,6 +21,7 @@ function NavBar(props: NavBarParams) {
         </li>
         <li className="expanded-content">
           <span>Coming soon!</span>
+          <Copyright />
         </li>
       </ul>
     </nav>
