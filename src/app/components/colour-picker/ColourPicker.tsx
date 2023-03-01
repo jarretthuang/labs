@@ -51,6 +51,7 @@ function ColourPicker(props: any) {
   const [currentColour, updateColour] = useState(generateAndApplyNewColour());
   useEffect(() => {
     props.setIsDarkTheme(currentColour.textColour === "white");
+    props.setThemeColour(currentColour.hex);
   });
 
   return (

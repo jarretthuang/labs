@@ -8,13 +8,13 @@
     z-index: 1;
     color: @rebel;
     .subtle-box-shadow();
-    .light-glass();
+    .glass();
     transition-delay: 0s;
     transition-duration: 0.5s;
     transition-property: background;
+    transition-timing-function: ease-in-out;
 
     &.dark-theme {
-        .dark-glass();
         color: @almost-white;
         .subtle-box-shadow-white();
     }
@@ -69,11 +69,6 @@
     &.expanded {
         box-shadow: none;
         height: 100vh;
-        .light-glass(0.9);
-
-        &.dark-theme {
-            .dark-glass(0.9);
-        }
 
         ul {
             flex-direction: column;

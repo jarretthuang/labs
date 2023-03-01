@@ -8,10 +8,19 @@ function NavBar(props: NavBarParams) {
   const [expanded, expand] = useState(false);
   const expandedClass = expanded ? "expanded" : "";
   const darkThemeClass = props.isDarkTheme ? "dark-theme" : "";
-  const allClassName = ["NavBar ", expandedClass, darkThemeClass].join(" ");
+  const allClassName = ["NavBar", expandedClass, darkThemeClass].join(" ");
+  const opacity = "90";
+  const backgroundColour = expanded
+    ? props.backgroundColour + opacity
+    : "transparent";
 
   return (
-    <nav className={allClassName}>
+    <nav
+      className={allClassName}
+      style={{
+        backgroundColor: backgroundColour,
+      }}
+    >
       <ul>
         <li className="jh-logo" onClick={props.goHome}>
           <img className="jh-logo-bw" src={jhLogoBW} alt="JH" />

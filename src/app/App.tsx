@@ -7,55 +7,54 @@ import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Error404 from "./Error404";
 import Three from "./components/three/Three";
 import NavBar from "./components/nav-bar/NavBar";
+import { HOME_APP, getAppByName } from "./model/Application";
 
 function App() {
-  const [currentApp, setApp] = useState("home");
-  const [isDarkTheme, setIsDarkTheme] = useState(true);
+  const [currentApp, setApp] = useState(HOME_APP);
+  const [isDarkThemeOverride, setIsDarkThemeOverride] = useState(false);
+  const [themeColourOverride, setThemeColourOverride] = useState(undefined);
   const navigate = useNavigate();
   const location = useLocation();
 
-  const fullScreenApps = ["colour-picker", "json-viewer", "three"];
-  const fullscreenClass = fullScreenApps.includes(currentApp)
-    ? "full-screen "
-    : "";
-  const darkThemeClass = isDarkTheme ? "dark-theme " : "";
+  const isDarkTheme = currentApp.isDarkTheme || isDarkThemeOverride;
+  const themeColour = themeColourOverride ?? currentApp.themeColour;
+
+  const fullscreenClass = currentApp.isFullScreen ? "full-screen" : "";
+  const darkThemeClass = isDarkTheme ? "dark-theme" : "";
 
   useEffect(() => {
-    const lightThemeApps = ["json-viewer", "three"];
-    if (lightThemeApps.includes(currentApp)) {
-      setIsDarkTheme(false);
-    } else {
-      setIsDarkTheme(true);
-    }
-  }, [currentApp]);
-
-  useEffect(() => {
-    const appFromUrl = location.pathname.slice(1);
-    if (appFromUrl === "") {
-      setApp("home");
-    } else {
-      setApp(appFromUrl);
-    }
+    const appNameFromUrl = location.pathname.slice(1);
+    const app = getAppByName(appNameFromUrl) ?? HOME_APP;
+    clearStyleOverrides();
+    setApp(app);
   }, [location]);
+
+  const clearStyleOverrides = () => {
+    setIsDarkThemeOverride(false);
+    setThemeColourOverride(undefined);
+  };
 
   const goHome = () => {
     navigate("/");
   };
 
-  const renderNavBar = () => {
-    return <NavBar goHome={goHome} isDarkTheme={isDarkTheme}></NavBar>;
-  };
-
   return (
     <div className={"App " + darkThemeClass}>
-      {renderNavBar()}
+      <NavBar
+        goHome={goHome}
+        isDarkTheme={isDarkTheme}
+        backgroundColour={themeColour}
+      ></NavBar>
       <div className={"app-view " + fullscreenClass}>
         <Routes>
           <Route path="/" element={<Home navigate={navigate}></Home>} />
           <Route
             path="/colour-picker"
             element={
-              <ColourPicker setIsDarkTheme={setIsDarkTheme}></ColourPicker>
+              <ColourPicker
+                setIsDarkTheme={setIsDarkThemeOverride}
+                setThemeColour={setThemeColourOverride}
+              ></ColourPicker>
             }
           />
           <Route path="/json-viewer" element={<JsonViewer></JsonViewer>} />
