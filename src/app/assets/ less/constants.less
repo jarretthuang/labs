@@ -82,10 +82,20 @@
     }
 }
 
-.dark-glass() {
-    background: rgba(7,20,25,0.9);
+.glass() {
     backdrop-filter: blur(5px);
 }
+
+.dark-glass() {
+    .glass();
+    background: rgba(7,20,25,0.3);
+}
+
+.light-glass() {
+    .glass();
+    background: rgba(250,250,250,0.3);
+}
+
 
 // mobile
 @mobile-screen-width: 800px;

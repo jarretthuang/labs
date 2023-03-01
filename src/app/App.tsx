@@ -43,8 +43,8 @@ function App() {
   };
 
   const renderNavBar = () => {
-    if (!fullScreenApps.includes(currentApp)) {
-      return <NavBar></NavBar>;
+    if (true) {
+      return <NavBar isDarkTheme={isDarkTheme}></NavBar>;
     }
   };
 

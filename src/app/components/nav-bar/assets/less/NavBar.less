@@ -6,9 +6,15 @@
     height: 48px;
     width: 100vw;
     z-index: 1;
-    color: @almost-white;
-    .dark-glass();
-    .subtle-box-shadow-white();
+    color: @rebel;
+    .subtle-box-shadow();
+    .light-glass();
+
+    &.dark-theme {
+        .dark-glass();
+        color: @almost-white;
+        .subtle-box-shadow-white();
+    }
 
     ul {
         height: 100%;
