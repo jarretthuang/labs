@@ -4,6 +4,7 @@ import { NavBarParams } from "./NavBarParams";
 import "./assets/css/NavBar.css";
 import jhLogoBW from "./assets/img/jhLogoBW.png";
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 function NavBar(props: NavBarParams) {
   const [expanded, expand] = useState(false);
@@ -24,19 +25,27 @@ function NavBar(props: NavBarParams) {
     ? getColourOrTransparent(props.backgroundColour, hexPercent90)
     : getColourOrTransparent(props.currentApp?.themeColour, hexPercent75);
 
+  const contentPending = () => {
+    return (
+      <div className="content">
+        <span className="title">Coming soon!</span>
+      </div>
+    );
+  };
+
   const renderContent = () => {
     const metadata = props.currentApp?.metadata;
     if (_.isUndefined(metadata)) {
-      return (
-        <div className="content">
-          <span className="title">Coming soon!</span>
-        </div>
-      );
+      return contentPending();
     } else {
       return (
         <div className="content">
-          <span className="title">{metadata.displayName}</span>
-          <span>{metadata.description}</span>
+          <div className="inner-content">
+            <span className="title">{metadata.displayName}</span>
+            <ReactMarkdown>
+              {props.currentApp?.metadata?.description ?? ""}
+            </ReactMarkdown>
+          </div>
         </div>
       );
     }

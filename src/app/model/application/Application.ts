@@ -1,4 +1,5 @@
 import _, { Dictionary } from "lodash";
+import { homeAppDescription, jsonViewerDescription } from "./appDescriptions";
 
 export type Application = {
   name: string;
@@ -10,7 +11,7 @@ export type Application = {
 
 export type ApplicationMetadata = {
   displayName: string;
-  description: string;
+  description?: string;
 };
 
 export const HOME_APP: Application = {
@@ -19,7 +20,7 @@ export const HOME_APP: Application = {
   isDarkTheme: true,
   metadata: {
     displayName: "Home",
-    description: "The Home app is the home page of labs.jhuang.ca",
+    description: homeAppDescription,
   },
 };
 
@@ -27,17 +28,27 @@ export const JSON_VIEWER_APP: Application = {
   name: "json-viewer",
   themeColour: "#d7eff2",
   isFullScreen: true,
+  metadata: {
+    displayName: "JSON Viewer",
+    description: jsonViewerDescription,
+  },
 };
 
 export const COLOUR_PICKER_APP: Application = {
   name: "colour-picker",
   isFullScreen: true,
+  metadata: {
+    displayName: "Colour Picker",
+  },
 };
 
 export const THREE_APP: Application = {
   name: "three",
   themeColour: "#FEF8E2",
   isFullScreen: true,
+  metadata: {
+    displayName: "Three",
+  },
 };
 
 export const applications = [
@@ -46,10 +57,12 @@ export const applications = [
   COLOUR_PICKER_APP,
   THREE_APP,
 ];
+
 export const applicationsMap: Dictionary<Application> = _.keyBy(
   applications,
   "name"
 );
+
 export const getAppByName = (appName) => {
   return applicationsMap[appName];
 };

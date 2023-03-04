@@ -7,7 +7,7 @@ import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Error404 from "./Error404";
 import Three from "./components/three/Three";
 import NavBar from "./components/nav-bar/NavBar";
-import { HOME_APP, getAppByName } from "./model/Application";
+import { HOME_APP, getAppByName } from "./model/application/Application";
 
 function App() {
   const [currentApp, setApp] = useState(HOME_APP);

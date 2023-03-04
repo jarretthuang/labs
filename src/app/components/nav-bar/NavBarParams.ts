@@ -1,4 +1,4 @@
-import { Application } from "../../model/Application";
+import { Application } from "../../model/application/Application";
 
 export type NavBarParams = {
   goHome: () => void;
