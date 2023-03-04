@@ -44,7 +44,7 @@ function App() {
         goHome={goHome}
         isDarkTheme={isDarkTheme}
         backgroundColour={themeColour}
-        collapsedColour={currentApp.themeColour}
+        currentApp={currentApp}
       ></NavBar>
       <div className={"app-view " + fullscreenClass}>
         <Routes>

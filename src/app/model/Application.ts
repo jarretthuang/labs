@@ -5,12 +5,22 @@ export type Application = {
   themeColour?: string;
   isFullScreen?: boolean;
   isDarkTheme?: boolean;
+  metadata?: ApplicationMetadata;
+};
+
+export type ApplicationMetadata = {
+  displayName: string;
+  description: string;
 };
 
 export const HOME_APP: Application = {
   name: "home",
   themeColour: "#071419",
   isDarkTheme: true,
+  metadata: {
+    displayName: "Home",
+    description: "The Home app is the home page of labs.jhuang.ca",
+  },
 };
 
 export const JSON_VIEWER_APP: Application = {

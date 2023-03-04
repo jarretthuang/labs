@@ -22,7 +22,25 @@ function NavBar(props: NavBarParams) {
 
   const backgroundColour = expanded
     ? getColourOrTransparent(props.backgroundColour, hexPercent90)
-    : getColourOrTransparent(props.collapsedColour, hexPercent75);
+    : getColourOrTransparent(props.currentApp?.themeColour, hexPercent75);
+
+  const renderContent = () => {
+    const metadata = props.currentApp?.metadata;
+    if (_.isUndefined(metadata)) {
+      return (
+        <div className="content">
+          <span className="title">Coming soon!</span>
+        </div>
+      );
+    } else {
+      return (
+        <div className="content">
+          <span className="title">{metadata.displayName}</span>
+          <span>{metadata.description}</span>
+        </div>
+      );
+    }
+  };
 
   return (
     <nav
@@ -39,7 +57,7 @@ function NavBar(props: NavBarParams) {
           <span className="handle-symbol">+</span>
         </li>
         <li className="expanded-content">
-          <span>Coming soon!</span>
+          {renderContent()}
           <Copyright />
         </li>
       </ul>
