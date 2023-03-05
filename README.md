@@ -17,5 +17,5 @@ npm run start
 # Deploy
 ```
 npm run deploy
-git cherry-pick 75c24d636f69caf3df5edbc2e72d832f41835df9  (adds CNAME + .gitignore)
+git cherry-pick 45c72ab08cff9275ff451acb9ab86d20eb613168  (adds CNAME + .gitignore)
 ```
