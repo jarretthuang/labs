@@ -101,8 +101,6 @@ function Home(props: any) {
         {jsonViewerApp()}
         {colourPickerApp()}
         {threeApp()}
-        <div className="block empty"></div>
-        <div className="block"></div>
         {/* <div className="block one-by-three"></div> */}
         {aboutMe()}
       </div>

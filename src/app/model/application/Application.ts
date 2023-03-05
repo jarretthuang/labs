@@ -1,5 +1,10 @@
 import _, { Dictionary } from "lodash";
-import { homeAppDescription, jsonViewerDescription } from "./appDescriptions";
+import {
+  colourPickerAppDescription,
+  homeAppDescription,
+  jsonViewerAppDescription,
+  threeAppDescription,
+} from "./appDescriptions";
 
 export type Application = {
   name: string;
@@ -30,7 +35,7 @@ export const JSON_VIEWER_APP: Application = {
   isFullScreen: true,
   metadata: {
     displayName: "JSON Viewer",
-    description: jsonViewerDescription,
+    description: jsonViewerAppDescription,
   },
 };
 
@@ -39,6 +44,7 @@ export const COLOUR_PICKER_APP: Application = {
   isFullScreen: true,
   metadata: {
     displayName: "Colour Picker",
+    description: colourPickerAppDescription,
   },
 };
 
@@ -48,6 +54,7 @@ export const THREE_APP: Application = {
   isFullScreen: true,
   metadata: {
     displayName: "Three",
+    description: threeAppDescription,
   },
 };
 
