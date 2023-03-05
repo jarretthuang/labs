@@ -13,7 +13,7 @@ function NavBar(props: NavBarParams) {
   const allClassName = ["NavBar", expandedClass, darkThemeClass].join(" ");
 
   const hexPercent75 = "BF";
-  const hexPercent90 = "E6";
+  const hexPercent85 = "D9";
   const getColourOrTransparent = (
     colour: string | undefined,
     opacity: string
@@ -22,7 +22,7 @@ function NavBar(props: NavBarParams) {
   };
 
   const backgroundColour = expanded
-    ? getColourOrTransparent(props.backgroundColour, hexPercent90)
+    ? getColourOrTransparent(props.backgroundColour, hexPercent85)
     : getColourOrTransparent(props.currentApp?.themeColour, hexPercent75);
 
   const contentPending = () => {
