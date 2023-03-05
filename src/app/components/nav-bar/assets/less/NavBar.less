@@ -1,9 +1,11 @@
 @import url(./../../../../assets/\ less/constants.less);
 
+@nav-bar-height: 48px;
+
 .NavBar {
     position: absolute;
     top: 0;
-    height: 48px;
+    height: @nav-bar-height;
     width: 100vw;
     z-index: 1;
     color: @rebel;
@@ -72,7 +74,7 @@
         }
 
         li {
-            height: 48px;
+            height: @nav-bar-height;
             width: 100%;
 
             &.jh-logo {
@@ -91,7 +93,7 @@
             &.expanded-content {
                 display: flex;
                 flex-direction: column;
-                height: calc(100% - 48px);
+                height: calc(100% - @nav-bar-height);
                 width: 100%;
                 overflow-y: hidden;
 

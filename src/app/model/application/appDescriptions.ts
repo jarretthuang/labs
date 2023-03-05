@@ -4,12 +4,15 @@
  */
 
 export const homeAppDescription = `
-The _Home_ app is the home page of _labs.jhuang.ca_.
+The _Home_ app is the home page of _labs.jhuang.ca_ which provides an entry point to each other app.
 
-This app uses CSS-Grid to create a proportional UI regardless of screen sizes.
+This app leverages technologies like _CSS Grid_ to create a proportional UI adjusting to the viewer's screen size dynamically.
 
-With CSS-Grid and other similar technologies, we are no longer required to fit our UI in the traditional 3 x 4 layouts. Empty space has also become more intuitive, practical, and very much meaningful in the design of a layout.
-To me, this has enabled many possibilities for the web, to be not just "pages", but full-fledged apps. And perhaps an art form.
+As web design tools develop, we no longer have to fit our UI in the traditional 3 x 4 layouts. Empty space has also become more intuitive and practical, and very much meaningful in the design of a layout.
+
+Learning this has enabled many possibilities for me, as a web developer, to create layouts for not just "pages", but full-fledged applications.
+
+To me, web is also an _art form_. I wish to do more web layout experiments in the future. :)
 `;
 
 export const jsonViewerAppDescription = `
