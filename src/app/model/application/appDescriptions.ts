@@ -6,14 +6,11 @@
 export const homeAppDescription = `
 The _Home_ app is the home page of _labs.jhuang.ca_ which provides an entry point to each other app.
 
-This app leverages _CSS Grid_ to create a proportional UI adjusting to the viewer's screen size dynamically, with fairly simple css:
+This app itself is also a layout experiment where I leverage _CSS Grid_ to create a dynamic UI adjusting to the viewer's screen size automatically, with fairly simple css:
 \`\`\`
 grid-template-columns: repeat(auto-fit, minmax(25vmin, 1fr));
 grid-auto-rows: minmax(20vmin, 1fr);
-grid-gap: 1rem;
 \`\`\`
-
-To me, this is pure art! :p
 `;
 
 export const jsonViewerAppDescription = `
