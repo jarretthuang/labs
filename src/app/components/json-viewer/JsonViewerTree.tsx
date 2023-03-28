@@ -3,6 +3,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import "./assets/css/json-viewer-tree.css";
 import JsonViewerTreeItem from "./JsonViewerTreeItem";
+import _ from "lodash";
 
 function JsonViewerTree(props) {
   const populateTree = (json: Object) => {
@@ -24,7 +25,16 @@ function JsonViewerTree(props) {
     nodeIdPrefix: string = ""
   ) => {
     const nodeId: string = nodeIdPrefix + "." + key;
-    if (typeof json === "object") {
+
+    if (_.isNull(json)) {
+      return (
+        <JsonViewerTreeItem
+          nodeId={nodeId}
+          key={nodeId}
+          label={key + ": null"}
+        />
+      );
+    } else if (typeof json === "object") {
       if (Array.isArray(json)) {
         return (
           <JsonViewerTreeItem nodeId={nodeId} key={nodeId} label={key + " [ ]"}>
