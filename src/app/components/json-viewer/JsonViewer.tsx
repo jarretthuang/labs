@@ -19,6 +19,7 @@ function JsonViewer(props: any) {
   const [jsonObject, updateJsonObject] = useState(undefined);
 
   const parseJson = (text: string, notify: boolean = true) => {
+    console.log("Parsing JSON...");
     try {
       return JSON.parse(text);
     } catch (e) {

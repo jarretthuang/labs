@@ -4,6 +4,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import "./assets/css/json-viewer-tree.css";
 import JsonViewerTreeItem from "./JsonViewerTreeItem";
 import _ from "lodash";
+import JsonViewerTreeItemLabel from "./JsonViewerTreeItemLabel";
 
 function JsonViewerTree(props) {
   const populateTree = (json: Object) => {
@@ -31,13 +32,19 @@ function JsonViewerTree(props) {
         <JsonViewerTreeItem
           nodeId={nodeId}
           key={nodeId}
-          label={key + ": null"}
+          label={
+            <JsonViewerTreeItemLabel type="value" name={key} value="null" />
+          }
         />
       );
     } else if (typeof json === "object") {
       if (Array.isArray(json)) {
         return (
-          <JsonViewerTreeItem nodeId={nodeId} key={nodeId} label={key + " [ ]"}>
+          <JsonViewerTreeItem
+            nodeId={nodeId}
+            key={nodeId}
+            label={<JsonViewerTreeItemLabel type="array" name={key} />}
+          >
             {json.map((itemInArray, index) =>
               populateTreeItems(itemInArray, index.toString(), nodeId)
             )}
@@ -45,7 +52,11 @@ function JsonViewerTree(props) {
         );
       } else {
         return (
-          <JsonViewerTreeItem nodeId={nodeId} key={nodeId} label={key + " { }"}>
+          <JsonViewerTreeItem
+            nodeId={nodeId}
+            key={nodeId}
+            label={<JsonViewerTreeItemLabel type="object" name={key} />}
+          >
             {Object.keys(json).map((key: string) =>
               populateTreeItems(json[key], key, nodeId)
             )}
@@ -59,7 +70,9 @@ function JsonViewerTree(props) {
         <JsonViewerTreeItem
           nodeId={nodeId}
           key={nodeId}
-          label={key + ": " + value}
+          label={
+            <JsonViewerTreeItemLabel type="value" name={key} value={value} />
+          }
         />
       );
     }

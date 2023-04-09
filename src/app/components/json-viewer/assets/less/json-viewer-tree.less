@@ -1,3 +1,4 @@
+@import url(./../../../../assets/\ less/constants.less);
 
 .JsonViewerTree {
     height: 100%;
@@ -29,6 +30,27 @@
             text-align: start;
             text-overflow: ellipsis;
             overflow: hidden;
+
+            .JsonViewerTreeItemLabel {
+                display: flex;
+
+                .label-icon {
+                    align-self: center;
+                    margin-left: 0.2rem;
+                    font-size: 0.6rem;
+                    color: @shakespeare-darker-40;
+
+                    &:hover {
+                        color: @shakespeare-darker-20;
+                    }
+                }
+
+                .label-separator {
+                    margin: 0 0.2rem;
+                    color: @shakespeare-darker-40;
+                }
+            }
+
         }
         
     }
