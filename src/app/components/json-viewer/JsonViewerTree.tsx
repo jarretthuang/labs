@@ -27,7 +27,7 @@ function JsonViewerTree(props) {
   ) => {
     const nodeId: string = nodeIdPrefix + "." + key;
 
-    if (_.isNull(json)) {
+    if (_.isEmpty(json)) {
       return (
         <JsonViewerTreeItem
           nodeId={nodeId}

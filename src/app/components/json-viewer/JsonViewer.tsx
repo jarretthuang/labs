@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import "./assets/css/json-viewer.css";
 import Notification from "../notification/Notification";
 import { ReactNotificationOptions } from "react-notifications-component";
@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 
 function JsonViewer(props: any) {
   type ViewType = "view" | "edit";
-  const [currentView, switchView] = useState("edit");
+  const [currentView, switchView] = useState<ViewType>("edit");
   const getSelectedClass = (view: ViewType) =>
     currentView === view ? "selected " : "";
   const defaultText = "Paste your JSON text here!";
@@ -67,64 +67,74 @@ function JsonViewer(props: any) {
     }
   };
 
-  const renderView = (viewType: string) => {
-    if (viewType === "edit") {
-      return (
-        <div className="json-viewer-container">
-          <div className="tool-bar">
-            <div
-              className="tool-bar-button"
-              onClick={() => navigator.clipboard.writeText(currentText)}
-            >
-              Copy
-            </div>
-            <div
-              className="tool-bar-button"
-              onClick={() =>
-                navigator.clipboard.readText().then((text) => updateText(text))
-              }
-            >
-              Paste
-            </div>
-            <div
-              className="tool-bar-button"
-              onClick={() => formatJson(currentText)}
-            >
-              Format
-            </div>
-            <div
-              className="tool-bar-button"
-              onClick={() => minimizeJson(currentText)}
-            >
-              Minimize
-            </div>
-            <div className="tool-bar-button" onClick={() => updateText("")}>
-              Clear
-            </div>
-            <div
-              className="tool-bar-button"
-              onClick={() => updateText(JSON.stringify(sampleJson))}
-            >
-              Example
-            </div>
+  const renderEditView = (hide: boolean) => {
+    return (
+      <div className="json-viewer-container" hidden={hide}>
+        <div className="tool-bar">
+          <div
+            className="tool-bar-button"
+            onClick={() => navigator.clipboard.writeText(currentText)}
+          >
+            Copy
           </div>
-          <textarea
-            className="main-textarea"
-            value={currentText}
-            onClick={clearDefaultText}
-            onChange={(e) => updateText(e.target.value)}
-          ></textarea>
-        </div>
-      );
-    } else {
-      return (
-        <div className="json-viewer-container">
-          <div className="readonly-view">
-            <JsonViewerTree json={jsonObject}></JsonViewerTree>
+          <div
+            className="tool-bar-button"
+            onClick={() =>
+              navigator.clipboard.readText().then((text) => updateText(text))
+            }
+          >
+            Paste
+          </div>
+          <div
+            className="tool-bar-button"
+            onClick={() => formatJson(currentText)}
+          >
+            Format
+          </div>
+          <div
+            className="tool-bar-button"
+            onClick={() => minimizeJson(currentText)}
+          >
+            Minimize
+          </div>
+          <div className="tool-bar-button" onClick={() => updateText("")}>
+            Clear
+          </div>
+          <div
+            className="tool-bar-button"
+            onClick={() => updateText(JSON.stringify(sampleJson))}
+          >
+            Example
           </div>
         </div>
-      );
-    }
+        <textarea
+          className="main-textarea"
+          value={currentText}
+          onClick={clearDefaultText}
+          onChange={(e) => updateText(e.target.value)}
+        ></textarea>
+      </div>
+    );
+  };
+
+  const renderTreeView = (hide: boolean) => {
+    return (
+      <div className="json-viewer-container" hidden={hide}>
+        <div className="readonly-view">
+          <JsonViewerTree json={jsonObject}></JsonViewerTree>
+        </div>
+      </div>
+    );
+  };
+
+  const renderView = (viewType: ViewType) => {
+    const isInEditView = viewType === "edit";
+    return (
+      <Fragment>
+        {renderEditView(!isInEditView)}
+        {renderTreeView(isInEditView)}
+      </Fragment>
+    );
   };
 
   const openTreeView = () => {
