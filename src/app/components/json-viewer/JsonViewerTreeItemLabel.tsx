@@ -1,7 +1,6 @@
 import DataObjectIcon from "@mui/icons-material/DataObject";
 import DataArrayIcon from "@mui/icons-material/DataArray";
-import { styled } from "@mui/material";
-import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
+import { Tooltip } from "../common/ui/tooltip/Tooltip";
 
 export type JsonViewerTreeItemLabelType = "object" | "array" | "value";
 
@@ -11,30 +10,21 @@ export type JsonViewerTreeItemLabelProps = {
   value?: string;
 };
 
-const LabelTooltip = styled(({ className, ...props }: TooltipProps) => (
-  <Tooltip {...props} arrow placement="right" classes={{ popper: className }} />
-))(({ theme }) => ({
-  [`& .${tooltipClasses.tooltip}`]: {
-    boxShadow: theme.shadows[1],
-    fontSize: "0.4rem",
-  },
-}));
-
 export default function JsonViewerTreeItemLabel(
   props: JsonViewerTreeItemLabelProps
 ) {
   const renderIcon = () => {
     if (props.type === "object") {
       return (
-        <LabelTooltip title="Object">
+        <Tooltip title="Object">
           <DataObjectIcon className="label-icon" />
-        </LabelTooltip>
+        </Tooltip>
       );
     } else if (props.type === "array") {
       return (
-        <LabelTooltip title="Array">
+        <Tooltip title="Array">
           <DataArrayIcon className="label-icon" />
-        </LabelTooltip>
+        </Tooltip>
       );
     }
   };
