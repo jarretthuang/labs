@@ -27,7 +27,7 @@ function JsonViewerTree(props) {
   ) => {
     const nodeId: string = nodeIdPrefix + "." + key;
 
-    if (_.isEmpty(json)) {
+    if (_.isNull(json) || _.isUndefined(json)) {
       return (
         <JsonViewerTreeItem
           nodeId={nodeId}
@@ -64,14 +64,17 @@ function JsonViewerTree(props) {
         );
       }
     } else {
-      const value =
-        typeof json === "string" ? '"' + json + '"' : json.toString();
+      const stringValue = json.toString();
       return (
         <JsonViewerTreeItem
           nodeId={nodeId}
           key={nodeId}
           label={
-            <JsonViewerTreeItemLabel type="value" name={key} value={value} />
+            <JsonViewerTreeItemLabel
+              type="value"
+              name={key}
+              value={stringValue}
+            />
           }
         />
       );
