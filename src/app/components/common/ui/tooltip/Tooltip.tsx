@@ -13,5 +13,6 @@ export const Tooltip = styled(({ className, ...props }: TooltipProps) => (
   [`& .${tooltipClasses.tooltip}`]: {
     boxShadow: theme.shadows[1],
     fontSize: "0.4rem",
+    userSelect: "none",
   },
 }));
