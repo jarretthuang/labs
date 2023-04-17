@@ -73,7 +73,7 @@ function JsonViewer(props: any) {
       title: "Copied to clipboard",
       type: "success",
       container: "top-center",
-      message: "JSON text has been successfully copied into your clipboard!",
+      message: "Content has been successfully copied into your clipboard!",
     };
     createNotification(notification);
   };
