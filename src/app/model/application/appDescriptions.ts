@@ -14,10 +14,11 @@ grid-auto-rows: minmax(20vmin, 1fr);
 `;
 
 export const jsonViewerAppDescription = `
-The _JSON Viewer_ app is a handy tool that I use regularly. It parses the text that you provide and if text is valid JSON,
-offers functionalities to auto-indent or minimize it, among a few other things.
+The _JSON Viewer_ app is a helpful tool that makes it incredibly easy to work with JSON.
 
-In the _View_ tab, a nicely configured tree structure will be generated for you to visualize your JSON object.
+You can start off by pasting a block of text in the _Edit_ tab. There are options available for you to quickly perform certain actions such as format (i.e. auto-indent) or minimize.
+
+In the _View_ tab, a tree structure will be generated to help you visualize the JSON object in the UI.
 `;
 
 export const colourPickerAppDescription = `
