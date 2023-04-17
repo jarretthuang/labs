@@ -40,6 +40,7 @@ function App() {
 
   return (
     <div className={"App " + darkThemeClass}>
+      <meta name="theme-color" content={currentApp.themeColour} />
       <NavBar
         goHome={goHome}
         isDarkTheme={isDarkTheme}
