@@ -38,13 +38,23 @@ export default function JsonViewerTreeItemLabel(
   };
 
   const renderActions = () => {
-    return (
-      <Fragment>
-        <Tooltip title="Copy" placement="top">
-          <ContentCopyIcon className="label-icon" />
-        </Tooltip>
-      </Fragment>
-    );
+    if (props.type === "value") {
+      return (
+        <Fragment>
+          <Tooltip
+            title="Copy"
+            placement="top"
+            onClick={() => navigator.clipboard.writeText(getLabelValueAsText())}
+          >
+            <ContentCopyIcon className="label-icon" />
+          </Tooltip>
+        </Fragment>
+      );
+    }
+  };
+
+  const getLabelValueAsText = () => {
+    return props.name + " : " + props.value;
   };
 
   return (
