@@ -31,7 +31,7 @@ export const HOME_APP: Application = {
 
 export const JSON_VIEWER_APP: Application = {
   name: "json-viewer",
-  themeColour: "#d7eff2",
+  themeColour: "#fdfeff",
   isFullScreen: true,
   metadata: {
     displayName: "JSON Viewer",
