@@ -67,13 +67,24 @@ function JsonViewer(props: any) {
     }
   };
 
+  const handleCopy = (text: string) => {
+    navigator.clipboard.writeText(text);
+    const notification: ReactNotificationOptions = {
+      title: "Copied to clipboard",
+      type: "success",
+      container: "top-center",
+      message: "JSON text has been successfully copied into your clipboard!",
+    };
+    createNotification(notification);
+  };
+
   const renderEditView = (hide: boolean) => {
     return (
       <div className="json-viewer-container" hidden={hide}>
         <div className="tool-bar">
           <div
             className="tool-bar-button"
-            onClick={() => navigator.clipboard.writeText(currentText)}
+            onClick={() => handleCopy(currentText)}
           >
             Copy
           </div>
@@ -121,7 +132,10 @@ function JsonViewer(props: any) {
     return (
       <div className="json-viewer-container" hidden={hide}>
         <div className="readonly-view">
-          <JsonViewerTree json={jsonObject}></JsonViewerTree>
+          <JsonViewerTree
+            json={jsonObject}
+            handleCopy={handleCopy}
+          ></JsonViewerTree>
         </div>
       </div>
     );

@@ -10,6 +10,7 @@ export type JsonViewerTreeItemLabelProps = {
   type: JsonViewerTreeItemLabelType;
   name: string;
   value?: string;
+  handleCopy?: (text: string) => void;
 };
 
 export default function JsonViewerTreeItemLabel(
@@ -44,7 +45,7 @@ export default function JsonViewerTreeItemLabel(
           <Tooltip
             title="Copy"
             placement="top"
-            onClick={() => navigator.clipboard.writeText(getLabelValueAsText())}
+            onClick={() => props?.handleCopy?.(getLabelValueAsText())}
           >
             <ContentCopyIcon className="label-icon" />
           </Tooltip>

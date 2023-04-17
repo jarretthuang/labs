@@ -33,7 +33,12 @@ function JsonViewerTree(props) {
           nodeId={nodeId}
           key={nodeId}
           label={
-            <JsonViewerTreeItemLabel type="value" name={key} value="null" />
+            <JsonViewerTreeItemLabel
+              type="value"
+              name={key}
+              value="null"
+              handleCopy={props.handleCopy}
+            />
           }
         />
       );
@@ -74,6 +79,7 @@ function JsonViewerTree(props) {
               type="value"
               name={key}
               value={stringValue}
+              handleCopy={props.handleCopy}
             />
           }
         />
