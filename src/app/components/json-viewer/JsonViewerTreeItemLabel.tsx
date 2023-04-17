@@ -1,6 +1,8 @@
 import DataObjectIcon from "@mui/icons-material/DataObject";
 import DataArrayIcon from "@mui/icons-material/DataArray";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { Tooltip } from "../common/ui/tooltip/Tooltip";
+import { Fragment } from "react";
 
 export type JsonViewerTreeItemLabelType = "object" | "array" | "value";
 
@@ -35,12 +37,25 @@ export default function JsonViewerTreeItemLabel(
     }
   };
 
+  const renderActions = () => {
+    return (
+      <Fragment>
+        <Tooltip title="Copy" placement="top">
+          <ContentCopyIcon className="label-icon" />
+        </Tooltip>
+      </Fragment>
+    );
+  };
+
   return (
     <div className="JsonViewerTreeItemLabel">
-      <div className="label-name">{props.name}</div>
-      {renderSeparator()}
-      <div className="label-value">{props.value}</div>
-      {renderIcon()}
+      <div className="label-content">
+        <div className="label-name">{props.name}</div>
+        {renderSeparator()}
+        <div className="label-value">{props.value}</div>
+        {renderIcon()}
+      </div>
+      <div className="label-actions">{renderActions()}</div>
     </div>
   );
 }

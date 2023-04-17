@@ -6,7 +6,7 @@ export const Tooltip = styled(({ className, ...props }: TooltipProps) => (
   <MuiTooltip
     {...props}
     arrow
-    placement="right"
+    placement={props.placement ?? "right"}
     classes={{ popper: className }}
   />
 ))(({ theme }) => ({
