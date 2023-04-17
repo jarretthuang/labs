@@ -19,6 +19,7 @@ function Three() {
     <div className="Three">
       <Helmet>
         <title>Three - JH Labs</title>
+        <meta name="theme-color" content="#FEF8E2" />
       </Helmet>
       <div className="three-container">
         <Canvas
