@@ -58,6 +58,13 @@ function App() {
             }
           />
           <Route path="/three" element={<Three></Three>} />
+          <Route
+            path="/json-viewer"
+            Component={() => {
+              window.location.replace("https://json.jhuang.ca");
+              return null;
+            }}
+          />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </div>
