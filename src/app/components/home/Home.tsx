@@ -32,7 +32,9 @@ function Home(props: any) {
     return (
       <div
         className="block rectangle-vertical project"
-        onClick={() => props.navigate("json-viewer")}
+        onClick={() =>
+          window.open("https://json.jhuang.ca", "_blank", "noreferrer")
+        }
       >
         <img
           className="app-logo mobile-only logo-xl"
