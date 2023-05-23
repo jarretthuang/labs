@@ -32,9 +32,7 @@ function Home(props: any) {
     return (
       <div
         className="block rectangle-vertical project"
-        onClick={() =>
-          window.open("https://json.jhuang.ca", "_blank", "noreferrer")
-        }
+        onClick={() => window.location.assign("https://json.jhuang.ca")}
       >
         <img
           className="app-logo mobile-only logo-xl"
