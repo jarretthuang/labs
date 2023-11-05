@@ -61,7 +61,7 @@ function App() {
           <Route
             path="/json-viewer"
             Component={() => {
-              window.location.replace("https://json.jhuang.ca");
+              window.location.replace("https://jsonviewer.io");
               return null;
             }}
           />
