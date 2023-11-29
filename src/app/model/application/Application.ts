@@ -2,7 +2,6 @@ import _, { Dictionary } from "lodash";
 import {
   colourPickerAppDescription,
   homeAppDescription,
-  jsonViewerAppDescription,
   threeAppDescription,
 } from "./appDescriptions";
 
@@ -29,16 +28,6 @@ export const HOME_APP: Application = {
   },
 };
 
-export const JSON_VIEWER_APP: Application = {
-  name: "json-viewer",
-  themeColour: "#fdfeff",
-  isFullScreen: true,
-  metadata: {
-    displayName: "JSON Viewer",
-    description: jsonViewerAppDescription,
-  },
-};
-
 export const COLOUR_PICKER_APP: Application = {
   name: "colour-picker",
   isFullScreen: true,
@@ -58,12 +47,7 @@ export const THREE_APP: Application = {
   },
 };
 
-export const applications = [
-  HOME_APP,
-  JSON_VIEWER_APP,
-  COLOUR_PICKER_APP,
-  THREE_APP,
-];
+export const applications = [HOME_APP, COLOUR_PICKER_APP, THREE_APP];
 
 export const applicationsMap: Dictionary<Application> = _.keyBy(
   applications,

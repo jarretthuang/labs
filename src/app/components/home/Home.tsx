@@ -32,7 +32,7 @@ function Home(props: any) {
     return (
       <div
         className="block rectangle-vertical project"
-        onClick={() => props.navigate("json-viewer")}
+        onClick={() => window.location.assign("https://jsonviewer.io")}
       >
         <img
           className="app-logo mobile-only logo-xl"
