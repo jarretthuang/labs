@@ -15,7 +15,7 @@ root.render(
     <HashRouter>
       <HelmetProvider>
         <Helmet>
-          <title>Jarrett Huang's Web Labs</title>
+          <title>Jarrett Huang's Labs</title>
           <meta name="theme-color" content="#071419" />
         </Helmet>
         <App />

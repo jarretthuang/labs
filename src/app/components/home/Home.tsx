@@ -22,7 +22,7 @@ function Home(props: any) {
         <span className="title-content desktop-only">
           Jarrett Huang's
           <br />
-          Web Design Labs
+          Software Labs
         </span>
       </div>
     );
