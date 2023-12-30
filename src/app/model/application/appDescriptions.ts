@@ -4,13 +4,11 @@
  */
 
 export const homeAppDescription = `
-The _Home_ app is the home page of _labs.jhuang.ca_ which provides an entry point to each other app.
+Welcome to labs.jhuang.ca!
 
-This app itself is also a layout experiment where I leverage _CSS Grid_ to create a dynamic UI adjusting to the viewer's screen size automatically, with fairly simple css:
-\`\`\`
-grid-template-columns: repeat(auto-fit, minmax(25vmin, 1fr));
-grid-auto-rows: minmax(20vmin, 1fr);
-\`\`\`
+My name is Jarrett, a software engineer from Canada. This site is where I put my coding projects and experiments.
+
+If you're interested in contacting me or learning more about me, please visit my [personal website](https://jhuang.ca) for more information.
 `;
 
 export const colourPickerAppDescription = `

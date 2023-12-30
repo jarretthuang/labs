@@ -23,7 +23,7 @@ export const HOME_APP: Application = {
   themeColour: "#071419",
   isDarkTheme: true,
   metadata: {
-    displayName: "Home",
+    displayName: `"Hello, world"`,
     description: homeAppDescription,
   },
 };

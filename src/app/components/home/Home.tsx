@@ -4,6 +4,7 @@ import jsonLogo from "./assets/img/code.png";
 import jhLogo from "./../../assets/img/jh.png";
 import jhLogoWide from "./../../assets/img/jhLabsLogoWideVector.png";
 import cubeLogo from "./assets/img/icecube.png";
+import widgetsLogo from "./assets/img/widgets.png";
 import WaveUi from "../common/ui/wave/Wave";
 import { useState } from "react";
 
@@ -12,7 +13,9 @@ function Home(props: any) {
     return (
       <div className="block large title-block">
         <div className="logo-container">
-          <img className="jh-logo desktop-only" src={jhLogo} alt="Logo" />
+          <a href="https://jhuang.ca" target="_blank">
+            <img className="jh-logo desktop-only" src={jhLogo} alt="Logo" />
+          </a>
           <img
             className="jh-logo wide mobile-only"
             src={jhLogoWide}
@@ -69,6 +72,15 @@ function Home(props: any) {
     );
   };
 
+  const widgetsApp = () => {
+    return (
+      <div className="block project rectangle" onClick={() => window.location.assign("https://widgets.jhuang.ca")}>
+        <img className="app-logo" src={widgetsLogo} alt="Logo" />
+        <span className="app-name">Widgets</span>
+      </div>
+    );
+  };
+
   const [isAboutMeHovered, setAboutMeHovered] = useState(false);
   const aboutMe = () => {
     return (
@@ -101,8 +113,8 @@ function Home(props: any) {
         {jsonViewerApp()}
         {colourPickerApp()}
         {threeApp()}
-        {/* <div className="block one-by-three"></div> */}
-        {aboutMe()}
+        {widgetsApp()}
+        {/* {aboutMe()} */}
       </div>
     </div>
   );
