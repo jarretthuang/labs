@@ -19,9 +19,9 @@ export default function RootLayout({
       <meta
         name="theme-color"
         media="(prefers-color-scheme: dark)"
-        content="#ffffff"
+        content="#000000"
       />
-      <meta name="theme-color" content="#000000" />
+      <meta name="theme-color" content="#ffffff" />
       <body
         className={`${font.className} antialiased`}
       >
