@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-mono-1000 dark:text-mono-100 font-sans;
+    @apply bg-gradient-to-br from-white to-mono-100 dark:from-black dark:to-mono-900
+  }
+
+  body * {
+    @apply duration-200 ease-in-out;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
