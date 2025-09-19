@@ -62,10 +62,15 @@ export default function SignupForm() {
             name="password"
             autoComplete="new-password"
             required
+            minLength={8}
             value={password}
+            aria-describedBy="password-hint"
             onChange={(e) => setPassword(e.target.value)}
           ></input>
         </div>
+        <span id="password-hint" className="text-xs opacity-30">
+          Your password must contain at least 8 characters.
+        </span>
         <button className="self-end">Signup</button>
       </form>
       {response && (
