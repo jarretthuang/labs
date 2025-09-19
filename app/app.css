@@ -18,3 +18,15 @@ body {
 a {
   @apply hover:text-gray-600 duration-200 hover:underline;
 }
+
+input {
+  @apply border-gray-300 border-1 rounded-md focus-visible:outline-gray-400 p-1;
+}
+
+button {
+  @apply bg-gray-100 rounded-lg p-2 hover:bg-gray-200 duration-200 cursor-pointer;
+}
+
+h1 {
+  @apply text-2xl py-4 font-semibold;
+}
