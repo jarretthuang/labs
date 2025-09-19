@@ -11,6 +11,7 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import { Analytics } from "@vercel/analytics/react";
+import { useMemo } from "react";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -25,13 +26,36 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
-type RouteHandle = {
+export type RouteHandle = {
   title: string;
+  path: string;
 };
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const matches = useMatches();
-  const handle = matches.at(-1)?.handle as RouteHandle;
+  const handles = (matches ?? [])
+    .map((match) => match.handle as RouteHandle)
+    .filter(Boolean);
+
+  const breadcrumbs = useMemo(() => {
+    const result = [];
+    const currentPaths = [];
+    for (const handle of handles) {
+      if (handle.path) {
+        currentPaths.push(handle.path);
+      }
+      const fullPath = `/${currentPaths.join("/")}`;
+      if (result.length > 0) {
+        result.push(<span>/</span>);
+      }
+      result.push(
+        <a href={fullPath} className="lowercase text-xl text-gray-800">
+          {handle.title}
+        </a>,
+      );
+    }
+    return <>{result}</>;
+  }, [handles]);
 
   return (
     <html lang="en">
@@ -51,9 +75,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   className="w-36 pointer-events-none select-none object-contain"
                 ></img>
               </a>
-              <span className="lowercase text-xl text-gray-800">
-                {handle?.title}{" "}
-              </span>
+              {breadcrumbs}
             </header>
             <div className="flex-1 flex p-8">{children}</div>
           </section>

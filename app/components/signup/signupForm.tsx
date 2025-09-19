@@ -1,12 +1,14 @@
 import { useState, type FormEvent } from "react";
-import type { Route } from "../+types/root";
+import type { Route } from "../../+types/root";
+import type { RouteHandle } from "~/root";
 
 export function meta({}: Route.MetaArgs) {
   return [{ title: "signup - jarrett's web labs" }];
 }
 
-export const handle = {
+export const handle: RouteHandle = {
   title: "Signup form",
+  path: "signup",
 };
 
 export default function SignupForm() {
@@ -68,7 +70,7 @@ export default function SignupForm() {
             required
             minLength={8}
             value={password}
-            aria-describedBy="password-hint"
+            aria-describedby="password-hint"
             onChange={(e) => setPassword(e.target.value)}
           ></input>
         </div>

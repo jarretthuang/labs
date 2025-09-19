@@ -1,4 +1,5 @@
 import type { Route } from "./+types/home";
+import type { RouteHandle } from "~/root";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -6,10 +7,6 @@ export function meta({}: Route.MetaArgs) {
     { name: "description", content: "Jarrett Huang's Web Experiments" },
   ];
 }
-
-export const handle = {
-  title: "Home",
-};
 
 export default function Home() {
   return (
