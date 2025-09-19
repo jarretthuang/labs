@@ -8,6 +8,7 @@ export function meta({}: Route.MetaArgs) {
 export default function SignupForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [responseStatus, setResponseStatus] = useState("");
   const [response, setResponse] = useState("");
 
   const onSubmit = async (event: FormEvent) => {
@@ -22,9 +23,17 @@ export default function SignupForm() {
         "Content-Type": "application/json",
       },
     });
+    setResponseStatus(response.ok ? "success" : "failure");
     const text = await response.text();
     setResponse(text);
   };
+
+  const statusEmoji =
+    responseStatus === "success"
+      ? "✅"
+      : responseStatus === "failure"
+        ? "❌"
+        : "";
 
   return (
     <div>
@@ -61,7 +70,7 @@ export default function SignupForm() {
       </form>
       {response && (
         <div>
-          <h1>Response</h1>
+          <h1>Response {statusEmoji}</h1>
           <span>{response}</span>
         </div>
       )}
