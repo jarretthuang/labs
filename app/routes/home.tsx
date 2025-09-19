@@ -7,6 +7,10 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
+export const handle = {
+  title: "Home",
+};
+
 export default function Home() {
   return (
     <ul>

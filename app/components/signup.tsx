@@ -5,6 +5,10 @@ export function meta({}: Route.MetaArgs) {
   return [{ title: "signup - jarrett's web labs" }];
 }
 
+export const handle = {
+  title: "Signup form",
+};
+
 export default function SignupForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,7 +41,7 @@ export default function SignupForm() {
 
   return (
     <div>
-      <h1>Signup Form</h1>
+      <h1>Form</h1>
       <form
         className="flex flex-col gap-2 border-2 border-gray-100 rounded-lg p-8 w-fit"
         onSubmit={onSubmit}
