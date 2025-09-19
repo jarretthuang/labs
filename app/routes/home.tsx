@@ -13,9 +13,12 @@ export const handle = {
 
 export default function Home() {
   return (
-    <ul>
+    <ul className="flex flex-col gap-4">
       <li>
         <a href="/signup">Signup Form</a>
+      </li>
+      <li>
+        <a href="/checkboxes">Nested Checkboxes</a>
       </li>
     </ul>
   );

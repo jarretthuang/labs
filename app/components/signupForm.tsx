@@ -43,7 +43,7 @@ export default function SignupForm() {
     <div>
       <h1>Form</h1>
       <form
-        className="flex flex-col gap-2 border-2 border-gray-100 rounded-lg p-8 w-fit"
+        className="flex flex-col gap-2 border-2 border-gray-100 rounded-lg p-12 w-fit"
         onSubmit={onSubmit}
       >
         <div className="flex gap-2 items-center justify-end">

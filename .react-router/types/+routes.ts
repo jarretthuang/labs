@@ -16,19 +16,26 @@ type Pages = {
   "/signup": {
     params: {};
   };
+  "/checkboxes": {
+    params: {};
+  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/signup";
+    page: "/" | "/signup" | "/checkboxes";
   };
   "routes/home.tsx": {
     id: "routes/home";
     page: "/";
   };
-  "./components/signup.tsx": {
-    id: "components/signup";
+  "./components/signupForm.tsx": {
+    id: "components/signupForm";
     page: "/signup";
+  };
+  "./components/nestedCheckboxes.tsx": {
+    id: "components/nestedCheckboxes";
+    page: "/checkboxes";
   };
 };

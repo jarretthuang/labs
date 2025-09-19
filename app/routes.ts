@@ -2,5 +2,6 @@ import { type RouteConfig, index, route } from "@react-router/dev/routes";
 
 export default [
   index("routes/home.tsx"),
-  route("signup", "./components/signup.tsx"),
+  route("signup", "./components/signupForm.tsx"),
+  route("checkboxes", "./components/nestedCheckboxes.tsx"),
 ] satisfies RouteConfig;

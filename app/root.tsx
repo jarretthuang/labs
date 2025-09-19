@@ -50,7 +50,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   className="w-36 pointer-events-none select-none object-contain"
                 ></img>
               </a>
-              <h1 className="uppercase">{handle?.title} </h1>
+              <span className="lowercase text-xl text-gray-800">
+                {handle?.title}{" "}
+              </span>
             </header>
             <div className="flex-1 flex p-8">{children}</div>
           </section>
