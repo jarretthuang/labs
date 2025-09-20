@@ -76,7 +76,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <a href="/">
                 <img
                   src="logo.png"
-                  className="w-36 pointer-events-none select-none object-contain"
+                  className="w-36 min-w-24 pointer-events-none select-none object-contain"
                 ></img>
               </a>
               {breadcrumbs}
