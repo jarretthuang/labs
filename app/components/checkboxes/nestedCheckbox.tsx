@@ -8,11 +8,13 @@ export default function NestedCheckbox({ item }: { item: CheckboxItem }) {
     setState((prev) => {
       const deepClone = JSON.parse(JSON.stringify(prev)) as CheckboxItem;
       let target = prev;
+      const parents = [];
       while (indices.length > 0) {
+        parents.push(target);
         target = (target.children ?? [])[indices.shift()!];
       }
       updateDescendants(target, checked);
-      updateRoot(deepClone);
+      updateParents(parents);
       return deepClone;
     });
   };
@@ -36,18 +38,17 @@ function updateDescendants(root: CheckboxItem, checked: boolean): void {
   }
 }
 
-function updateRoot(node: CheckboxItem): void {
-  const children = node.children ?? [];
-  if (children.length === 0) {
-    return;
-  } else {
-    children.forEach(updateRoot);
+function updateParents(nodes: CheckboxItem[]): void {
+  console.log(nodes);
+  while (nodes.length > 0) {
+    const current = nodes.pop()!;
+    const children = current.children ?? [];
     if (children.every((child) => child.checked === true)) {
-      node.checked = true;
-    } else if (children.every((child) => child.checked === false)) {
-      node.checked = false;
+      current.checked = true;
+    } else if (children.every((child) => !child.checked)) {
+      current.checked = false;
     } else {
-      node.checked = "indeterminate";
+      current.checked = "indeterminate";
     }
   }
 }
