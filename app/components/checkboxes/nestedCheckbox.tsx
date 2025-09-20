@@ -8,7 +8,7 @@ export default function NestedCheckbox({ item }: { item: CheckboxItem }) {
   const handleOnChange = useCallback((indices: number[], checked: boolean) => {
     setState((prev) => {
       const deepClone = JSON.parse(JSON.stringify(prev)) as CheckboxItem;
-      let target = prev;
+      let target = deepClone;
       const parents = [];
       while (indices.length > 0) {
         parents.push(target);
@@ -35,9 +35,7 @@ function updateDescendants(root: CheckboxItem, checked: boolean): void {
   let nodes = [root];
   for (let i = 0; i < nodes.length; i++) {
     const current = nodes[i];
-    console.log(`before: ${current.checked}`);
     current.checked = checked;
-    console.log(`after: ${current.checked}`);
     nodes.push(...(current.children ?? []));
   }
 }
