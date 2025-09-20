@@ -15,6 +15,7 @@ export default function NestedCheckbox({ item }: { item: CheckboxItem }) {
       }
       updateDescendants(target, checked);
       updateParents(parents);
+      console.log(JSON.stringify(deepClone));
       return deepClone;
     });
   };
@@ -39,7 +40,6 @@ function updateDescendants(root: CheckboxItem, checked: boolean): void {
 }
 
 function updateParents(nodes: CheckboxItem[]): void {
-  console.log(nodes);
   while (nodes.length > 0) {
     const current = nodes.pop()!;
     const children = current.children ?? [];
