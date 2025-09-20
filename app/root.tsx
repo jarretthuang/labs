@@ -46,10 +46,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
       }
       const fullPath = `/${currentPaths.join("/")}`;
       if (result.length > 0) {
-        result.push(<span>/</span>);
+        result.push(<span key={`${fullPath}/`}>/</span>);
       }
       result.push(
-        <a href={fullPath} className="lowercase text-xl text-gray-800">
+        <a
+          key={fullPath}
+          href={fullPath}
+          className="lowercase text-xl text-gray-800"
+        >
           {handle.title}
         </a>,
       );

@@ -1,3 +1,10 @@
+export interface CheckboxItem {
+  id: number;
+  name: string;
+  checked?: boolean | "indeterminate";
+  children?: CheckboxItem[];
+}
+
 export const checkboxes = [
   {
     id: 1,
