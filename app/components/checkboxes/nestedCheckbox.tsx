@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Checkbox from "./checkbox";
 import type { CheckboxItem } from "./models";
 
 export default function NestedCheckbox({ item }: { item: CheckboxItem }) {
   const [state, setState] = useState(item);
-  const handleOnChange = (indices: number[], checked: boolean) => {
+
+  const handleOnChange = useCallback((indices: number[], checked: boolean) => {
     setState((prev) => {
       console.log(`indices: ${indices}, checked: ${indices}`);
       const deepClone = JSON.parse(JSON.stringify(prev)) as CheckboxItem;
@@ -19,7 +20,8 @@ export default function NestedCheckbox({ item }: { item: CheckboxItem }) {
       console.log(JSON.stringify(deepClone));
       return deepClone;
     });
-  };
+  }, []);
+
   return (
     <Checkbox
       key={state.id}
