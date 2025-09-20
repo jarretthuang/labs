@@ -4,41 +4,51 @@ import type { CheckboxItem } from "./models";
 type ChekboxProps = {
   item: CheckboxItem;
   level: number;
+  indices: number[];
+  onChanged: (indices: number[], checked: boolean) => void;
 };
 
-export default function Checkbox({ item, level }: ChekboxProps) {
+export default function Checkbox({
+  item,
+  level,
+  indices,
+  onChanged,
+}: ChekboxProps) {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [checked, setChecked] = useState<boolean | "indeterminate">(
-    item.checked ?? false,
-  );
 
   useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.indeterminate = checked === "indeterminate";
+    if (inputRef?.current) {
+      inputRef.current.indeterminate = item.checked === "indeterminate";
     }
-  }, []);
+  }, [item]);
 
-  const handleChange = () => {
-    setChecked(inputRef?.current?.checked ?? false);
+  const handleChange = (e: any) => {
+    onChanged(indices, inputRef?.current?.checked ?? false);
   };
 
   return (
     <>
       <div
-        className="flex items-center gap-2"
+        className="flex items-center gap-4"
         style={{ paddingLeft: `${level * 20}px` }}
       >
         <input
           id={item.id.toString()}
           type="checkbox"
-          checked={!!checked}
+          checked={!!item.checked}
           ref={inputRef}
-          onChange={() => handleChange()}
+          onChange={(e) => handleChange(e)}
         ></input>
         <label htmlFor={item.id.toString()}>{item.name}</label>
       </div>
-      {item.children?.map((child) => (
-        <Checkbox item={child} level={level + 1} />
+      {item.children?.map((child, index) => (
+        <Checkbox
+          key={child.id}
+          item={child}
+          level={level + 1}
+          indices={[...indices, index]}
+          onChanged={onChanged}
+        />
       ))}
     </>
   );

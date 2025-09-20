@@ -27,6 +27,10 @@ button {
   @apply bg-gray-100 rounded-lg p-2 hover:bg-gray-200 duration-200 cursor-pointer;
 }
 
+input[type="checkbox"] {
+  @apply scale-180 cursor-pointer;
+}
+
 h1 {
   @apply text-2xl py-4 font-semibold;
 }
