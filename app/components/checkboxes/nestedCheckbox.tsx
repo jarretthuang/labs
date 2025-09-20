@@ -10,9 +10,10 @@ export default function NestedCheckbox({ item }: { item: CheckboxItem }) {
       const deepClone = JSON.parse(JSON.stringify(prev)) as CheckboxItem;
       let target = deepClone;
       const parents = [];
-      while (indices.length > 0) {
+      const paths = [...indices];
+      while (paths.length > 0) {
         parents.push(target);
-        target = (target.children ?? [])[indices.shift()!];
+        target = (target.children ?? [])[paths.shift()!];
       }
       updateDescendants(target, checked);
       updateParents(parents);

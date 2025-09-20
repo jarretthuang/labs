@@ -20,7 +20,7 @@ export default function Checkbox({
     if (inputRef?.current) {
       inputRef.current.indeterminate = item.checked === "indeterminate";
     }
-  }, [item]);
+  }, [item.checked]);
 
   const handleChange = (e: any) => {
     onChanged(indices, inputRef?.current?.checked ?? false);
@@ -35,7 +35,7 @@ export default function Checkbox({
         <input
           id={item.id.toString()}
           type="checkbox"
-          checked={!!item.checked}
+          checked={item.checked === true}
           ref={inputRef}
           onChange={(e) => handleChange(e)}
         ></input>
