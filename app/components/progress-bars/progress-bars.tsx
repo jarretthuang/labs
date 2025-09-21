@@ -6,7 +6,7 @@ export const meta = () => PROGRESS_BARS.meta;
 export const handle = PROGRESS_BARS.routeHandle;
 
 export default function ProgressBars() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   const renderBars = () => {
     const bars = [];
@@ -18,7 +18,7 @@ export default function ProgressBars() {
 
   return (
     <div className="flex flex-col gap-2 w-full">
-      <button className="w-16" onClick={() => setCount((c) => c + 1)}>
+      <button className="w-fit" onClick={() => setCount((c) => c + 1)}>
         Add
       </button>
       {renderBars()}

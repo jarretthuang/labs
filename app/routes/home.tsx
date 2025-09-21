@@ -13,7 +13,9 @@ export default function Home() {
     <ul className="flex flex-col gap-4">
       {VISIBLE_COMPONENTS.map((component) => (
         <li key={component.id}>
-          <a href={component.url}>{component.name}</a>
+          <a href={component.url} className="lowercase">
+            {component.name}
+          </a>
         </li>
       ))}
     </ul>

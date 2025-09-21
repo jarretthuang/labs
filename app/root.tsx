@@ -70,17 +70,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body className="flex justify-center">
-        <main className="flex flex-col w-full max-w-4xl min-h-screen p-8">
+        <main className="flex flex-col w-full max-w-4xl min-h-screen p-8 gap-2">
           <header className="flex flex-col">
-            <a href="/">
+            <div className="flex flex-col md:flex-row md:items-end">
               <img
                 src="logo.png"
                 className="w-32 min-w-24 pointer-events-none select-none object-contain"
               ></img>
-            </a>
-            <ul className="p-4 flex gap-2">{breadcrumbs}</ul>
+              <span className="p-4 italic text-gray-800">
+                <a href="https://jhuang.ca">jarrett huang</a>'s web experiments
+              </span>
+            </div>
+            <nav className="p-4 flex gap-2 items-center">{breadcrumbs}</nav>
           </header>
-          <div className="flex-1 flex p-4">{children}</div>
+          <div className="flex-1 flex p-5 border-t-1 border-t-gray-200">
+            {children}
+          </div>
           <footer className="w-full flex justify-center">
             <span className="text-xs opacity-30 p-12">
               @ {new Date().getFullYear()} jarrett huang. all rights reserved.

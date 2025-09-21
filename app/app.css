@@ -8,15 +8,19 @@
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  @apply bg-white;
 
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) {
     color-scheme: dark;
-  }
+  } */
 }
 
 a {
   @apply hover:text-gray-600 duration-200 hover:underline;
+}
+
+nav a {
+  @apply bg-gray-100 px-2 py-1 rounded-lg;
 }
 
 input {
@@ -24,13 +28,17 @@ input {
 }
 
 button {
-  @apply bg-gray-100 rounded-lg p-2 hover:bg-gray-200 duration-200 cursor-pointer;
+  @apply bg-gray-100 rounded-lg py-2 px-4 hover:bg-gray-200 duration-200 cursor-pointer;
 }
 
 input[type="checkbox"] {
-  @apply scale-180 m-1 cursor-pointer;
+  @apply scale-180 m-1 cursor-pointer accent-gray-500;
 }
 
 h1 {
   @apply text-2xl py-4 font-semibold;
+}
+
+::selection {
+  @apply bg-gray-500 text-white;
 }
