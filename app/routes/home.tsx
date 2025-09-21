@@ -1,5 +1,6 @@
 import type { Route } from "./+types/home";
 import type { RouteHandle } from "~/root";
+import { COMPONENTS } from "./components";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -11,12 +12,11 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <ul className="flex flex-col gap-4">
-      <li>
-        <a href="/signup">Signup Form</a>
-      </li>
-      <li>
-        <a href="/checkboxes">Nested Checkboxes</a>
-      </li>
+      {COMPONENTS.map((component) => (
+        <li key={component.id}>
+          <a href={component.url}>{component.name}</a>
+        </li>
+      ))}
     </ul>
   );
 }
