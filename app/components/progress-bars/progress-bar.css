@@ -1,0 +1,9 @@
+.progress-bar {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 500ms ease-in-out;
+}
+
+.progress-bar__filled {
+  transform: scaleX(1);
+}

@@ -69,23 +69,23 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
-        <main className="w-screen h-screen flex flex-col">
-          <section className="m-auto w-full h-full max-w-5xl flex flex-col p-12">
-            <header className="flex gap-4 items-center">
-              <a href="/">
-                <img
-                  src="logo.png"
-                  className="w-36 min-w-24 pointer-events-none select-none object-contain"
-                ></img>
-              </a>
-              {breadcrumbs}
-            </header>
-            <div className="flex-1 flex p-8">{children}</div>
-          </section>
-          <span className="text-xs opacity-30 absolute bottom-0 right-0 p-12">
-            @ {new Date().getFullYear()} jarrett huang. all rights reserved.
-          </span>
+      <body className="flex justify-center">
+        <main className="flex flex-col w-full max-w-4xl min-h-screen p-8">
+          <header className="flex flex-col">
+            <a href="/">
+              <img
+                src="logo.png"
+                className="w-32 min-w-24 pointer-events-none select-none object-contain"
+              ></img>
+            </a>
+            <ul className="p-4 flex gap-2">{breadcrumbs}</ul>
+          </header>
+          <div className="flex-1 flex p-4">{children}</div>
+          <footer className="w-full flex justify-center">
+            <span className="text-xs opacity-30 p-12">
+              @ {new Date().getFullYear()} jarrett huang. all rights reserved.
+            </span>
+          </footer>
         </main>
         <ScrollRestoration />
         <Scripts />

@@ -29,8 +29,8 @@ export default function Checkbox({
   return (
     <>
       <div
-        className="flex items-center gap-4"
-        style={{ paddingLeft: `${level * 20}px` }}
+        className="flex items-center gap-2"
+        style={{ paddingLeft: `${level * 25}px` }}
       >
         <input
           id={item.id.toString()}

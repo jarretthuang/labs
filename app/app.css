@@ -28,7 +28,7 @@ button {
 }
 
 input[type="checkbox"] {
-  @apply scale-180 cursor-pointer;
+  @apply scale-180 m-1 cursor-pointer;
 }
 
 h1 {

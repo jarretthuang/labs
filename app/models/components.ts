@@ -36,7 +36,14 @@ export const AUTH_CODE_INPUT = new Component(
   true,
 );
 
-const ALL_COMPONENTS = [SIGNUP_FORM, NESTED_CHECKBOXES, AUTH_CODE_INPUT];
+export const PROGRESS_BARS = new Component("progress-bars", "Progress Bars");
+
+const ALL_COMPONENTS = [
+  SIGNUP_FORM,
+  NESTED_CHECKBOXES,
+  AUTH_CODE_INPUT,
+  PROGRESS_BARS,
+];
 
 export const VISIBLE_COMPONENTS = ALL_COMPONENTS.filter(
   (component) => !component.hidden,
