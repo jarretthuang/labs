@@ -1,15 +1,8 @@
 import { useState, type FormEvent } from "react";
-import type { Route } from "../../+types/root";
-import type { RouteHandle } from "~/root";
+import { SIGNUP_FORM } from "~/models/components";
 
-export function meta({}: Route.MetaArgs) {
-  return [{ title: "signup - jarrett's web labs" }];
-}
-
-export const handle: RouteHandle = {
-  title: "Signup form",
-  path: "signup",
-};
+export const meta = () => SIGNUP_FORM.meta;
+export const handle = SIGNUP_FORM.routeHandle;
 
 export default function SignupForm() {
   const [email, setEmail] = useState("");

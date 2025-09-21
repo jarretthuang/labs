@@ -1,28 +1,40 @@
-export type Component = {
-  id: string;
-  name: string;
-  url: string;
-  hidden?: boolean;
-};
+import type { RouteHandle } from "~/root";
 
-const SIGNUP_FORM: Component = {
-  id: "signup-form",
-  name: "Signup form",
-  url: "/signup-form",
-};
+export class Component {
+  constructor(
+    public readonly id: string,
+    public readonly name: string,
+    public readonly hidden?: boolean,
+  ) {}
 
-const NESTED_CHECKBOXES: Component = {
-  id: "nested-checkboxes",
-  name: "Nested checkboxes",
-  url: "/nested-checkboxes",
-};
+  public get url(): string {
+    return `/${this.id}`;
+  }
 
-const AUTH_CODE_INPUT: Component = {
-  id: "auth-code-input",
-  name: "Auth code input",
-  url: "/auth-code-input",
-  hidden: true,
-};
+  public get meta(): any[] {
+    return [{ title: `${this.name} - JH Labs` }];
+  }
+
+  public get routeHandle(): RouteHandle {
+    return {
+      title: this.name,
+      path: this.id,
+    };
+  }
+}
+
+export const SIGNUP_FORM = new Component("signup-form", "Signup Form");
+
+export const NESTED_CHECKBOXES = new Component(
+  "nested-checkboxes",
+  "Nested Checkboxes",
+);
+
+export const AUTH_CODE_INPUT = new Component(
+  "auth-code-input",
+  "Auth Code Input",
+  true,
+);
 
 const ALL_COMPONENTS = [SIGNUP_FORM, NESTED_CHECKBOXES, AUTH_CODE_INPUT];
 
