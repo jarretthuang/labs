@@ -57,7 +57,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <a
           key={fullPath}
           href={fullPath}
-          className="lowercase text-xl text-gray-800"
+          className="lowercase text-xl text-gray-800 font-medium"
         >
           {component.name}
         </a>,
@@ -105,7 +105,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </div>
           <footer className="w-full flex justify-center">
             <span className="text-xs opacity-30 p-12">
-              @ {new Date().getFullYear()} jarrett huang. all rights reserved.
+              @ {new Date().getFullYear()}{" "}
+              <a href="https://jhuang.ca" target="_blank">
+                jarrett huang
+              </a>{" "}
+              |{" "}
+              <a
+                href="https://github.com/jarretthuang/labs.jhuang.ca"
+                target="_blank"
+              >
+                github
+              </a>
             </span>
           </footer>
         </main>

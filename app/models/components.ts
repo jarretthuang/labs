@@ -28,7 +28,7 @@ export const SIGNUP_FORM = new Component(
   "Signup Form",
   `<span>
       An HTML form that supports native validation and autocomplete.
-      On submit, it sends a POST request to a dummy (but real) endpoint at <a href="https://api.jhuang.ca" target="_blank">https://api.jhuang.ca</a>/signup.
+      On submit, it sends a POST request to a dummy (but real) endpoint at <a href="https://api.jhuang.ca" target="_blank">https://api.jhuang.ca/signup</a>.
   </span>`,
 );
 
@@ -54,7 +54,16 @@ export const PROGRESS_BARS = new Component(
 export const ACCORDION = new Component(
   "accordion",
   "Accordion",
-  "Simple accordion component",
+  "A simple accordion component",
+);
+
+export const DATA_TABLE = new Component(
+  "data-table",
+  "Data Table",
+  `<span>
+      A data table that supports server-side pagination via infinite scrolling.
+      On scrolling to the bottom, a new POST request will be sent to <a href="https://api.jhuang.ca" target="_blank">https://api.jhuang.ca/rows</a> to fetch the next 30 rows, until the 137th, i.e. the final row, is reached.
+  </span>`,
 );
 
 const ALL_COMPONENTS = [
@@ -63,6 +72,7 @@ const ALL_COMPONENTS = [
   AUTH_CODE_INPUT,
   PROGRESS_BARS,
   ACCORDION,
+  DATA_TABLE,
 ];
 
 export const VISIBLE_COMPONENTS = ALL_COMPONENTS.filter(
