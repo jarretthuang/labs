@@ -28,7 +28,7 @@ export const SIGNUP_FORM = new Component(
   "Signup Form",
   `<span>
       An HTML form that supports native validation and autocomplete.
-      On submit, it sends a POST request to a dummy (but real) endpoint at <a href="https://api.jhuang.ca">https://api.jhuang.ca</a>/signup.
+      On submit, it sends a POST request to a dummy (but real) endpoint at <a href="https://api.jhuang.ca" target="_blank">https://api.jhuang.ca</a>/signup.
   </span>`,
 );
 
@@ -41,7 +41,7 @@ export const NESTED_CHECKBOXES = new Component(
 export const AUTH_CODE_INPUT = new Component(
   "auth-code-input",
   "Auth Code Input",
-  "Auth code input.",
+  "",
   true,
 );
 
@@ -51,11 +51,18 @@ export const PROGRESS_BARS = new Component(
   "On clicking the add button, a new progress bar will be added and it will fill automatically.",
 );
 
+export const ACCORDION = new Component(
+  "accordion",
+  "Accordion",
+  "Simple accordion component",
+);
+
 const ALL_COMPONENTS = [
   SIGNUP_FORM,
   NESTED_CHECKBOXES,
   AUTH_CODE_INPUT,
   PROGRESS_BARS,
+  ACCORDION,
 ];
 
 export const VISIBLE_COMPONENTS = ALL_COMPONENTS.filter(

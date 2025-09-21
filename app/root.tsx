@@ -83,7 +83,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 className="w-32 min-w-24 pointer-events-none select-none object-contain"
               ></img>
               <span className="p-4 italic text-gray-800">
-                <a href="https://jhuang.ca">jarrett huang</a>'s web experiments
+                <a href="https://jhuang.ca" target="_blank">
+                  jarrett huang
+                </a>
+                's web experiments
               </span>
             </div>
             <nav className="p-4 flex gap-2 items-center">{breadcrumbs}</nav>
