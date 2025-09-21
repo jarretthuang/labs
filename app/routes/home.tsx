@@ -1,6 +1,5 @@
 import type { Route } from "./+types/home";
-import type { RouteHandle } from "~/root";
-import { COMPONENTS } from "./components";
+import { VISIBLE_COMPONENTS } from "../models/components";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -12,7 +11,7 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <ul className="flex flex-col gap-4">
-      {COMPONENTS.map((component) => (
+      {VISIBLE_COMPONENTS.map((component) => (
         <li key={component.id}>
           <a href={component.url}>{component.name}</a>
         </li>

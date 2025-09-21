@@ -1,9 +1,11 @@
 import { type RouteConfig, index, route } from "@react-router/dev/routes";
+import { VISIBLE_COMPONENTS } from "./models/components";
 
 export default [
   route("", "routes/layout.tsx", [
     index("routes/home.tsx"), // this is the default child at "/"
-    route("signup", "./components/signup/signupForm.tsx"),
-    route("checkboxes", "./components/checkboxes/nestedCheckboxes.tsx"),
+    ...VISIBLE_COMPONENTS.map((component) =>
+      route(component.id, `./components/${component.id}/${component.id}.tsx`),
+    ),
   ]),
 ] satisfies RouteConfig;

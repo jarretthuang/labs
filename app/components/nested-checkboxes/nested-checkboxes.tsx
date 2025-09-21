@@ -1,7 +1,7 @@
 import type { RouteHandle } from "~/root";
 import type { Route } from "../../+types/root";
 import { checkboxes } from "./models";
-import NestedCheckbox from "./nestedCheckbox";
+import NestedCheckbox from "./nested-checkbox";
 
 export function meta({}: Route.MetaArgs) {
   return [{ title: "nested checkboxes - jarrett's web labs" }];
