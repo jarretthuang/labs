@@ -12,6 +12,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import { Analytics } from "@vercel/analytics/react";
 import { useMemo } from "react";
+import type { Component } from "./models/components";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -27,8 +28,7 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export type RouteHandle = {
-  title: string;
-  path: string;
+  component: Component;
 };
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -37,12 +37,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
     .map((match) => match.handle as RouteHandle)
     .filter(Boolean);
 
+  const currentComponent = useMemo(() => {
+    return handles.at(-1)?.component;
+  }, [handles]);
+
   const breadcrumbs = useMemo(() => {
     const result = [];
     const currentPaths = [];
     for (const handle of handles) {
-      if (handle.path) {
-        currentPaths.push(handle.path);
+      const component = handle.component;
+      if (component.id) {
+        currentPaths.push(component.id);
       }
       const fullPath = `/${currentPaths.join("/")}`;
       if (result.length > 0) {
@@ -54,7 +59,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           href={fullPath}
           className="lowercase text-xl text-gray-800"
         >
-          {handle.title}
+          {component.name}
         </a>,
       );
     }
@@ -70,7 +75,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body className="flex justify-center">
-        <main className="flex flex-col w-full max-w-4xl min-h-screen p-8 gap-2">
+        <main className="flex flex-col w-full max-w-4xl min-h-screen p-8 gap-4">
           <header className="flex flex-col">
             <div className="flex flex-col md:flex-row md:items-end">
               <img
@@ -82,8 +87,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </span>
             </div>
             <nav className="p-4 flex gap-2 items-center">{breadcrumbs}</nav>
+            {currentComponent?.description && (
+              <p
+                className="ml-5 p-4 border-l-4 border-l-gray-400"
+                dangerouslySetInnerHTML={{
+                  __html: currentComponent?.description ?? "",
+                }}
+              ></p>
+            )}
           </header>
-          <div className="flex-1 flex p-5 border-t-1 border-t-gray-200">
+
+          <div className="flex-1 flex p-4 border-t-1 border-t-gray-200">
             {children}
           </div>
           <footer className="w-full flex justify-center">

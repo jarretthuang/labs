@@ -1,9 +1,9 @@
 import { Outlet } from "react-router";
+import { Component } from "~/models/components";
 import type { RouteHandle } from "~/root";
 
 export const handle: RouteHandle = {
-  title: "Home",
-  path: "",
+  component: new Component("", "Home", ""),
 };
 export default function Layout() {
   return <Outlet />;
