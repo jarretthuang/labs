@@ -75,10 +75,11 @@ export default function DataTable() {
           <table className="w-full flex flex-col h-fit border-collapse">
             <thead className="bg-gray-100 w-fit sticky top-0">
               <tr className="flex">
+                <th className="w-14 border-1 px-4 py-2 flex items-center border-gray-200"></th>
                 {COL_DEFS.map((col) => (
                   <th
                     key={col.id}
-                    className="border-1 flex p-4 items-center border-gray-200"
+                    className="border-1 px-4 py-2 flex items-center border-gray-200 font-semibold text-gray-500"
                     style={{ width: `${col.width}px` }}
                   >
                     <span>{col.name}</span>{" "}
@@ -87,12 +88,15 @@ export default function DataTable() {
               </tr>
             </thead>
             <tbody className="flex-1 w-fit">
-              {rows.map((row) => (
+              {rows.map((row, index) => (
                 <tr key={row.id} className="flex">
+                  <td className="w-14 border-1 px-4 py-2 items-center border-gray-100 bg-gray-50 font-medium text-right">
+                    {index + 1}
+                  </td>
                   {COL_DEFS.map((col) => (
                     <td
                       key={`${row.id}.${col.id}`}
-                      className="border-1 p-4 items-center border-gray-100 truncate"
+                      className="border-1 px-4 py-2 items-center border-gray-100 truncate"
                       style={{ width: `${col.width}px` }}
                     >
                       <span>{(row as any)[col.field] ?? "N/A"}</span>
@@ -104,7 +108,7 @@ export default function DataTable() {
           </table>
         </div>
       </div>
-      <div className="flex justify-end p-2 items-center gap-2 text-gray-900">
+      <div className="flex justify-end p-2 items-center gap-2 text-gray-600">
         <span>
           Rows: {rows.length} / {end ? rows.length : "?"}{" "}
         </span>

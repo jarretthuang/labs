@@ -14,16 +14,10 @@ export type Row = {
 
 export const COL_DEFS: ColDef[] = [
   {
-    id: "id",
-    field: "id",
-    name: "ID",
-    width: 300,
-  },
-  {
     id: "name",
     field: "name",
     name: "Name",
-    width: 300,
+    width: 250,
   },
   {
     id: "gender",
@@ -36,5 +30,11 @@ export const COL_DEFS: ColDef[] = [
     field: "age",
     name: "Age",
     width: 100,
+  },
+  {
+    id: "id",
+    field: "id",
+    name: "ID",
+    width: 300,
   },
 ];
