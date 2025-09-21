@@ -75,7 +75,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body className="flex justify-center">
-        <main className="flex flex-col w-full max-w-4xl min-h-screen p-8 gap-4">
+        <main className="flex flex-col w-full max-w-4xl min-h-screen p-4 md:p-8 gap-4">
           <header className="flex flex-col">
             <div className="flex flex-col md:flex-row md:items-end">
               <img

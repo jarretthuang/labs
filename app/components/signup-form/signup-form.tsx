@@ -35,15 +35,16 @@ export default function SignupForm() {
         : "";
 
   return (
-    <div>
+    <div className="w-full">
       <h1>Form</h1>
       <form
-        className="flex flex-col gap-2 border-2 border-gray-100 rounded-lg p-12 w-fit"
+        className="flex flex-col gap-2 border-2 border-gray-100 rounded-lg p-12 w-full max-w-fit md:items-end"
         onSubmit={onSubmit}
       >
-        <div className="flex gap-2 items-center justify-end">
+        <div className="flex gap-2 items-center justify-end flex-col md:flex-row">
           <label htmlFor="email-input">Email</label>
           <input
+            className="w-full"
             id="email-input"
             type="email"
             name="email"
@@ -53,9 +54,10 @@ export default function SignupForm() {
             onChange={(e) => setEmail(e.target.value)}
           ></input>
         </div>
-        <div className="flex gap-2 items-center justify-end">
+        <div className="flex gap-2 items-center justify-end flex-col md:flex-row">
           <label htmlFor="password-input">Password</label>
           <input
+            className="w-full"
             id="password-input"
             type="password"
             name="password"
@@ -67,7 +69,7 @@ export default function SignupForm() {
             onChange={(e) => setPassword(e.target.value)}
           ></input>
         </div>
-        <span id="password-hint" className="text-xs opacity-30">
+        <span id="password-hint" className="text-xs opacity-30 w-fit">
           Your password must contain at least 8 characters.
         </span>
         <button className="self-end">Signup</button>
