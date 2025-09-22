@@ -65,7 +65,7 @@ export default function DataTable() {
 
   return (
     <div className="flex w-full flex-col gap-4">
-      <div className="w-full max-h-80 border-gray-200 border-2 rounded-xl overflow-hidden relative">
+      <div className="w-full h-80 border-gray-200 border-2 rounded-xl overflow-hidden relative">
         {isLoading && (
           <div className="w-full h-full absolute top-0 left-0 bg-white/80 z-20 flex">
             <span className="m-auto">Loading...</span>

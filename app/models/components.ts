@@ -66,6 +66,12 @@ export const DATA_TABLE = new Component(
   </span>`,
 );
 
+export const MODAL_DIALOG = new Component(
+  "modal-dialog",
+  "Modal Dialog",
+  "A simple modal dialog",
+);
+
 const ALL_COMPONENTS = [
   SIGNUP_FORM,
   NESTED_CHECKBOXES,
@@ -73,6 +79,7 @@ const ALL_COMPONENTS = [
   PROGRESS_BARS,
   ACCORDION,
   DATA_TABLE,
+  MODAL_DIALOG,
 ];
 
 export const VISIBLE_COMPONENTS = ALL_COMPONENTS.filter(
