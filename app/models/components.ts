@@ -72,6 +72,12 @@ export const MODAL_DIALOG = new Component(
   "A generic modal dialog that supports any type of content.",
 );
 
+export const TIC_TAC_TOE = new Component(
+  "tic-tac-toe",
+  "Tic-tac-toe",
+  "A game of tic-tac-toe.",
+);
+
 const ALL_COMPONENTS = [
   SIGNUP_FORM,
   NESTED_CHECKBOXES,
@@ -80,6 +86,7 @@ const ALL_COMPONENTS = [
   ACCORDION,
   DATA_TABLE,
   MODAL_DIALOG,
+  TIC_TAC_TOE,
 ];
 
 export const VISIBLE_COMPONENTS = ALL_COMPONENTS.filter(
