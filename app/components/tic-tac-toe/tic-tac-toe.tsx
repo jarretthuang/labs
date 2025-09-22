@@ -44,10 +44,10 @@ export default function TicTacToe() {
         {gameState.map((slotState, slotIndex) => (
           <div
             key={slotIndex}
-            className={`w-16 h-16 flex border-1 border-gray-300 cursor-pointer select-none ${slotState !== undefined || winner !== undefined ? "pointer-events-none" : ""}`}
+            className={`w-20 h-20 flex border-1 border-gray-300 cursor-pointer hover:bg-gray-200 active:bg-gray-200 duration-200 select-none ${slotState !== undefined || winner !== undefined ? "pointer-events-none" : ""}`}
             onClick={() => takeAction(slotIndex)}
           >
-            <span className="m-auto text-2xl">
+            <span className="m-auto text-4xl">
               {slotState === 1 ? "⭕" : slotState === 2 ? "❌" : ""}
             </span>
           </div>
