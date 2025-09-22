@@ -69,7 +69,7 @@ export const DATA_TABLE = new Component(
 export const MODAL_DIALOG = new Component(
   "modal-dialog",
   "Modal Dialog",
-  "A simple modal dialog",
+  "A generic modal dialog that supports any type of content.",
 );
 
 const ALL_COMPONENTS = [
