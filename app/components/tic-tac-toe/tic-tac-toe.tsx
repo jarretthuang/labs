@@ -35,11 +35,13 @@ export default function TicTacToe() {
 
   return (
     <div className="flex flex-col gap-2">
-      {winner !== undefined && <span>Player {winner} has won! 🎉</span>}
-      {winner === undefined && action < 9 && (
-        <span>Player {playerNumber} is moving... ♟️</span>
-      )}
-      {winner === undefined && action === 9 && <span>It was a tie! 🤝</span>}
+      <div className="bg-gray-100 px-4 py-2 rounded-2xl font-medium text-gray-700 text-lg">
+        {winner !== undefined && <span>Player {winner} has won! 🎉</span>}
+        {winner === undefined && action < 9 && (
+          <span>Player {playerNumber} is moving... ♟️</span>
+        )}
+        {winner === undefined && action === 9 && <span>It was a tie! 🤝</span>}
+      </div>
       <div className="grid grid-cols-3 grid-rows-3 bg-gray-50 w-fit h-fit">
         {gameState.map((slotState, slotIndex) => (
           <div
