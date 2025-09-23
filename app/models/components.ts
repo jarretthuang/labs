@@ -27,7 +27,7 @@ export const SIGNUP_FORM = new Component(
   "signup-form",
   "Signup Form",
   `<span>
-      An HTML form that supports native validation and autocomplete.
+      A simple form component that supports native validation and autocomplete.
       On submit, it sends a POST request to a dummy (but real) endpoint at <a href="https://api.jhuang.ca" target="_blank">https://api.jhuang.ca/signup</a>.
   </span>`,
 );

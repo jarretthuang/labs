@@ -9,7 +9,7 @@ export default function ModalDialogDemo() {
   const [open, setOpen] = useState<"simple" | "rich" | undefined>(undefined);
   return (
     <div>
-      <div className="flex gap-2">
+      <div className="flex flex-col gap-2">
         <button onClick={() => setOpen("simple")}>
           Open with simple content
         </button>
