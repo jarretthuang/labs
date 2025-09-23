@@ -1,16 +1,23 @@
-import { ACCORDION } from "~/models/components";
-import { ACCORDION_ITEMS } from "./models";
-import SimpleAccordion from "./simple-accordion";
+import { useState } from "react";
+import type { AccordionItem } from "./models";
 
-export const meta = () => ACCORDION.meta;
-export const handle = ACCORDION.routeHandle;
-
-export default function Accordion() {
+export default function Accordion({ item }: { item: AccordionItem }) {
+  const [expanded, setExpanded] = useState(false);
   return (
-    <div className="flex flex-col w-full max-w-md gap-4">
-      {ACCORDION_ITEMS.map((item) => (
-        <SimpleAccordion item={item} />
-      ))}
+    <div className="flex flex-col w-full bg-gray-50 rounded-lg">
+      <button
+        className="flex justify-between items-center font-medium"
+        onClick={() => setExpanded((e) => !e)}
+      >
+        <span>{item.name}</span>
+        <span
+          className="transition-all duration-200"
+          style={{ transform: expanded ? "rotate(0)" : "rotate(180deg)" }}
+        >
+          Λ
+        </span>
+      </button>
+      {expanded && <p className="p-4">{item.content}</p>}
     </div>
   );
 }

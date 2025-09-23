@@ -5,7 +5,7 @@ import Modal from "./modal";
 export const meta = () => MODAL_DIALOG.meta;
 export const handle = MODAL_DIALOG.routeHandle;
 
-export default function ModalDialog() {
+export default function ModalDialogDemo() {
   const [open, setOpen] = useState<"simple" | "rich" | undefined>(undefined);
   return (
     <div>

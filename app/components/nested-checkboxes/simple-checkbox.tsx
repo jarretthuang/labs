@@ -8,7 +8,7 @@ type ChekboxProps = {
   onChanged: (indices: number[], checked: boolean) => void;
 };
 
-export default function Checkbox({
+export default function SimpleCheckbox({
   item,
   level,
   indices,
@@ -42,7 +42,7 @@ export default function Checkbox({
         <label htmlFor={item.id.toString()}>{item.name}</label>
       </div>
       {item.children?.map((child, index) => (
-        <Checkbox
+        <SimpleCheckbox
           key={child.id}
           item={child}
           level={level + 1}

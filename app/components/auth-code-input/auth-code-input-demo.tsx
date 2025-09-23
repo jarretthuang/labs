@@ -4,7 +4,7 @@ import { AUTH_CODE_INPUT } from "~/models/components";
 export const meta = () => AUTH_CODE_INPUT.meta;
 export const handle = AUTH_CODE_INPUT.routeHandle;
 
-export default function AuthCodeInput() {
+export default function AuthCodeInputDemo() {
   const [digits, setDigits] = useState(
     new Array<number | undefined>(6).fill(undefined),
   );

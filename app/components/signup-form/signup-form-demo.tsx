@@ -4,7 +4,7 @@ import { SIGNUP_FORM } from "~/models/components";
 export const meta = () => SIGNUP_FORM.meta;
 export const handle = SIGNUP_FORM.routeHandle;
 
-export default function SignupForm() {
+export default function SignupFormDemo() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [responseStatus, setResponseStatus] = useState("");

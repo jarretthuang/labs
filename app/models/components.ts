@@ -78,6 +78,12 @@ export const TIC_TAC_TOE = new Component(
   "A game of tic-tac-toe.",
 );
 
+export const DROPDOWN = new Component(
+  "dropdown",
+  "Dropdown",
+  "A simple dropdown component",
+);
+
 const ALL_COMPONENTS = [
   SIGNUP_FORM,
   NESTED_CHECKBOXES,
@@ -87,6 +93,7 @@ const ALL_COMPONENTS = [
   DATA_TABLE,
   MODAL_DIALOG,
   TIC_TAC_TOE,
+  DROPDOWN,
 ];
 
 export const VISIBLE_COMPONENTS = ALL_COMPONENTS.filter(

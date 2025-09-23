@@ -5,7 +5,10 @@ export default [
   route("", "routes/layout.tsx", [
     index("routes/home.tsx"), // this is the default child at "/"
     ...VISIBLE_COMPONENTS.map((component) =>
-      route(component.id, `./components/${component.id}/${component.id}.tsx`),
+      route(
+        component.id,
+        `./components/${component.id}/${component.id}-demo.tsx`,
+      ),
     ),
   ]),
 ] satisfies RouteConfig;

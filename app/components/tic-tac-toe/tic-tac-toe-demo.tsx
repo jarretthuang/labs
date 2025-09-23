@@ -4,7 +4,7 @@ import { TIC_TAC_TOE } from "~/models/components";
 export const meta = () => TIC_TAC_TOE.meta;
 export const handle = TIC_TAC_TOE.routeHandle;
 
-export default function TicTacToe() {
+export default function TicTacToeDemo() {
   const [gameState, setGameState] = useState<number[]>(
     new Array(9).fill(undefined),
   );

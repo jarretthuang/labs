@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import Checkbox from "./checkbox";
+import SimpleCheckbox from "./simple-checkbox";
 import type { CheckboxItem } from "./models";
 
 export default function NestedCheckbox({ item }: { item: CheckboxItem }) {
@@ -22,13 +22,13 @@ export default function NestedCheckbox({ item }: { item: CheckboxItem }) {
   }, []);
 
   return (
-    <Checkbox
+    <SimpleCheckbox
       key={state.id}
       item={state}
       level={0}
       indices={[]}
       onChanged={handleOnChange}
-    ></Checkbox>
+    ></SimpleCheckbox>
   );
 }
 

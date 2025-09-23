@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 export const meta = () => DATA_TABLE.meta;
 export const handle = DATA_TABLE.routeHandle;
 
-export default function DataTable() {
+export default function DataTableDemo() {
   const [pageIndex, setPageIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [rows, setRows] = useState<Row[]>([]);

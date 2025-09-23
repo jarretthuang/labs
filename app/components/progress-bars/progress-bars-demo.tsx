@@ -5,7 +5,7 @@ import ProgressBar from "./progress-bar";
 export const meta = () => PROGRESS_BARS.meta;
 export const handle = PROGRESS_BARS.routeHandle;
 
-export default function ProgressBars() {
+export default function ProgressBarsDemo() {
   const [count, setCount] = useState(1);
 
   const renderBars = () => {
