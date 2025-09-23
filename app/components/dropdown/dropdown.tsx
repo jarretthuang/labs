@@ -15,7 +15,7 @@ type Props = {
 export default function Dropdown({ items, selectedItem, onSelected }: Props) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="w-50 bg-gray-50 rounded-xl border-1 border-gray-300 relative hover:border-gray-400 duration-200 cursor-pointer">
+    <div className="w-50 bg-gray-50 rounded-xl border-1 border-gray-300 relative hover:border-gray-400 active:border-gray-400 duration-200 cursor-pointer">
       <div
         className="w-full flex justify-between p-2 items-center"
         onClick={() => setOpen((o) => !o)}
@@ -33,7 +33,7 @@ export default function Dropdown({ items, selectedItem, onSelected }: Props) {
             {items.map((item) => (
               <li
                 key={item.id}
-                className="py-2 px-4 hover:bg-gray-100 select-none"
+                className="py-2 px-4 hover:bg-gray-100 active:bg-gray-100 select-none"
                 onClick={() => {
                   setOpen(false);
                   onSelected(item);
