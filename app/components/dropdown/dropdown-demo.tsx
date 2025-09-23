@@ -9,14 +9,12 @@ export default function DropdownDemo() {
   const [drink, setDrink] = useState<DropdownItem | undefined>(undefined);
   return (
     <div>
-      <div className="flex flex-col md:flex-row items-center gap-2">
-        <span>Choose your coffee:</span>
-        <Dropdown
-          items={items}
-          selectedItem={drink}
-          onSelected={(item) => setDrink(item)}
-        ></Dropdown>
-      </div>
+      <Dropdown
+        items={items}
+        placeholderText="Choose your coffee"
+        selectedItem={drink}
+        onSelected={(item) => setDrink(item)}
+      ></Dropdown>
     </div>
   );
 }
