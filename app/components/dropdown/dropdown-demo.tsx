@@ -10,7 +10,7 @@ export default function DropdownDemo() {
   return (
     <div>
       <Dropdown
-        items={items}
+        items={items.sort((a, b) => a.displayName.localeCompare(b.displayName))}
         placeholderText="Choose your coffee"
         selectedItem={drink}
         onSelected={(item) => setDrink(item)}
@@ -39,5 +39,13 @@ const items: DropdownItem[] = [
   {
     id: "latte",
     displayName: "Latte",
+  },
+  {
+    id: "cold-brew",
+    displayName: "Cold brew",
+  },
+  {
+    id: "flat-white",
+    displayName: "Flat white",
   },
 ];

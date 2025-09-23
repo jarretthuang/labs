@@ -43,7 +43,7 @@ export default function Dropdown({
         className="w-full flex justify-between py-2 px-4 gap-2 items-center bg-gray-50 rounded-xl border-1 border-gray-300 hover:border-gray-400 active:border-gray-400 duration-200 cursor-pointer"
         onClick={() => setOpen((o) => !o)}
       >
-        <span className="select-none text-gray-800">
+        <span className="select-none text-gray-800 font-medium">
           {selectedItem?.displayName ?? placeholderText}
         </span>
         <span className="select-none font-medium text-gray-600">
@@ -56,7 +56,7 @@ export default function Dropdown({
             {items.map((item) => (
               <li
                 key={item.id}
-                className="py-2 px-4 hover:bg-gray-100 active:bg-gray-100 select-none cursor-pointer text-gray-900"
+                className="py-2 px-4 hover:bg-gray-100 active:bg-gray-100 select-none cursor-pointer text-gray-900 font-medium"
                 onClick={() => {
                   setOpen(false);
                   onSelected(item);
