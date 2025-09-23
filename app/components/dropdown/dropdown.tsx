@@ -20,7 +20,9 @@ export default function Dropdown({ items, selectedItem, onSelected }: Props) {
         className="w-full flex justify-between p-2 items-center"
         onClick={() => setOpen((o) => !o)}
       >
-        <span className="px-2">{selectedItem?.displayName ?? ""}</span>
+        <span className="px-2 select-none">
+          {selectedItem?.displayName ?? ""}
+        </span>
         <span className="select-none font-medium text-gray-600 px-2">
           {open ? "▲" : "▼"}
         </span>
