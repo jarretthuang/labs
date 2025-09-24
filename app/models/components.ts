@@ -54,7 +54,7 @@ export const PROGRESS_BARS = new Component(
 export const ACCORDION = new Component(
   "accordion",
   "Accordion",
-  "A simple accordion component",
+  "A simple accordion component.",
 );
 
 export const DATA_TABLE = new Component(
@@ -81,7 +81,13 @@ export const TIC_TAC_TOE = new Component(
 export const DROPDOWN = new Component(
   "dropdown",
   "Dropdown",
-  "A simple dropdown component",
+  "A simple dropdown component.",
+);
+
+export const DEBOUNCE_VS_THROTTLE = new Component(
+  "debounce-vs-throttle",
+  "Debounce vs. Throttle",
+  "A simple demonstration of the difference between debounce and throttle.",
 );
 
 const ALL_COMPONENTS = [
@@ -94,6 +100,7 @@ const ALL_COMPONENTS = [
   MODAL_DIALOG,
   TIC_TAC_TOE,
   DROPDOWN,
+  DEBOUNCE_VS_THROTTLE,
 ];
 
 export const VISIBLE_COMPONENTS = ALL_COMPONENTS.filter(
