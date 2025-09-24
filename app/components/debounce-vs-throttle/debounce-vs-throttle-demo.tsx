@@ -21,6 +21,9 @@ export default function DebounceVsThrottleDemoComponent() {
     [],
   );
 
+  const notification = (total: number, success: number) => {
+    return `Clicked ${total} ${total === 1 ? "time" : "times"}, ${success} ${success === 1 ? "success" : "successes"}.`;
+  };
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-col gap-2">
@@ -33,7 +36,7 @@ export default function DebounceVsThrottleDemoComponent() {
         >
           Debounce 0.5s
         </button>
-        <span>{`Clicked ${debounceClickTotal} times, ${debounceCount} successes.`}</span>
+        <span>{notification(debounceClickTotal, debounceCount)}</span>
       </div>
       <div className="flex flex-col gap-2">
         <button
@@ -45,7 +48,7 @@ export default function DebounceVsThrottleDemoComponent() {
         >
           Throttle 0.5s
         </button>
-        <span>{`Clicked ${throttleClickTotal} times, ${throttleCount} successes.`}</span>
+        <span>{notification(throttleClickTotal, throttleCount)}</span>
       </div>
     </div>
   );
