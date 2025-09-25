@@ -7,6 +7,6 @@
   padding: 12px 24px;
   width: 100%;
   max-width: 30rem;
-  background-color: #fafafa;
+  background-color: oklch(96.7% 0.003 264.542);
   border-radius: 10px;
 }
