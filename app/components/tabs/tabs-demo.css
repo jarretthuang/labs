@@ -1,0 +1,12 @@
+.tabs-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.content {
+  padding: 12px 24px;
+  width: 100%;
+  max-width: 30rem;
+  background-color: #fafafa;
+  border-radius: 10px;
+}

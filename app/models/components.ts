@@ -90,6 +90,12 @@ export const DEBOUNCE_VS_THROTTLE = new Component(
   "A simple demonstration of the difference between debounce and throttle.",
 );
 
+export const TABS = new Component(
+  "tabs",
+  "Tabs",
+  "A simple component for rendering different content based on the selected tab.",
+);
+
 const ALL_COMPONENTS = [
   SIGNUP_FORM,
   NESTED_CHECKBOXES,
@@ -101,6 +107,7 @@ const ALL_COMPONENTS = [
   TIC_TAC_TOE,
   DROPDOWN,
   DEBOUNCE_VS_THROTTLE,
+  TABS,
 ];
 
 export const VISIBLE_COMPONENTS = ALL_COMPONENTS.filter(

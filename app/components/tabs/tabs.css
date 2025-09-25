@@ -1,0 +1,26 @@
+.tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  background-color: #fafafa;
+  padding: 8px 16px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.tabs .tab {
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-wrap: nowrap;
+}
+
+.tabs .tab:hover {
+  background-color: oklch(87.2% 0.01 258.338);
+  transition-duration: 200ms;
+}
+
+.tabs .tab__selected {
+  background-color: oklch(92.8% 0.006 264.531);
+  font-weight: 500;
+}
