@@ -24,6 +24,7 @@ export default function DataTableDemo() {
 
   useEffect(() => {
     (async () => {
+      const abortController = new AbortController();
       try {
         setIsLoading(true);
         const response = await fetch("/api/rows", {
@@ -31,16 +32,19 @@ export default function DataTableDemo() {
           body: JSON.stringify({
             pageIndex,
             pageSize: 30,
+            loadTime: 500, // to simulate a slow request
           }),
+          signal: abortController.signal,
         });
         const json = await response.json();
         setEnd(json.end);
         setRows((rows) => [...rows, ...json.rows]);
       } finally {
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 500);
+        setIsLoading(false);
       }
+      return () => {
+        abortController.abort();
+      };
     })();
   }, [pageIndex]);
 
