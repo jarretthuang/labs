@@ -26,10 +26,10 @@ export class Component {
 export const SIGNUP_FORM = new Component(
   "signup-form",
   "Signup Form",
-  `<span>
-      A simple form component that supports native validation and autocomplete.
-      On submit, it sends a POST request to a dummy (but real) endpoint at <a href="https://api.jhuang.ca" target="_blank">https://api.jhuang.ca/signup</a>.
-  </span>`,
+  `
+    <p>A simple form component that supports native validation and autocomplete.</p>
+    <p>On submit, it sends a POST request to a dummy (but real) endpoint at <a href="https://api.jhuang.ca" target="_blank">https://api.jhuang.ca/signup</a>.</p>
+  `,
 );
 
 export const NESTED_CHECKBOXES = new Component(
@@ -60,10 +60,10 @@ export const ACCORDION = new Component(
 export const DATA_TABLE = new Component(
   "data-table",
   "Data Table",
-  `<span>
-      A data table that supports server-side pagination via infinite scrolling.
-      On scrolling to the bottom, a new POST request will be sent to <a href="https://api.jhuang.ca" target="_blank">https://api.jhuang.ca/rows</a> to fetch the next 30 rows, until the 137th, i.e. the final row, is reached.
-  </span>`,
+  `
+    <p>A data table that supports server-side pagination via infinite scrolling.</p>
+    <p>On scrolling to the bottom, a new POST request will be sent to <a href="https://api.jhuang.ca" target="_blank">https://api.jhuang.ca/rows</a> to fetch the next 30 rows, until the 137th, i.e. the final row, is reached.</p>    
+  `,
 );
 
 export const MODAL_DIALOG = new Component(

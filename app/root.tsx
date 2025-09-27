@@ -13,6 +13,7 @@ import "./app.css";
 import { Analytics } from "@vercel/analytics/react";
 import { useMemo } from "react";
 import type { Component } from "./models/components";
+import sanitizeHtml from "sanitize-html";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -91,12 +92,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </div>
             <nav className="p-4 flex gap-2 items-center">{breadcrumbs}</nav>
             {currentComponent?.description && (
-              <p
+              <div
                 className="ml-5 p-4 border-l-4 border-l-gray-400"
                 dangerouslySetInnerHTML={{
-                  __html: currentComponent?.description ?? "",
+                  __html: sanitizeHtml(currentComponent?.description ?? ""),
                 }}
-              ></p>
+              ></div>
             )}
           </header>
 
