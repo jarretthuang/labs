@@ -6,22 +6,22 @@
   padding: 6px 12px;
   border-radius: 10px;
   width: fit-content;
-}
 
-.tabs .tab {
-  cursor: pointer;
-  padding: 6px 12px;
-  border-radius: 8px;
-  text-wrap: nowrap;
-  transition-duration: 200ms;
-}
+  .tab {
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-wrap: nowrap;
+    transition-duration: 200ms;
 
-.tabs .tab:hover,
-.tabs .tab:active {
-  background-color: oklch(87.2% 0.01 258.338);
-}
+    &.tab__selected {
+      background-color: oklch(92.8% 0.006 264.531);
+      font-weight: 500;
+    }
 
-.tabs .tab__selected {
-  background-color: oklch(92.8% 0.006 264.531);
-  font-weight: 500;
+    &:hover,
+    &:active {
+      background-color: oklch(87.2% 0.01 258.338);
+    }
+  }
 }
