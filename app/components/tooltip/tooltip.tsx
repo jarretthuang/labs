@@ -22,7 +22,7 @@ export default function Tooltip({
     return current
       ? {
           top: current.offsetTop + current.offsetHeight + 10,
-          left: current.offsetLeft,
+          left: current.offsetLeft + 10,
         }
       : {};
   }, [containerRef?.current]);
