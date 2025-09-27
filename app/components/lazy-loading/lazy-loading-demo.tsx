@@ -11,7 +11,7 @@ export default function LazyLoadingDemo() {
   const loading = <div className="m-auto">Loading...</div>;
   return (
     <div className="w-full max-w-2xl h-full bg-gray-100 rounded-xl grid grid-rows-2 grid-cols-2 p-4 gap-4">
-      <div className="col-span-2 flex rounded-xl bg-gray-50">
+      <div className="col-span-2 flex rounded-xl bg-gray-50 text-gray-700 font-medium">
         <Suspense fallback={loading}>
           <SlowComponent1 className="bg-gray-200" />
         </Suspense>

@@ -1,7 +1,5 @@
+import LoadingTestTemplate from "./loading-test-template";
+
 export default function LoadingTest({ className }: { className?: string }) {
-  return (
-    <div className={`w-full h-full flex rounded-xl ${className ?? ""}`}>
-      <span className="m-auto">Loaded</span>
-    </div>
-  );
+  return <LoadingTestTemplate chunkNumber={1} className={className} />;
 }
