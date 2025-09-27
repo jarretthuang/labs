@@ -1,16 +1,27 @@
 import { TOOLTIP } from "~/models/components";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Tooltip from "./tooltip";
 
 export const meta = () => TOOLTIP.meta;
 export const handle = TOOLTIP.routeHandle;
 
+function useNow(cadence: number) {
+  const [now, setNow] = useState(new Date());
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNow(new Date());
+    }, cadence);
+    return () => clearInterval(interval);
+  }, []);
+  return now;
+}
+
 export default function TooltipDemoComponent() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const now = useNow(1000);
 
   const currentTime = () => {
-    const date = new Date();
-    const hour = date.getHours();
+    const hour = now.getHours();
     let greeting = "";
     if (hour >= 5 && hour < 12) {
       greeting = "Good morning!";
@@ -24,14 +35,22 @@ export default function TooltipDemoComponent() {
     return (
       <>
         <span className="font-semibold">{greeting}</span>
-        <div>Your current local time is {date.toLocaleTimeString()}.</div>
+        <div>
+          Your local time is{" "}
+          <span className="bg-gray-200 px-2 py-1 rounded-md">
+            {now.toLocaleTimeString()}
+          </span>
+          .
+        </div>
       </>
     );
   };
 
   return (
     <div>
-      <div ref={containerRef}>Hover me!</div>
+      <div className="select-none cursor-pointer" ref={containerRef}>
+        Hover me!
+      </div>
       <Tooltip content={currentTime} containerRef={containerRef} />
     </div>
   );

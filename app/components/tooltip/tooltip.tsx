@@ -17,12 +17,12 @@ export default function Tooltip({
 }) {
   const [show, setShow] = useState(false);
 
-  const tooltipPosition = useMemo(() => {
+  const tooltipStyle = useMemo(() => {
     const current = containerRef.current;
     return current
       ? {
-          top: current.offsetTop + current.offsetHeight,
-          left: current.offsetLeft + current.offsetWidth,
+          top: current.offsetTop + current.offsetHeight + 10,
+          left: current.offsetLeft,
         }
       : {};
   }, [containerRef?.current]);
@@ -51,8 +51,8 @@ export default function Tooltip({
     containerRef.current &&
     createPortal(
       <div
-        className="absolute bg-gray-100 border-1 border-gray-200 px-3 py-2 rounded-md text-gray-700"
-        style={tooltipPosition}
+        className="absolute max-w-full bg-gray-100 border-1 border-gray-200 px-4 py-3 rounded-md text-gray-700"
+        style={tooltipStyle}
       >
         {content()}
       </div>,
