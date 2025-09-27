@@ -96,6 +96,12 @@ export const TABS = new Component(
   "A simple component for rendering different content based on the selected tab.",
 );
 
+export const TOOLTIP = new Component(
+  "tooltip",
+  "Tooltip",
+  `<span>A simple tooltip component that supports dynamic content, implemented using <code>createPortal</code>.</span>`,
+);
+
 const ALL_COMPONENTS = [
   SIGNUP_FORM,
   NESTED_CHECKBOXES,
@@ -108,6 +114,7 @@ const ALL_COMPONENTS = [
   DROPDOWN,
   DEBOUNCE_VS_THROTTLE,
   TABS,
+  TOOLTIP,
 ];
 
 export const VISIBLE_COMPONENTS = ALL_COMPONENTS.filter(
