@@ -48,7 +48,6 @@ export default function Tooltip({
 
   return (
     show &&
-    containerRef.current &&
     createPortal(
       <div
         className="absolute max-w-full bg-gray-100 border-1 border-gray-200 px-4 py-3 rounded-md text-gray-700"
@@ -56,7 +55,7 @@ export default function Tooltip({
       >
         {content()}
       </div>,
-      containerRef.current,
+      document.body,
     )
   );
 }
