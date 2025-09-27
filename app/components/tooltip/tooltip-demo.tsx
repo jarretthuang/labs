@@ -16,7 +16,7 @@ function useNow(cadence: number) {
   return now;
 }
 
-export default function TooltipDemoComponent() {
+export default function TooltipDemo() {
   const containerRef = useRef<HTMLDivElement>(null);
   const now = useNow(1000);
 

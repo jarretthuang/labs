@@ -4,7 +4,7 @@ import { DEBOUNCE_VS_THROTTLE } from "~/models/components";
 export const meta = () => DEBOUNCE_VS_THROTTLE.meta;
 export const handle = DEBOUNCE_VS_THROTTLE.routeHandle;
 
-export default function DebounceVsThrottleDemoComponent() {
+export default function DebounceVsThrottleDemo() {
   const [debounceCount, setDebounceCount] = useState(0);
   const [throttleCount, setThrottleCount] = useState(0);
 

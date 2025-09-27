@@ -102,6 +102,15 @@ export const TOOLTIP = new Component(
   `<span>A simple tooltip component that supports dynamic content, implemented using <code>createPortal</code>.</span>`,
 );
 
+export const LAZY_LOADING = new Component(
+  "lazy-loading",
+  "Lazy loading",
+  `
+    <p>A simple demo of how React components can be lazily loaded.<p>
+    <p>Check the network tab to see code-splitting in action!<p>
+  `,
+);
+
 const ALL_COMPONENTS = [
   SIGNUP_FORM,
   NESTED_CHECKBOXES,
@@ -115,6 +124,7 @@ const ALL_COMPONENTS = [
   DEBOUNCE_VS_THROTTLE,
   TABS,
   TOOLTIP,
+  LAZY_LOADING,
 ];
 
 export const VISIBLE_COMPONENTS = ALL_COMPONENTS.filter(
