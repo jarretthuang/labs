@@ -81,7 +81,7 @@ export const TIC_TAC_TOE = new Component(
 export const DROPDOWN = new Component(
   "dropdown",
   "Dropdown",
-  "A simple dropdown component.",
+  "A simple and accessible dropdown component.",
 );
 
 export const DEBOUNCE_VS_THROTTLE = new Component(

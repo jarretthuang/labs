@@ -38,9 +38,17 @@ export default function Dropdown({
   }, []);
 
   return (
-    <div className="w-56 relative" ref={containerRef}>
-      <div
-        className="w-full flex justify-between py-2 px-4 gap-2 items-center bg-gray-50 rounded-xl border-1 border-gray-300 hover:border-gray-400 active:border-gray-400 duration-200 cursor-pointer"
+    <div
+      className="w-56 relative"
+      ref={containerRef}
+      onKeyDown={(e) => {
+        if (e.key === "Escape") {
+          setOpen(false);
+        }
+      }}
+    >
+      <button
+        className="w-full flex justify-between items-center border-1 border-gray-300"
         onClick={() => setOpen((o) => !o)}
       >
         <span className="select-none text-gray-800 font-medium">
@@ -49,24 +57,26 @@ export default function Dropdown({
         <span className="select-none font-medium text-gray-600">
           {open ? "▲" : "▼"}
         </span>
-      </div>
+      </button>
       {open && (
-        <ul className="absolute z-10 bg-gray-50 rounded-xl border-1 border-gray-300 w-full mt-2 flex flex-col gap-1 shadow-sm max-h-46 overflow-hidden">
-          <div className="w-full h-full overflow-auto">
+        <div className="absolute z-10 bg-gray-100 rounded-xl border-1 border-gray-300 w-full flex mt-2 shadow-sm max-h-46 overflow-hidden">
+          <ul className="w-full overflow-auto flex flex-col p-1 gap-1">
             {items.map((item) => (
               <li
                 key={item.id}
-                className="py-2 px-4 hover:bg-gray-100 active:bg-gray-100 select-none cursor-pointer text-gray-900 font-medium"
+                className=""
                 onClick={() => {
                   setOpen(false);
                   onSelected(item);
                 }}
               >
-                {item.displayName}
+                <button className="w-full text-left text-gray-700">
+                  {item.displayName}
+                </button>
               </li>
             ))}
-          </div>
-        </ul>
+          </ul>
+        </div>
       )}
     </div>
   );
