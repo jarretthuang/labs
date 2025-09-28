@@ -9,8 +9,6 @@
 
   .tab {
     cursor: pointer;
-    padding: 6px 12px;
-    border-radius: 8px;
     text-wrap: nowrap;
     transition-duration: 200ms;
 

@@ -20,14 +20,16 @@ export default function Tabs({
   );
 
   return (
-    <ul className="tabs">
+    <ul className="tabs" role="tablist">
       {items.map((item, index) => (
-        <li
-          key={item.id}
-          className={`tab ${selectedItemIndex === index ? "tab__selected" : ""}`}
-          onClick={() => onSelected(item.id)}
-        >
-          {item.displayName}
+        <li key={item.id}>
+          <button
+            role="tab"
+            className={`tab ${selectedItemIndex === index ? "tab__selected" : ""}`}
+            onClick={() => onSelected(item.id)}
+          >
+            {item.displayName}
+          </button>
         </li>
       ))}
     </ul>

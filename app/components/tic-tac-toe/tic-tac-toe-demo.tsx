@@ -44,15 +44,17 @@ export default function TicTacToeDemo() {
       </div>
       <div className="grid grid-cols-3 grid-rows-3 bg-gray-50 w-fit h-fit">
         {gameState.map((slotState, slotIndex) => (
-          <div
+          <button
             key={slotIndex}
-            className={`w-20 h-20 flex border-1 border-gray-300 cursor-pointer hover:bg-gray-200 active:bg-gray-200 duration-200 select-none ${slotState !== undefined || winner !== undefined ? "pointer-events-none" : ""}`}
+            className="w-20 h-20 flex border-1 border-gray-300 cursor-pointer hover:bg-gray-200 active:bg-gray-200 duration-200 select-none"
+            style={{ borderRadius: 0 }} // to override the default button style
+            disabled={slotState !== undefined || winner !== undefined}
             onClick={() => takeAction(slotIndex)}
           >
             <span className="m-auto text-4xl">
               {slotState === 1 ? "⭕" : slotState === 2 ? "❌" : ""}
             </span>
-          </div>
+          </button>
         ))}
       </div>
       <div className="flex justify-center">

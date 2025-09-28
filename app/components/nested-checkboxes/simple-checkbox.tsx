@@ -22,8 +22,9 @@ export default function SimpleCheckbox({
     }
   }, [item.checked]);
 
-  const handleChange = (e: any) => {
-    onChanged(indices, inputRef?.current?.checked ?? false);
+  const handleChange = (toggle: boolean) => {
+    const current = inputRef?.current?.checked ?? false;
+    onChanged(indices, toggle ? !current : current);
   };
 
   return (
@@ -37,7 +38,12 @@ export default function SimpleCheckbox({
           type="checkbox"
           checked={item.checked === true}
           ref={inputRef}
-          onChange={(e) => handleChange(e)}
+          onChange={() => handleChange(false)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleChange(true);
+            }
+          }}
         ></input>
         <label htmlFor={item.id.toString()}>{item.name}</label>
       </div>
