@@ -4,7 +4,7 @@ import { VISIBLE_COMPONENTS } from "../models/components";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "JH Labs" },
-    { name: "description", content: "Jarrett Huang's Web Experiments" },
+    { name: "description", content: "Jarrett Huang's web experiments." },
   ];
 }
 
