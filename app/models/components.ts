@@ -99,7 +99,7 @@ export const TABS = new Component(
 export const TOOLTIP = new Component(
   "tooltip",
   "Tooltip",
-  `<span>A simple tooltip component that supports dynamic content, implemented using <code>createPortal</code>.</span>`,
+  "A simple tooltip component that supports dynamic content.",
 );
 
 export const LAZY_LOADING = new Component(
