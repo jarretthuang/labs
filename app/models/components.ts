@@ -111,6 +111,12 @@ export const LAZY_LOADING = new Component(
   `,
 );
 
+export const DRILLDOWN = new Component(
+  "drilldown",
+  "Drilldown",
+  "A simple drilldown component.",
+);
+
 const ALL_COMPONENTS = [
   SIGNUP_FORM,
   NESTED_CHECKBOXES,
@@ -125,6 +131,7 @@ const ALL_COMPONENTS = [
   TABS,
   TOOLTIP,
   LAZY_LOADING,
+  DRILLDOWN,
 ];
 
 export const VISIBLE_COMPONENTS = ALL_COMPONENTS.filter(
