@@ -69,15 +69,6 @@ export const drilldownItems: DrilldownItem[] = [
         ],
       },
       {
-        id: "hong-kong",
-        displayName: "Hong Kong",
-        children: [
-          { id: "central", displayName: "Central" },
-          { id: "kowloon", displayName: "Kowloon" },
-          { id: "tsim-sha-tsui", displayName: "Tsim Sha Tsui" },
-        ],
-      },
-      {
         id: "taiwan",
         displayName: "Taiwan",
         children: [
