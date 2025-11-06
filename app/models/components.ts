@@ -117,6 +117,12 @@ export const DRILLDOWN = new Component(
   "A simple drilldown component.",
 );
 
+export const TIC_TAC_TOE_PRO_MAX = new Component(
+  "tic-tac-toe-pro-max",
+  "Tic-tac-toe-pro-max",
+  "A game of tic-tac-toe, on steroids (potentially).",
+);
+
 const ALL_COMPONENTS = [
   SIGNUP_FORM,
   NESTED_CHECKBOXES,
@@ -132,6 +138,7 @@ const ALL_COMPONENTS = [
   TOOLTIP,
   LAZY_LOADING,
   DRILLDOWN,
+  TIC_TAC_TOE_PRO_MAX,
 ];
 
 export const VISIBLE_COMPONENTS = ALL_COMPONENTS.filter(
