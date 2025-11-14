@@ -123,6 +123,12 @@ export const TIC_TAC_TOE_PRO_MAX = new Component(
   "A game of tic-tac-toe, on steroids (potentially).",
 );
 
+export const TOAST = new Component(
+  "toast",
+  "toast",
+  "A simple toast component.",
+);
+
 const ALL_COMPONENTS = [
   SIGNUP_FORM,
   NESTED_CHECKBOXES,
@@ -139,6 +145,7 @@ const ALL_COMPONENTS = [
   LAZY_LOADING,
   DRILLDOWN,
   TIC_TAC_TOE_PRO_MAX,
+  TOAST,
 ];
 
 export const VISIBLE_COMPONENTS = ALL_COMPONENTS.filter(

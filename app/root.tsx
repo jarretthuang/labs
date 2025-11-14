@@ -11,9 +11,10 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import { Analytics } from "@vercel/analytics/react";
-import { useMemo } from "react";
+import { useContext, useMemo, useState } from "react";
 import type { Component } from "./models/components";
 import sanitizeHtml from "sanitize-html";
+import { ToastProvider } from "~/components/toast/toastProvider";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -76,50 +77,52 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body className="flex justify-center">
-        <main className="flex flex-col w-full max-w-4xl min-h-screen p-4 md:p-8 gap-4">
-          <header className="flex flex-col">
-            <div className="flex flex-col md:flex-row md:items-end">
-              <img
-                src="logo.png"
-                className="w-32 min-w-24 pointer-events-none select-none object-contain"
-              ></img>
-              <span className="p-4 italic text-gray-800">
+        <ToastProvider>
+          <main className="flex flex-col w-full max-w-4xl min-h-screen p-4 md:p-8 gap-4">
+            <header className="flex flex-col">
+              <div className="flex flex-col md:flex-row md:items-end">
+                <img
+                  src="logo.png"
+                  className="w-32 min-w-24 pointer-events-none select-none object-contain"
+                ></img>
+                <span className="p-4 italic text-gray-800">
+                  <a href="https://jhuang.ca" target="_blank">
+                    jarrett huang
+                  </a>
+                  's web experiments
+                </span>
+              </div>
+              <nav className="p-4 flex gap-2 items-center">{breadcrumbs}</nav>
+              {currentComponent?.description && (
+                <div
+                  className="ml-5 p-4 border-l-4 border-l-gray-400"
+                  dangerouslySetInnerHTML={{
+                    __html: sanitizeHtml(currentComponent?.description ?? ""),
+                  }}
+                ></div>
+              )}
+            </header>
+
+            <div className="flex-1 flex p-4 border-t-1 border-t-gray-200">
+              {children}
+            </div>
+            <footer className="w-full flex justify-center">
+              <span className="text-xs opacity-30 p-12">
+                @ {new Date().getFullYear()}{" "}
                 <a href="https://jhuang.ca" target="_blank">
                   jarrett huang
+                </a>{" "}
+                |{" "}
+                <a
+                  href="https://github.com/jarretthuang/labs.jhuang.ca"
+                  target="_blank"
+                >
+                  github
                 </a>
-                's web experiments
               </span>
-            </div>
-            <nav className="p-4 flex gap-2 items-center">{breadcrumbs}</nav>
-            {currentComponent?.description && (
-              <div
-                className="ml-5 p-4 border-l-4 border-l-gray-400"
-                dangerouslySetInnerHTML={{
-                  __html: sanitizeHtml(currentComponent?.description ?? ""),
-                }}
-              ></div>
-            )}
-          </header>
-
-          <div className="flex-1 flex p-4 border-t-1 border-t-gray-200">
-            {children}
-          </div>
-          <footer className="w-full flex justify-center">
-            <span className="text-xs opacity-30 p-12">
-              @ {new Date().getFullYear()}{" "}
-              <a href="https://jhuang.ca" target="_blank">
-                jarrett huang
-              </a>{" "}
-              |{" "}
-              <a
-                href="https://github.com/jarretthuang/labs.jhuang.ca"
-                target="_blank"
-              >
-                github
-              </a>
-            </span>
-          </footer>
-        </main>
+            </footer>
+          </main>
+        </ToastProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
