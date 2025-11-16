@@ -119,14 +119,20 @@ export const DRILLDOWN = new Component(
 
 export const TIC_TAC_TOE_PRO_MAX = new Component(
   "tic-tac-toe-pro-max",
-  "Tic-tac-toe-pro-max",
+  "Tic-tac-toe Pro Max",
   "A game of tic-tac-toe, on steroids (potentially).",
 );
 
 export const TOAST = new Component(
   "toast",
-  "toast",
+  "Toast",
   "A simple toast component.",
+);
+
+export const STAR_RATING = new Component(
+  "star-rating",
+  "Star Rating",
+  "A simple star rating component.",
 );
 
 const ALL_COMPONENTS = [
@@ -146,6 +152,7 @@ const ALL_COMPONENTS = [
   DRILLDOWN,
   TIC_TAC_TOE_PRO_MAX,
   TOAST,
+  STAR_RATING,
 ];
 
 export const VISIBLE_COMPONENTS = ALL_COMPONENTS.filter(
