@@ -135,6 +135,12 @@ export const STAR_RATING = new Component(
   "A simple star rating component.",
 );
 
+export const DIFF_TOOL = new Component(
+  "diff-tool",
+  "Diff Tool",
+  "A simple diff tool",
+);
+
 const ALL_COMPONENTS = [
   SIGNUP_FORM,
   NESTED_CHECKBOXES,
@@ -153,6 +159,7 @@ const ALL_COMPONENTS = [
   TIC_TAC_TOE_PRO_MAX,
   TOAST,
   STAR_RATING,
+  DIFF_TOOL,
 ];
 
 export const VISIBLE_COMPONENTS = ALL_COMPONENTS.filter(
