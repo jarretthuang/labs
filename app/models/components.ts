@@ -138,7 +138,7 @@ export const STAR_RATING = new Component(
 export const DIFF_TOOL = new Component(
   "diff-tool",
   "Diff Tool",
-  "A simple diff tool",
+  "A diff tool similar to git.",
 );
 
 const ALL_COMPONENTS = [

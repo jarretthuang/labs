@@ -1,4 +1,5 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
+import { computeDiff, type Line, toLine } from "~/components/diff-tool/models";
 
 export default function DiffTool({
   left,
@@ -7,17 +8,44 @@ export default function DiffTool({
   left: string[];
   right: string[];
 }) {
+  const [hoveredLine, setHoveredLine] = useState(-1);
+
   const { leftLines, rightLines, diffLines } = useMemo(() => {
+    const d = computeDiff(left, right);
+    const l: Line[] = d.map((diffLine) => {
+      return diffLine.originLeft !== undefined
+        ? {
+            content: left[diffLine.originLeft],
+            type: "raw",
+          }
+        : {
+            content: diffLine.content,
+            type: "void",
+          };
+    });
+    const r: Line[] = d.map((diffLine) => {
+      return diffLine.originRight !== undefined
+        ? {
+            content: right[diffLine.originRight],
+            type: "raw",
+          }
+        : {
+            content: diffLine.content,
+            type: "void",
+          };
+    });
     return {
-      leftLines: left.map((l) => toLine(l, "raw")),
-      rightLines: right.map((r) => toLine(r, "raw")),
-      diffLines: computeDiff(left, right),
+      leftLines: l,
+      rightLines: r,
+      diffLines: d,
     };
   }, [left, right]);
 
   const renderLines = (lines: Line[], group: string) => {
     function getBackgroundColour(line: Line): string {
       switch (line.type) {
+        case "void":
+          return "bg-cyan-100";
         case "raw":
           return "bg-cyan-100";
         case "common":
@@ -34,7 +62,8 @@ export default function DiffTool({
           {lines.map((line, index) => (
             <div
               key={`${group}-${line.type}-${index}`}
-              className={`flex px-2 py-1 items-center min-h-8 w-full ${getBackgroundColour(line)}`}
+              className={`flex px-2 py-1 items-center min-h-8 transition-all duration-200 w-full ${getBackgroundColour(line)}`}
+              onMouseOver={() => setHoveredLine(index)}
               style={{
                 color:
                   line.type === "add" ||
@@ -42,15 +71,22 @@ export default function DiffTool({
                   line.type === "common"
                     ? "white"
                     : "black",
+                filter: hoveredLine === index ? "brightness(0.95)" : "unset",
               }}
             >
-              {line.type !== "raw" && (
-                <div className="w-6">
-                  {line.type === "add" && <span>+</span>}
-                  {line.type === "remove" && <span>-</span>}
-                </div>
-              )}
-              <span className="flex-1">{line.content}</span>
+              <div className="w-6">
+                {line.type === "add" && <span>+</span>}
+                {line.type === "remove" && <span>-</span>}
+              </div>
+              <span
+                className="flex-1"
+                style={{
+                  color: line.type === "void" ? "transparent" : "unset",
+                  userSelect: line.type === "void" ? "none" : "auto",
+                }}
+              >
+                {line.content}
+              </span>
             </div>
           ))}
         </div>
@@ -75,114 +111,4 @@ export default function DiffTool({
       {renderLines(rightLines, "right")}
     </div>
   );
-}
-
-type LineType = "raw" | "common" | "add" | "remove";
-type Line = {
-  content: string;
-  type: LineType;
-};
-
-function toLine(str: string, type: LineType): Line {
-  return {
-    content: str,
-    type: type,
-  };
-}
-
-function computeDiff(left: string[], right: string[]): Line[] {
-  const { commonPrefix, midLeft, midRight, commonSuffix } = compareStrings(
-    left,
-    right,
-  );
-
-  function computeInnerDiff(l: string[], r: string[]): Line[] {
-    const commonUniqueStrings = getUniqueStringIndexInBothSides(l, r);
-    if (commonUniqueStrings === undefined) {
-      return [
-        ...l.map((s) => toLine(s, "remove")),
-        ...r.map((s) => toLine(s, "add")),
-      ];
-    } else {
-      const [leftAnchor, rightAnchor] = commonUniqueStrings;
-      return [
-        ...computeInnerDiff(l.slice(0, leftAnchor), r.slice(0, rightAnchor)),
-        toLine(l[leftAnchor], "common"),
-        ...computeInnerDiff(l.slice(leftAnchor + 1), r.slice(rightAnchor + 1)),
-      ];
-    }
-  }
-
-  return [
-    ...commonPrefix.map((s) => toLine(s, "common")),
-    ...computeInnerDiff(midLeft, midRight),
-    ...commonSuffix.map((s) => toLine(s, "common")),
-  ];
-}
-
-function compareStrings(
-  left: string[],
-  right: string[],
-): {
-  commonPrefix: string[];
-  midLeft: string[];
-  midRight: string[];
-  commonSuffix: string[];
-} {
-  let prefixEnd = 0; // exclusive
-  while (prefixEnd < left.length && prefixEnd < right.length) {
-    const currentStr = left[prefixEnd];
-    if (currentStr && currentStr === right[prefixEnd]) {
-      prefixEnd++;
-    } else {
-      break;
-    }
-  }
-
-  let suffixEnd = 0; // exclusive
-  while (suffixEnd < left.length - prefixEnd && suffixEnd < right.length) {
-    const currentStr = left.at(-suffixEnd);
-    if (currentStr && currentStr === right.at(-suffixEnd)) {
-      suffixEnd++;
-    } else {
-      break;
-    }
-  }
-
-  return {
-    commonPrefix: left.slice(0, prefixEnd),
-    midLeft: left.slice(prefixEnd, left.length - suffixEnd + 1),
-    midRight: right.slice(prefixEnd, right.length - suffixEnd + 1),
-    commonSuffix: left.slice(left.length - suffixEnd),
-  };
-}
-
-function getUniqueStringIndices(strs: string[]): Map<string, number> {
-  const indicesMap = new Map<string, number[]>();
-  for (let i = 0; i < strs.length; i++) {
-    const str = strs[i];
-    indicesMap.set(str, [...(indicesMap.get(str) ?? []), i]);
-  }
-
-  const result = new Map();
-  indicesMap.forEach((value, key) => {
-    if (value.length === 1) {
-      result.set(key, value[0]);
-    }
-  });
-  return result;
-}
-
-function getUniqueStringIndexInBothSides(
-  left: string[],
-  right: string[],
-): [number, number] | undefined {
-  const uniqueStringsInLeft = getUniqueStringIndices(left);
-  const uniqueStringsInRight = getUniqueStringIndices(right);
-  for (const [key, value] of uniqueStringsInLeft) {
-    if (uniqueStringsInRight.has(key)) {
-      return [value, uniqueStringsInRight.get(key)!];
-    }
-  }
-  return undefined;
 }
