@@ -15,6 +15,10 @@ body {
   } */
 }
 
+body * {
+  @apply focus-visible:outline-gray-400;
+}
+
 a {
   @apply hover:text-gray-600 duration-200 hover:underline;
 }

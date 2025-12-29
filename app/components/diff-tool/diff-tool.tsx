@@ -58,7 +58,7 @@ export default function DiffTool({
     }
     return (
       <div className="flex flex-col overflow-x-auto">
-        <div className="flex flex-col gap-2 w-fit">
+        <div className="flex flex-col gap-2 w-fit min-w-full">
           {lines.map((line, index) => (
             <div
               key={`${group}-${line.type}-${index}`}
